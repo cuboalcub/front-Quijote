@@ -1,3 +1,11 @@
+/* Estilo para el contenedor de la tabla */
+.tabla-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Altura total de la ventana */
+}
+
 /* Estilo para la tabla */
 table {
   width: 80%; /* Ancho de la tabla */
