@@ -1,0 +1,24 @@
+/* Estilo para la tabla */
+table {
+  width: 80%; /* Ancho de la tabla */
+  margin: 50px auto; /* Centrar la tabla */
+  border-collapse: collapse;
+  background-color: white; /* Fondo blanco */
+}
+
+/* Estilo para las celdas */
+td, th {
+  border: 1px solid black; /* Borde negro */
+  padding: 8px;
+}
+
+/* Estilo para el encabezado */
+th {
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+}
+
+/* Estilo para las filas impares (opcional) */
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2; /* Fondo gris claro */
+}
