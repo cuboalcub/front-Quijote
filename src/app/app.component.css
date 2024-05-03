@@ -39,7 +39,7 @@ aside{
     background: #F19426;
     position: absolute;
     width: 15%;
-    margin-top: 120px;
+    margin-top: 80px;
     height: 100%- 120px;
 }
 ul{
@@ -63,3 +63,5 @@ ul li:hover{
     color: #4a2d11;
     transition: 700ms;
 }
+
+
