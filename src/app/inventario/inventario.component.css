@@ -71,7 +71,16 @@ footer {
     font-size: 18px; /* Tamaño de fuente más grande para los datos */
 }
 
+.detalle img {
+    width: 30px; /* Ancho de la imagen del ojo */
+    height: auto; /* Altura automática para mantener la proporción */
+    transition: transform 0.3s ease; /* Transición suave al pasar el mouse */
+}
 
+.detalle img:hover {
+    transform: scale(1.3); /* Aumenta el tamaño al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar el mouse */
+}
 
 .tabla tbody tr:hover {
     background-color: #f0f0f0; /* Cambia el color de fondo al pasar el mouse */
