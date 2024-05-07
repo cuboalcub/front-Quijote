@@ -14,7 +14,6 @@
                 <th>Id de la Editorial</th>
                 <th>Precio</th>
                 <th>Existencias</th>
-                <th>Modificar</th>
             </tr>
         </thead>
         <tbody>
@@ -27,7 +26,6 @@
                 <td>Dato6</td>
                 <td>Dato7</td>
                 <td>Dato8</td>
-                <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
             </tr>
             <!-- Agrega más filas según sea necesario -->
         </tbody>
@@ -45,6 +43,7 @@
 </div>
 
 <div class="carrito-container">
+    <h2 class="carrito-titulo">Carrito de Préstamo</h2>
     <div class="tabla-container">
         <table class="tabla-carrito">
             <thead>
@@ -65,6 +64,19 @@
                 <!-- Aquí se insertarán las filas según sea necesario -->
             </tbody>
         </table>
+    </div>
+</div>
+
+<div class="cliente-container">
+    <h2 class="cliente-titulo">Ingrese el Nombre del Cliente:</h2>
+    <div class="input-wrapper">
+        <input type="text" id="nombreCliente" placeholder="Ingrese el nombre del cliente">
+        <select id="listaClientes"></select>
+    </div>
+    <h3 class="cantidad-titulo">Cantidad de libros a agregar:</h3>
+    <div class="cantidad-wrapper">
+        <input type="number" id="cantidadProductos" min="1" value="1">
+        <button class="agregar-btn">Agregar</button>
     </div>
 </div>
 
