@@ -16,7 +16,9 @@ header{
         width: 400px; /* ajusta el ancho según sea necesario */
         height: auto; /* ajusta la altura automáticamente según el ancho */
       }
-    
+    a{
+        text-decoration: none;
+    }
     .logo {
         position: absolute;
         top: -19px; /* ajusta la posición vertical según sea necesario */
