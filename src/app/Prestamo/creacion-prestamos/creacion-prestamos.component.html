@@ -1,0 +1,83 @@
+<div class="titulo">
+    NUEVO PRÉSTAMO
+</div>
+
+<div class="tabla-container">
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>ID del Libro</th>
+                <th>Nombre del Libro</th>
+                <th>Fecha de Publicación</th>
+                <th>Id de la Sucursal</th>
+                <th>Id del Género</th>
+                <th>Id de la Editorial</th>
+                <th>Precio</th>
+                <th>Existencias</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dato1</td>
+                <td>Dato2</td>
+                <td>Dato3</td>
+                <td>Dato4</td>
+                <td>Dato5</td>
+                <td>Dato6</td>
+                <td>Dato7</td>
+                <td>Dato8</td>
+            </tr>
+            <!-- Agrega más filas según sea necesario -->
+        </tbody>
+    </table>
+</div>
+
+<div class="texto-disponibles">
+    <p>Libros disponibles:</p>
+</div>
+
+<div class="busqueda">
+    <label for="busqueda">Buscar:</label>
+    <input type="text" id="busqueda" name="busqueda" placeholder="Ingrese su búsqueda...">
+    <button class="mostrar-todo">Mostrar todo</button>
+</div>
+
+<div class="carrito-container">
+    <h2 class="carrito-titulo">Carrito de Préstamo</h2>
+    <div class="tabla-container">
+        <table class="tabla-carrito">
+            <thead>
+                <tr>
+                    <th>ID Libro</th>
+                    <th>Nombre Libro</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Dato1</td>
+                <td>Dato2</td>
+                <td>Dato3</td>
+                <td>Dato4</td>
+                </tr>
+                <!-- Aquí se insertarán las filas según sea necesario -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="cliente-container">
+    <h2 class="cliente-titulo">Ingrese el Nombre del Cliente:</h2>
+    <div class="input-wrapper">
+        <input type="text" id="nombreCliente" placeholder="Ingrese el nombre del cliente">
+        <select id="listaClientes"></select>
+    </div>
+    <h3 class="cantidad-titulo">Cantidad de libros a agregar:</h3>
+    <div class="cantidad-wrapper">
+        <input type="number" id="cantidadProductos" min="1" value="1">
+        <button class="agregar-btn">Agregar</button>
+    </div>
+</div>
+
+
