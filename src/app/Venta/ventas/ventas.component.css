@@ -20,11 +20,10 @@
 
 .tabla-container {
     width: 100%;
-    display: flex;
     justify-content: center;
     margin-top: 50px; /* Ajusta el margen superior */
-    padding-left: 320px;
-    padding-top: 20px;
+    padding-left: 420px;
+    padding-top: 160px;
 }
 
 th {
@@ -57,12 +56,11 @@ footer {
 .tabla {
     width: 100%; /* Ancho de la tabla */
     max-width: 1300px; /* Ancho máximo de la tabla */
+    max-height: 700px;
     margin-top: 20px; /* Margen superior */
     border-collapse: collapse; /* Combina los bordes de la tabla */
     text-align: center; /* Centra el texto en las celdas */
-    position: relative; /* Posición relativa para posicionar con bottom y right */
-    bottom: -150px; /* Mueve la tabla hacia abajo */
-    right: -170px; /* Mueve la tabla hacia la derecha */
+    /* Posición relativa para posicionar con bottom y right */
 }
 
 .tabla th {
