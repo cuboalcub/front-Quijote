@@ -19,10 +19,12 @@
 }
 
 .tabla-container {
+    width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 50px; /* Ajusta el margen superior */
-    margin-right: 100px; /* Ajusta el margen derecho */
+    padding-left: 380px;
+    padding-top: 200px;
 }
 
 th {
@@ -53,14 +55,12 @@ footer {
 }
 
 .tabla {
-    width: 80%; /* Ancho de la tabla */
-    max-width: 1200px; /* Ancho máximo de la tabla */
+    width: 100%; /* Ancho de la tabla */
+    max-width: 1300px; /* Ancho máximo de la tabla */
     margin-top: 20px; /* Margen superior */
     border-collapse: collapse; /* Combina los bordes de la tabla */
     text-align: center; /* Centra el texto en las celdas */
     position: relative; /* Posición relativa para posicionar con bottom y right */
-    bottom: -150px; /* Mueve la tabla hacia abajo */
-    right: -170px; /* Mueve la tabla hacia la derecha */
 }
 
 .tabla th {
@@ -121,5 +121,12 @@ footer {
     box-shadow: 0 0 #7a3b00;
 }
 
+.botones-container{
+    position: absolute;
+    top: 750px;
+}
+.prestamos-container{
+    position: absolute;
+}
 
 
