@@ -9,7 +9,7 @@ import { RegistroEmpleadosComponent } from './Empleado/registro-empleados/regist
 import { CreacionPrestamosComponent } from './Prestamo/creacion-prestamos/creacion-prestamos.component';
 import { CreacionSucursalComponent } from './Sucursal/creacion-sucursal/creacion-sucursal.component';
 import { ClienteComponent } from './Clientes/cliente/cliente.component';
-import { EditorialesComponent } from './editoriales/editoriales.component';
+import { EditorialesComponent } from './Editorial/editoriales/editoriales.component';
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
     {path: 'prestamos', component:PrestamosComponent },
