@@ -9,6 +9,7 @@ import { RegistroEmpleadosComponent } from './Empleado/registro-empleados/regist
 import { CreacionPrestamosComponent } from './Prestamo/creacion-prestamos/creacion-prestamos.component';
 import { CreacionSucursalComponent } from './Sucursal/creacion-sucursal/creacion-sucursal.component';
 import { ClienteComponent } from './Clientes/cliente/cliente.component';
+import { EditorialesComponent } from './editoriales/editoriales.component';
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
     {path: 'prestamos', component:PrestamosComponent },
@@ -16,10 +17,10 @@ export const routes: Routes = [
     {path: 'registroempleados', component:RegistroEmpleadosComponent},
     {path: 'creacionPrestamos', component:CreacionPrestamosComponent},
     {path: 'inventario', component:InventarioComponent},
-    {path: 'ventas', component:VentasComponent},
     {path: 'creacionSucursal', component: CreacionSucursalComponent},
     {path: 'ventas', component:VentasComponent},
     {path: 'registroClientes', component:RegistroClientesComponent},
+    {path: 'editoriales', component:EditorialesComponent},
     {path: 'creacionEditorial', component:CreacionEditorialComponent},
     {path: 'altaLibros', component:AltaLibrosComponent},
     {path: 'cliente', component:ClienteComponent},];
