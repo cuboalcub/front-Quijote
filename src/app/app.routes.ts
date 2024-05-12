@@ -11,6 +11,7 @@ import { CreacionSucursalComponent } from './Sucursal/creacion-sucursal/creacion
 import { ClienteComponent } from './Clientes/cliente/cliente.component';
 import { EditorialesComponent } from './Editorial/editoriales/editoriales.component';
 import { SucursaleComponent } from './sucursale/sucursale.component';
+import { GenerosComponent } from './generos/generos.component';
 
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
@@ -26,5 +27,7 @@ export const routes: Routes = [
     {path: 'creacionEditorial', component:CreacionEditorialComponent},
     {path: 'altaLibros', component:AltaLibrosComponent},
     {path: 'cliente', component:ClienteComponent},
-    {path: 'sucursales', component:SucursaleComponent}];
+    {path: 'sucursales', component:SucursaleComponent},
+    {path: 'generos', component:GenerosComponent}];
+
 
