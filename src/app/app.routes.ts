@@ -10,6 +10,8 @@ import { CreacionPrestamosComponent } from './Prestamo/creacion-prestamos/creaci
 import { CreacionSucursalComponent } from './Sucursal/creacion-sucursal/creacion-sucursal.component';
 import { ClienteComponent } from './Clientes/cliente/cliente.component';
 import { EditorialesComponent } from './Editorial/editoriales/editoriales.component';
+import { SucursaleComponent } from './sucursale/sucursale.component';
+
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
     {path: 'prestamos', component:PrestamosComponent },
@@ -23,6 +25,6 @@ export const routes: Routes = [
     {path: 'editoriales', component:EditorialesComponent},
     {path: 'creacionEditorial', component:CreacionEditorialComponent},
     {path: 'altaLibros', component:AltaLibrosComponent},
-    {path: 'cliente', component:ClienteComponent},];
-
+    {path: 'cliente', component:ClienteComponent},
+    {path: 'sucursales', component:SucursaleComponent}];
 
