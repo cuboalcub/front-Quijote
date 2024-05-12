@@ -8,7 +8,7 @@ import { AltaLibrosComponent } from './Libros/alta-libros/alta-libros.component'
 import { RegistroEmpleadosComponent } from './Empleado/registro-empleados/registro-empleados.component';
 import { CreacionPrestamosComponent } from './Prestamo/creacion-prestamos/creacion-prestamos.component';
 import { CreacionSucursalComponent } from './Sucursal/creacion-sucursal/creacion-sucursal.component';
-import { ClienteComponent } from './cliente/cliente.component';
+import { ClienteComponent } from './Clientes/cliente/cliente.component';
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
     {path: 'prestamos', component:PrestamosComponent },
