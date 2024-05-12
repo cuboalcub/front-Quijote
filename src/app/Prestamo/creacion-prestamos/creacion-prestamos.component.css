@@ -1,0 +1,369 @@
+.titulo {
+    position: absolute;
+    width: 512px;
+    height: 164px;
+    left: 720px;
+    top: 80px;
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 176px;
+    color: #C35F01;
+}
+
+.texto-disponibles {
+    position: absolute;
+    width: 412px;
+    height: 164px;
+    left: 820px;
+    top: 95px;
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 176px;
+    color: #C35F01;
+}
+
+.carrito-titulo {
+    position: absolute;
+    width: 412px;
+    height: 164px;
+    left: 1100px;
+    top: 420px;
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 176px;
+    color: #C35F01;
+}
+
+.cliente-titulo {
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    color: #C35F01;
+}
+
+.busqueda {
+    position: absolute;
+    width: 500px;
+    height: 164px;
+    left: 725px;
+    top: 165px;
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 176px;
+    color: #C35F01;
+}
+
+.busqueda {
+    margin-top: 20px; /* Espacio entre el texto y el cuadro de búsqueda */
+}
+
+.busqueda label {
+    font-size: 28px; /* Tamaño de letra para el texto "Buscar" */
+}
+
+.busqueda input {
+    width: 250px; /* Ancho del cuadro de búsqueda */
+    height: 30px; /* Altura del cuadro de búsqueda */
+    font-size: 17px;
+    margin-right: 10px; /* Espacio entre el cuadro de búsqueda y el botón */
+}
+
+.busqueda button {
+    font-weight: bold; /* Texto del botón en negrita */
+    font-size: 15px;
+    height: 36px; /* Altura del botón */
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background-color: #3a86ff;
+    box-shadow: 0 3px 1px -2px #ccc, 0 2px 2px 0 #ccc, 0 1px 5px 0 #ccc;
+}
+
+.busqueda button {
+    box-shadow: 0 4px 2px -3px #ccc, 0 4px 5px 1px #ccc, 0 2px 7px 1px #ccc;
+  }
+
+
+.tabla-container {
+    display: flex;
+    justify-content: center;
+    margin-top:  10px; /* Ajusta el margen superior */
+    margin-right: 100px; /* Ajusta el margen derecho */
+}
+
+th {
+    background-color: #823F00; /* Color de fondo del encabezado */
+    color: white; /* Color del texto */
+    height: 35px; /* Altura del encabezado */
+    border-bottom: 1px solid rgb(210, 220, 250); /* Borde inferior */
+}
+
+td {
+    color: rgba(100, 100, 100, 60); /* Color del texto */
+    height: 30px; /* Altura de las celdas */
+    border: 0.5px solid rgba(240, 240, 240, 10); /* Borde de las celdas */
+}
+
+/* Pseudo-clases */
+th:hover {
+    background-color: rgba(20, 20, 20, 90); /* Color de fondo al pasar el mouse sobre el encabezado */
+}
+
+tr:hover {
+    background-color: rgba(15, 25, 25, 90); /* Color de fondo al pasar el mouse sobre las filas */
+}
+
+footer {
+    margin-top: 40px; /* Margen superior */
+    text-align: center; /* Centrado del texto */
+}
+
+.tabla {
+    width: 100%; /* Ancho de la tabla */
+    max-width: 1300px; /* Ancho máximo de la tabla */
+    margin-top: 20px; /* Margen superior */
+    border-collapse: collapse; /* Combina los bordes de la tabla */
+    text-align: center; /* Centra el texto en las celdas */
+    position: relative; /* Posición relativa para posicionar con bottom y right */
+    bottom: -295px; /* Mueve la tabla hacia abajo */
+    right: -170px; /* Mueve la tabla hacia la derecha */
+}
+
+.tabla th {
+    font-size: 21px; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+}
+.tabla td {
+    font-size: 18px; /* Tamaño de fuente más grande para los datos */
+}
+
+.tabla tbody tr:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el mouse */
+}
+.tabla thead th:hover {
+    background-color: #553000; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.tabla-carrito {
+    width: 100%; /* Ancho de la tabla */
+    max-width: 460px; /* Ancho máximo de la tabla */
+    margin-top: 20px; /* Margen superior */
+    border-collapse: collapse; /* Combina los bordes de la tabla */
+    text-align: center; /* Centra el texto en las celdas */
+    position: relative; /* Posición relativa para posicionar con bottom y right */
+    bottom: -450px; /* Mueve la tabla hacia abajo */
+    right: -470px; /* Mueve la tabla hacia la derecha */
+}
+
+.tabla-carrito tbody tr:hover {
+    background-color: #f0f0f0; 
+}
+.tabla-carrito thead th:hover {
+    background-color: #553000; 
+}
+
+.cliente-container {
+    position: absolute;
+    left: 400px; /* Ajusta la posición horizontal según sea necesario */
+    top: 550px; /* Ajusta la posición vertical según sea necesario */
+    /* Otros estilos opcionales */
+    width: 500px; /* Ajusta el ancho según sea necesario */
+    height: 300px; /* Ajusta la altura según sea necesario */
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .input-wrapper {
+    display: flex; /* Utiliza flexbox para alinear los elementos en línea */
+    align-items: center; /* Alinea los elementos verticalmente */
+}
+#nombreCliente {
+    width: 300px; /* Ancho del cuadro de entrada de texto */
+    height: 40px; /* Altura del cuadro de entrada de texto */
+    margin-right: 20px; /* Espacio entre el cuadro de entrada de texto y el selector */
+}
+
+#listaClientes {
+    width: 200px; /* Ancho del selector de lista desplegable */
+    height: 40px; /* Altura del selector de lista desplegable */
+}
+
+.cantidad-titulo {
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #C35F01;
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+
+.cantidad-wrapper {
+    display: flex; /* Utiliza flexbox para alinear los elementos en línea */
+    align-items: center; /* Alinea los elementos verticalmente */
+    margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+}
+
+#cantidadProductos {
+    width: 80px; /* Ancho del cuadro de número */
+    height: 40px; /* Altura del cuadro de número */
+    margin-right: 20px; /* Espacio entre el cuadro de número y el botón */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.agregar-btn {
+    min-width: 100px; /* Ancho mínimo del botón */
+    height: 40px; /* Altura del botón */
+    color: #fff; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: all 0.3s ease; /* Transición suave */
+    outline: none; /* Sin contorno al enfocar */
+    border-radius: 5px; /* Borde redondeado */
+    border: none; /* Sin borde */
+    background: #0ed100; /* Color de fondo */
+    box-shadow: 0 5px #009700; /* Sombra */
+}
+
+.agregar-btn:hover {
+    box-shadow: 0 3px #17ac00; /* Sombra al pasar el mouse */
+    top: 1px; /* Efecto de elevación */
+}
+
+.agregar-btn:active {
+    box-shadow: 0 0 #19a500; /* Sombra al hacer clic */
+    top: 5px; /* Efecto de hundimiento */
+}
+
+.eliminar-btn-container {
+    position: absolute; /* Posicionamiento absoluto para controlar la ubicación */
+    top: 700px; /* Ajusta la posición vertical */
+    left: 75%; /* Ajusta la posición horizontal */
+    transform: translateX(-50%); /* Centra horizontalmente el botón */
+}
+
+.eliminar-producto-btn {
+    min-width: 100px; /* Ancho mínimo del botón */
+    height: 40px; /* Altura del botón */
+    color: #fff; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: all 0.3s ease; /* Transición suave */
+    outline: none; /* Sin contorno al enfocar */
+    border-radius: 5px; /* Borde redondeado */
+    border: none; /* Sin borde */
+    background: #c82b00; /* Color de fondo */
+    box-shadow: 0 5px #970000; /* Sombra */
+}
+
+.eliminar-producto-btn:hover {
+    box-shadow: 0 3px #ac0000; /* Sombra al pasar el mouse */
+    top: 1px; /* Efecto de elevación */
+}
+
+.eliminar-producto-btn:active {
+    box-shadow: 0 0 #a50000; /* Sombra al hacer clic */
+    top: 5px; /* Efecto de hundimiento */
+}
+
+/* Estilos para el título "Fecha Límite" */
+.fecha-limite-titulo {
+    position: absolute;
+    width: 612px;
+    height: 164px;
+    left: 1040px;
+    top: 680px;
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 176px;
+    color: #C35F01;
+}
+
+/* Estilos para el input de tipo date */
+.fecha-limite-input {
+    position: absolute;
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    height: 40px; /* Ajusta la altura según sea necesario */
+    left: 1270px; /* Ajusta la posición horizontal según sea necesario */
+    top: 775px; /* Ajusta la posición vertical según sea necesario */
+    font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
+    padding: 5px; /* Ajusta el relleno según sea necesario */
+}
+
+
+
+/* Estilos para los botones de Confirmar y Cancelar préstamo */
+.confirmar-prestamo-btn,
+.cancelar-prestamo-btn {
+    min-width: 220px; /* Ancho mínimo del botón */
+    height: 50px; /* Altura del botón */
+    color: #fff; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 20px;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: all 0.3s ease; /* Transición suave */
+    outline: none; /* Sin contorno al enfocar */
+    border-radius: 5px; /* Borde redondeado */
+    border: none; /* Sin borde */
+    margin-right: 70px
+}
+
+.confirmar-prestamo-btn {
+    background: #00de34; /* Color de fondo */
+    box-shadow: 0 5px #029300; /* Sombra */
+
+}
+
+.cancelar-prestamo-btn {
+    background: #c82b00; /* Color de fondo */
+    box-shadow: 0 5px #860000; /* Sombra */
+
+}
+
+.confirmar-prestamo-btn:hover {
+    box-shadow: 0 3px #17ac00; /* Sombra al pasar el mouse */
+    top: 1px; /* Efecto de elevación */
+}
+
+.cancelar-prestamo-btn:hover {
+    box-shadow: 0 3px #b80000; /* Sombra al pasar el mouse */
+    top: 1px; /* Efecto de elevación */
+}
+
+.confirmar-prestamo-btn:active {
+    box-shadow: 0 0 #1aae00; /* Sombra al hacer clic */
+    top: 5px; /* Efecto de hundimiento */
+}
+
+.cancelar-prestamo-btn:active {
+    box-shadow: 0 0 #a90000; /* Sombra al hacer clic */
+    top: 5px; /* Efecto de hundimiento */
+}
+
+.buttons {
+    position: absolute; /* Posicionamiento absoluto para controlar la ubicación */
+    top: 1000px; /* Ajusta la posición vertical */
+    left: 60%; /* Ajusta la posición horizontal */
+    transform: translateX(-50%); /* Centra horizontalmente el botón */
+}
