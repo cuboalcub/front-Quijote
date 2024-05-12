@@ -2,12 +2,13 @@ import { Routes } from '@angular/router';
 import { VentasComponent } from './Venta/ventas/ventas.component';
 import { PrestamosComponent } from './Prestamo/prestamos/prestamos.component';
 import { InventarioComponent } from './Invetarios/inventario/inventario.component';
-import { RegistroClientesComponent } from './registro-clientes/registro-clientes.component';
-import { CreacionEditorialComponent } from './creacion-editorial/creacion-editorial.component';
-import { AltaLibrosComponent } from './alta-libros/alta-libros.component';
-import { RegistroEmpleadosComponent } from './Clientes/registro-empleados/registro-empleados.component';
+import { RegistroClientesComponent } from './Clientes/registro-clientes/registro-clientes.component';
+import { CreacionEditorialComponent } from './Editorial/creacion-editorial/creacion-editorial.component';
+import { AltaLibrosComponent } from './Libros/alta-libros/alta-libros.component';
+import { RegistroEmpleadosComponent } from './Empleado/registro-empleados/registro-empleados.component';
 import { CreacionPrestamosComponent } from './Prestamo/creacion-prestamos/creacion-prestamos.component';
-import { CreacionSucursalComponent } from './creacion-sucursal/creacion-sucursal.component';
+import { CreacionSucursalComponent } from './Sucursal/creacion-sucursal/creacion-sucursal.component';
+import { ClienteComponent } from './cliente/cliente.component';
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
     {path: 'prestamos', component:PrestamosComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
     {path: 'ventas', component:VentasComponent},
     {path: 'registroClientes', component:RegistroClientesComponent},
     {path: 'creacionEditorial', component:CreacionEditorialComponent},
-    {path: 'altaLibros', component:AltaLibrosComponent}];
+    {path: 'altaLibros', component:AltaLibrosComponent},
+    {path: 'cliente', component:ClienteComponent},];
 
 
