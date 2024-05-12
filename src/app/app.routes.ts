@@ -10,8 +10,8 @@ import { CreacionPrestamosComponent } from './Prestamo/creacion-prestamos/creaci
 import { CreacionSucursalComponent } from './Sucursal/creacion-sucursal/creacion-sucursal.component';
 import { ClienteComponent } from './Clientes/cliente/cliente.component';
 import { EditorialesComponent } from './Editorial/editoriales/editoriales.component';
-import { SucursaleComponent } from './sucursale/sucursale.component';
-import { GenerosComponent } from './generos/generos.component';
+import { SucursaleComponent } from './Sucursal/sucursale/sucursale.component';
+import { GenerosComponent } from './Genero/generos/generos.component';
 
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
