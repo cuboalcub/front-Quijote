@@ -13,6 +13,7 @@ import { EditorialesComponent } from './Editorial/editoriales/editoriales.compon
 import { SucursaleComponent } from './Sucursal/sucursale/sucursale.component';
 import { GenerosComponent } from './Genero/generos/generos.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
+import { ModificarClienteComponent } from './modificar-cliente/modificar-cliente.component';
 
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
@@ -30,6 +31,7 @@ export const routes: Routes = [
     {path: 'cliente', component:ClienteComponent},
     {path: 'sucursales', component:SucursaleComponent},
     {path: 'generos', component:GenerosComponent},
-    {path: 'empleados', component:EmpleadosComponent}];
+    {path: 'empleados', component:EmpleadosComponent},
+    {path: 'modificarCliente', component:ModificarClienteComponent},];
 
 
