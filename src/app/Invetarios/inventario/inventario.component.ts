@@ -23,7 +23,7 @@ export class InventarioComponent { // Implementar OnInit
   }
 
   getInventario(): void {
-    this.inventarioService.getInventarios()
+    this.inventarioService.getTablas()
       .subscribe((inventarios: Inventario[]) => {
         this.arrInventarios = inventarios;
         console.log(inventarios);

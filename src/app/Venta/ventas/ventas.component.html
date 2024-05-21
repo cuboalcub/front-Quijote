@@ -13,12 +13,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dato1</td>
-            <td>Dato2</td>
-            <td>Dato3</td>
-            <td>Dato4</td>
-            <td>Dato5</td>
+          <tr *ngFor="let venta of arrventas">
+            <td>venta.id</td>
+            <td>venta.fechaventa</td>
+            <td>venta.cliente</td>
+            <td>venta.subtotal</td>
+            <td>venta.total</td>
             <td class="detalle"><img src="assets/ojo.png" alt="Detalle"></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->
