@@ -15,6 +15,8 @@ import { GenerosComponent } from './Genero/generos/generos.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { RegistroGeneroComponent } from './registro-genero/registro-genero.component';
 import { ModificarGeneroComponent } from './Genero/modificar-genero/modificar-genero.component';
+import { ModificarEmpleadoComponent } from './modificar-empleado/modificar-empleado.component';
+
 
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
@@ -35,6 +37,7 @@ export const routes: Routes = [
     {path: 'registroGenero', component:RegistroGeneroComponent},
     {path: 'empleados', component:EmpleadosComponent},
     {path: 'modificarGenero', component:ModificarGeneroComponent},
-];
+    {path: 'modificarEmpleado', component:ModificarEmpleadoComponent}];
+
 
 
