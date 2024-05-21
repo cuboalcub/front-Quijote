@@ -1,0 +1,160 @@
+[
+    {
+        "id": 1,
+        "nombre_libro": "Libro 1",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },{
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },{
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },{
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    },
+    {
+        "id": 2,
+        "nombre_libro": "Libro 2",
+        "Fecha_public": "2020-01-01",
+        "id_sucur": 1,
+        "id_genero": 1,
+        "idEditorial": 1,
+        "precio": 10.99,
+        "existencias": 10
+    }
+
+]

@@ -12,10 +12,8 @@ import { ClienteComponent } from './Clientes/cliente/cliente.component';
 import { EditorialesComponent } from './Editorial/editoriales/editoriales.component';
 import { SucursaleComponent } from './Sucursal/sucursale/sucursale.component';
 import { GenerosComponent } from './Genero/generos/generos.component';
-<<<<<<< HEAD
-=======
-import { EmpleadosComponent } from './empleados/empleados.component';
->>>>>>> develop
+import { EmpleadosComponent } from './Empleado/empleados/empleados.component';
+
 
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},

@@ -16,15 +16,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dato1</td>
-            <td>Dato2</td>
-            <td>Dato3</td>
-            <td>Dato4</td>
-            <td>Dato5</td>
-            <td>Dato6</td>
-            <td>Dato7</td>
-            <td>Dato8</td>
+          <tr *ngFor="let inventario of arrInventarios">
+            <td>{{ inventario.id }}</td>
+            <td>{{ inventario.nombre_libro }}</td>
+            <td>{{ inventario.Fecha_public }}</td>
+            <td>{{ inventario.id_sucur }}</td>
+            <td>{{ inventario.id_genero }}</td>
+            <td>{{ inventario.idEditorial }}</td>
+            <td>{{ inventario.precio}}</td>
+            <td>{{ inventario.existencias }}</td>
             <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->

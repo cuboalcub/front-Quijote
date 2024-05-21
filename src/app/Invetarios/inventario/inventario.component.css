@@ -19,6 +19,8 @@
 }
 
 .tabla-container {
+    max-height: 300px;
+    overflow-y: auto;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -57,12 +59,12 @@ footer {
 
 .tabla {
     width: 100%; /* Ancho de la tabla */
-    max-width: 1300px; /* Ancho máximo de la tabla */
+    max-width: 900px; /* Ancho máximo de la tabla */
     margin-top: 20px; /* Margen superior */
     border-collapse: collapse; /* Combina los bordes de la tabla */
     text-align: center; /* Centra el texto en las celdas */
     position: relative; /* Posición relativa para posicionar con bottom y right */
-    
+    max-height: 1000px;
 }
 
 .tabla th {
@@ -131,4 +133,9 @@ footer {
 }
 .inventario-container{
     position: absolute;
+}
+
+thead{
+    position: sticky;
+    top: 0;
 }
