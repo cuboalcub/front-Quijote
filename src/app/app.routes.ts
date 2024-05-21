@@ -18,8 +18,8 @@ import { ModificarGeneroComponent } from './Genero/modificar-genero/modificar-ge
 import { ModificarEmpleadoComponent } from './Empleado/modificar-empleado/modificar-empleado.component';
 import { ModificarClienteComponent } from './Clientes/modificar-cliente/modificar-cliente.component';
 import { ModificarEditorialComponent } from './Editorial/modificar-editorial/modificar-editorial.component';
-import { ModificarSucursalComponent } from './modificar-sucursal/modificar-sucursal.component';
-import { CreacionVentaComponent } from './creacion-venta/creacion-venta.component';
+import { ModificarSucursalComponent } from './Sucursal/modificar-sucursal/modificar-sucursal.component';
+import { CreacionVentaComponent } from './Venta/creacion-venta/creacion-venta.component';
 
 
 export const routes: Routes = [
