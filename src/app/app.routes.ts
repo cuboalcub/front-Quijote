@@ -12,14 +12,14 @@ import { ClienteComponent } from './Clientes/cliente/cliente.component';
 import { EditorialesComponent } from './Editorial/editoriales/editoriales.component';
 import { SucursaleComponent } from './Sucursal/sucursale/sucursale.component';
 import { GenerosComponent } from './Genero/generos/generos.component';
-import { EmpleadosComponent } from './empleados/empleados.component';
+import { EmpleadosComponent } from './Empleado/empleados/empleados.component';
 import { RegistroGeneroComponent } from './Genero/registro-genero/registro-genero.component';
 import { ModificarGeneroComponent } from './Genero/modificar-genero/modificar-genero.component';
 import { ModificarEmpleadoComponent } from './Empleado/modificar-empleado/modificar-empleado.component';
 import { ModificarClienteComponent } from './Clientes/modificar-cliente/modificar-cliente.component';
 
 
-import { ModificarEditorialComponent } from './modificar-editorial/modificar-editorial.component';
+import { ModificarEditorialComponent } from './Editorial/modificar-editorial/modificar-editorial.component';
 
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
