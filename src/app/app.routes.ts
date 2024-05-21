@@ -19,6 +19,8 @@ import { ModificarEmpleadoComponent } from './modificar-empleado/modificar-emple
 import { ModificarClienteComponent } from './modificar-cliente/modificar-cliente.component';
 
 
+import { ModificarEditorialComponent } from './modificar-editorial/modificar-editorial.component';
+
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
     {path: 'prestamos', component:PrestamosComponent },
@@ -40,6 +42,7 @@ export const routes: Routes = [
     {path: 'modificarGenero', component:ModificarGeneroComponent},
     {path: 'modificarEmpleado', component:ModificarEmpleadoComponent},
     {path: 'empleados', component:EmpleadosComponent},
-    {path: 'modificarCliente', component:ModificarClienteComponent},];
+    {path: 'modificarCliente', component:ModificarClienteComponent},
+    {path: 'modificarEditorial', component:ModificarEditorialComponent}];
 
 
