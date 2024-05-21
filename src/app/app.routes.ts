@@ -17,9 +17,8 @@ import { RegistroGeneroComponent } from './Genero/registro-genero/registro-gener
 import { ModificarGeneroComponent } from './Genero/modificar-genero/modificar-genero.component';
 import { ModificarEmpleadoComponent } from './Empleado/modificar-empleado/modificar-empleado.component';
 import { ModificarClienteComponent } from './Clientes/modificar-cliente/modificar-cliente.component';
-
-
 import { ModificarEditorialComponent } from './Editorial/modificar-editorial/modificar-editorial.component';
+import { ModificarSucursalComponent } from './modificar-sucursal/modificar-sucursal.component';
 
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
@@ -43,6 +42,7 @@ export const routes: Routes = [
     {path: 'modificarEmpleado', component:ModificarEmpleadoComponent},
     {path: 'empleados', component:EmpleadosComponent},
     {path: 'modificarCliente', component:ModificarClienteComponent},
-    {path: 'modificarEditorial', component:ModificarEditorialComponent}];
+    {path: 'modificarEditorial', component:ModificarEditorialComponent},
+    {path: 'modificarSucursal', component:ModificarSucursalComponent}];
 
 
