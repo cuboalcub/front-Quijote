@@ -13,7 +13,7 @@ import { EditorialesComponent } from './Editorial/editoriales/editoriales.compon
 import { SucursaleComponent } from './Sucursal/sucursale/sucursale.component';
 import { GenerosComponent } from './Genero/generos/generos.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
-import { ModificarGeneroComponent } from './modificar-genero/modificar-genero.component';
+import { ModificarGeneroComponent } from './Genero/modificar-genero/modificar-genero.component';
 
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
