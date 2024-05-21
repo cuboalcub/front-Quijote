@@ -13,10 +13,10 @@ import { EditorialesComponent } from './Editorial/editoriales/editoriales.compon
 import { SucursaleComponent } from './Sucursal/sucursale/sucursale.component';
 import { GenerosComponent } from './Genero/generos/generos.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
-import { RegistroGeneroComponent } from './registro-genero/registro-genero.component';
+import { RegistroGeneroComponent } from './Genero/registro-genero/registro-genero.component';
 import { ModificarGeneroComponent } from './Genero/modificar-genero/modificar-genero.component';
-import { ModificarEmpleadoComponent } from './modificar-empleado/modificar-empleado.component';
-import { ModificarClienteComponent } from './modificar-cliente/modificar-cliente.component';
+import { ModificarEmpleadoComponent } from './Empleado/modificar-empleado/modificar-empleado.component';
+import { ModificarClienteComponent } from './Clientes/modificar-cliente/modificar-cliente.component';
 
 
 export const routes: Routes = [
