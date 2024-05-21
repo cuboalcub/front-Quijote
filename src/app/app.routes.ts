@@ -13,6 +13,7 @@ import { EditorialesComponent } from './Editorial/editoriales/editoriales.compon
 import { SucursaleComponent } from './Sucursal/sucursale/sucursale.component';
 import { GenerosComponent } from './Genero/generos/generos.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
+import { RegistroGeneroComponent } from './registro-genero/registro-genero.component';
 import { ModificarGeneroComponent } from './Genero/modificar-genero/modificar-genero.component';
 
 export const routes: Routes = [
@@ -31,6 +32,7 @@ export const routes: Routes = [
     {path: 'cliente', component:ClienteComponent},
     {path: 'sucursales', component:SucursaleComponent},
     {path: 'generos', component:GenerosComponent},
+    {path: 'registroGenero', component:RegistroGeneroComponent},
     {path: 'empleados', component:EmpleadosComponent},
     {path: 'modificarGenero', component:ModificarGeneroComponent},
 ];
