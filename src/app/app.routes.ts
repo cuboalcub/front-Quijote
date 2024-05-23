@@ -13,6 +13,13 @@ import { EditorialesComponent } from './Editorial/editoriales/editoriales.compon
 import { SucursaleComponent } from './Sucursal/sucursale/sucursale.component';
 import { GenerosComponent } from './Genero/generos/generos.component';
 import { EmpleadosComponent } from './Empleado/empleados/empleados.component';
+import { RegistroGeneroComponent } from './Genero/registro-genero/registro-genero.component';
+import { ModificarGeneroComponent } from './Genero/modificar-genero/modificar-genero.component';
+import { ModificarEmpleadoComponent } from './Empleado/modificar-empleado/modificar-empleado.component';
+import { ModificarClienteComponent } from './Clientes/modificar-cliente/modificar-cliente.component';
+import { ModificarEditorialComponent } from './Editorial/modificar-editorial/modificar-editorial.component';
+import { ModificarSucursalComponent } from './Sucursal/modificar-sucursal/modificar-sucursal.component';
+import { CreacionVentaComponent } from './Venta/creacion-venta/creacion-venta.component';
 
 
 export const routes: Routes = [
@@ -31,6 +38,14 @@ export const routes: Routes = [
     {path: 'cliente', component:ClienteComponent},
     {path: 'sucursales', component:SucursaleComponent},
     {path: 'generos', component:GenerosComponent},
-    {path: 'empleados', component:EmpleadosComponent}];
+    {path: 'registroGenero', component:RegistroGeneroComponent},
+    {path: 'empleados', component:EmpleadosComponent},
+    {path: 'modificarGenero', component:ModificarGeneroComponent},
+    {path: 'modificarEmpleado', component:ModificarEmpleadoComponent},
+    {path: 'modificarCliente', component:ModificarClienteComponent},
+    {path: 'modificarEditorial', component:ModificarEditorialComponent},
+    {path: 'modificarSucursal', component:ModificarSucursalComponent},
+    {path: 'creacionVenta', component:CreacionVentaComponent},];
+
 
 
