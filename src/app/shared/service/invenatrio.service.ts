@@ -16,4 +16,15 @@ export class InvenatrioService implements LiberiaApiService<Inventario> {
     return this.http.get<Inventario[]>('../assets/invetario.json')
   }
 
+  updateTablasById(id: number): Observable<Inventario> {
+    return this.http.get<Inventario>(`../assets/invetario.json/${id}`)
+  }
+
+  crearObjeto(): Inventario {
+    return new Inventario();
+  }
+
+  deleteTablasById(id: number): Observable<Inventario> {
+    return this.http.get<Inventario>(`../assets/invetario.json/${id}`)
+  }
 }

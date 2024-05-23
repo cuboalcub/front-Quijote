@@ -13,4 +13,16 @@ export class VentasService  implements LiberiaApiService<Ventas>{
     return this.http.get<Ventas[]>('../assets/invetario.json')
   }
 
+  updateTablasById(id: number): Observable<Ventas> {
+    return this.http.get<Ventas>(`../assets/invetario.json/${id}`)
+  }
+
+  deleteTablasById(id: number): Observable<Ventas> {
+    return this.http.get<Ventas>(`../assets/invetario.json/${id}`)
+  }
+
+  crearObjeto(): Ventas {
+    return new Ventas();
+  }
+
 }
