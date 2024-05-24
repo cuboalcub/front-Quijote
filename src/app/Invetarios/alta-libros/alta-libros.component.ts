@@ -33,7 +33,6 @@ ngOninit(){
   precio: number = 0;
   genero: string = '';
   onSubmit() {
-    console.log(this.nombre, this.fecha, this.cantidad, this.precio, this.genero);
     
   }
   onCancel() {
