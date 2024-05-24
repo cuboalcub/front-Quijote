@@ -137,6 +137,8 @@ footer {
 }
 
 .tabla {
+    max-height: 300px;
+    overflow-y: auto;
     width: 100%; /* Ancho de la tabla */
     max-width: 1300px; /* Ancho máximo de la tabla */
     margin-top: 20px; /* Margen superior */
@@ -163,6 +165,8 @@ footer {
 }
 
 .tabla-carrito {
+    max-height: 300px;
+    overflow-y: auto;
     width: 100%; /* Ancho de la tabla */
     max-width: 460px; /* Ancho máximo de la tabla */
     margin-top: 20px; /* Margen superior */
@@ -366,4 +370,9 @@ footer {
     top: 1000px; /* Ajusta la posición vertical */
     left: 60%; /* Ajusta la posición horizontal */
     transform: translateX(-50%); /* Centra horizontalmente el botón */
+}
+
+thead{
+    position: sticky;
+    top: 0;
 }

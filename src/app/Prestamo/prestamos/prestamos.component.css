@@ -8,7 +8,7 @@
     position: absolute;
     width: 612px;
     height: 164px;
-    left: 550px;
+    left: 650px;
     top: 50px;
     font-family: 'Amiri';
     font-style: normal;
@@ -19,11 +19,13 @@
 }
 
 .tabla-container {
+    max-height: 300px;
+    overflow-y: auto;
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 50px; /* Ajusta el margen superior */
-    padding-left: 380px;
+    padding-left: 450px;
     padding-top: 200px;
 }
 
@@ -110,7 +112,7 @@ footer {
     left: 650px;
 }
 .boton-borrar {
-    left: 900px; 
+    left: 1100px; 
 }
 
 .boton-nuevo:hover, .boton-borrar:hover {
@@ -129,4 +131,7 @@ footer {
     position: absolute;
 }
 
-
+thead{
+    position: sticky;
+    top: 0;
+}
