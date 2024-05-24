@@ -4,7 +4,7 @@ import { PrestamosComponent } from './Prestamo/prestamos/prestamos.component';
 import { InventarioComponent } from './Invetarios/inventario/inventario.component';
 import { RegistroClientesComponent } from './Clientes/registro-clientes/registro-clientes.component';
 import { CreacionEditorialComponent } from './Editorial/creacion-editorial/creacion-editorial.component';
-import { AltaLibrosComponent } from './Libros/alta-libros/alta-libros.component';
+import { AltaLibrosComponent } from './Invetarios/alta-libros/alta-libros.component';
 import { RegistroEmpleadosComponent } from './Empleado/registro-empleados/registro-empleados.component';
 import { CreacionPrestamosComponent } from './Prestamo/creacion-prestamos/creacion-prestamos.component';
 import { CreacionSucursalComponent } from './Sucursal/creacion-sucursal/creacion-sucursal.component';
