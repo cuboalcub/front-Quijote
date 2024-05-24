@@ -20,9 +20,7 @@
     <div class="form-group">
       <h2 class="titulo-secundario">Escoja el Género:</h2>
       <select id="genero" [(ngModel)]="genero" name="genero" required>
-        <option value="" disabled selected>Género...</option>
-        <option value="Fiction">Fiction</option>
-        <option value="Non-Fiction">Non-Fiction</option>
+        <option *ngFor="let genero of arr">{{genero}}</option>
         <!-- Add more options as needed -->
       </select>
     </div>
