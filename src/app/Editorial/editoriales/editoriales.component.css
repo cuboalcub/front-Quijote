@@ -8,7 +8,7 @@
     position: absolute;
     width: 612px;
     height: 164px;
-    left: 580px;
+    left: 620px;
     top: 50px;
     font-family: 'Amiri';
     font-style: normal;
@@ -19,10 +19,12 @@
 }
 
 .tabla-container {
+    max-height: 300px;
+    overflow-y: auto;
     width: 100%;
     justify-content: center;
     margin-top: 50px; /* Ajusta el margen superior */
-    padding-left: 420px;
+    padding-left: 480px;
     padding-top: 160px;
 }
 
@@ -125,8 +127,13 @@ footer {
 .botones-container{
     position: absolute;
     top: 750px;
-    left: 40px;
+    left: 90px;
 }
 .editoriales-container{
     position: absolute;
+}
+
+thead{
+    position: sticky;
+    top: 0;
 }
