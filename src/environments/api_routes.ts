@@ -1,5 +1,3 @@
-import { Sucursal } from "../app/shared/models/sucursal";
-
 export const API_ROUTEs = {
     baseurl: "",
     inventario:{
