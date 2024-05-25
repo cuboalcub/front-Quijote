@@ -8,7 +8,7 @@
     position: absolute;
     width: 612px;
     height: 164px;
-    left: 580px;
+    left: 650px;
     top: 50px;
     font-family: 'Amiri';
     font-style: normal;
@@ -26,7 +26,7 @@
     justify-content: center;
     margin-top: 50px; /* Ajusta el margen superior */
     margin-right: 100px; /* Ajusta el margen derecho */
-    margin-left: 200px;
+    margin-left: 225px;
     margin-top: 200px;
 }
 
@@ -129,7 +129,7 @@ footer {
 .botones-container{
     position: absolute;
     top: 800px;
-    left: 50px;
+    left: 130px;
 }
 .inventario-container{
     position: absolute;

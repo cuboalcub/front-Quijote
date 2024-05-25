@@ -1,33 +1,46 @@
 <div class="form-container">
-  <h1 class="titulo-principal">ALTA DE LIBROS</h1>
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <h2 class="titulo-secundario">Ingrese el Nombre:</h2>
-      <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" placeholder="Nombre..." required>
-    </div>
-    <div class="form-group">
-      <h2 class="titulo-secundario">Ingrese la Fecha de Publicación:</h2>
-      <input type="date" id="fecha" [(ngModel)]="fecha" name="fecha" required>
-    </div>
-    <div class="form-group">
-      <h2 class="titulo-secundario">Ingrese la Cantidad:</h2>
-      <input type="number" id="cantidad" [(ngModel)]="cantidad" name="cantidad" placeholder="Cantidad..." required min="1">
-    </div>
-    <div class="form-group">
-      <h2 class="titulo-secundario">Ingrese el Precio:</h2>
-      <input type="number" step="0.01" id="precio" [(ngModel)]="precio" name="precio" placeholder="$ Precio..." required>
-    </div>
-    <div class="form-group">
-      <h2 class="titulo-secundario">Escoja el Género:</h2>
-      <select id="genero" [(ngModel)]="genero" name="genero" required>
-        <option *ngFor="let genero of arr">{{genero}}</option>
-        <!-- Add more options as needed -->
-      </select>
-    </div>
-    <!-- Repeat for editorial and sucursal if necessary -->
-    <div class="button-group">
-      <button type="submit" class="agregar-btn">Agregar</button>
-      <button type="button" class="cancelar-btn" (click)="onCancel()">Cancelar</button>
-    </div>
-  </form>
-</div>
+    <h1 class="titulo-principal">ALTA DE LIBROS</h1>
+    <form>
+      <div class="form-group">
+        <h2 class="titulo-secundario">Ingrese el Nombre:</h2>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre...">
+      </div>
+      <div class="form-group">
+        <h2 class="titulo-secundario">Ingrese la Fecha de Publicación:</h2>
+        <input type="date" id="fecha" name="fecha">
+      </div>
+      <div class="form-group">
+        <h2 class="titulo-secundario">Ingrese la Cantidad:</h2>
+        <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad...">
+      </div>
+      <div class="form-group">
+        <h2 class="titulo-secundario">Ingrese el Precio:</h2>
+        <input type="text" id="precio" name="precio" placeholder="$ Precio...">
+      </div>
+      <div class="form-group">
+        <h2 class="titulo-secundario">Escoja el Género:</h2>
+        <select id="genero" name="genero">
+          <option>Género...</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <h2 class="titulo-secundario">Escoja la Editorial:</h2>
+        <select id="editorial" name="editorial">
+          <option>Editorial...</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <h2 class="titulo-secundario">Escoja el Sucursal:</h2>
+        <select id="sucursal" name="sucursal">
+          <option>Sucursal...</option>
+        </select>
+      </div>
+      <!-- Repite para editorial y sucursal -->
+      <div class="button-group">
+        <button type="submit" class="agregar-btn">Agregar</button>
+        <button type="button" class="cancelar-btn">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  
