@@ -1,52 +1,52 @@
 export const API_ROUTES = {
-    baseurl: "",
-    inventario:{
-        get:"",
-        post:"",
-        update:"",
-        delete:""
+    baseurl: "http://192.168.124.16:8080/",
+    inventarios:{
+        get:"libro/obtener",
+        post:"libro/guadar",
+        update:"libro/guadar",
+        delete:"libro/borrar"
     },
-    cliente:{
-        get:"",
-        post:"",
-        update:"",
-        delete:""
+    clientes:{
+        get:"cliente/obtener",
+        post:"cliente/guardar",
+        update:"cliente/guadar",
+        delete:"cliente/borrar"
     },
-    editorial:{
-        get:"",
-        post:"",
-        update:"",
-        delete:""
+    editoriales:{
+        get:"editorial/obtener",
+        post:"editorial/guardar",
+        update:"editorial/guadar",
+        delete:"editorial/borrar"
     },
-    empleado:{
-        get:"",
-        post:"",
-        update:"",
-        delete:""
+    empleados:{
+        get:"empleados/obtener",
+        post:"empleados/guardar",
+        update:"empleados/guadar",
+        delete:"empleados/borrar"
     },
-    genero:{
-        get:"",
-        post:"",
-        update:"",
-        delete:""
+    generos:{
+        get:"genero/obtener",
+        post:"genero/guardar",
+        update:"genero/guadar",
+        delete:"genero/borrar"
     },
     prestamos:{
-        get:"",
-        post:"",
-        update:"",
-        delete:""
+        get:"prestamo/obtener",
+        post:"prestamo/guardar",
+        update:"/guadar",
+        delete:"/borrar"
     },
-    sucursal:{
-        get:"",
-        post:"",
-        update:"",
-        delete:""
+    sucursales:{
+        get:"surcusal/obtener",
+        post:"sucursal/guardar",
+        update:"sucursal/guadar",
+        delete:"sucursal/borrar"
     },
-    venta:{
-        get:"",
-        post:"",
-        update:"",
-        delete:""
+    ventas:{
+        get:"venta/obtener",
+        post:"venta/guardar",
+        update:"venta/guadar",
+        delete:"venta/borrar"
     }
     
 }

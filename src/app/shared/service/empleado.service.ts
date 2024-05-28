@@ -12,18 +12,18 @@ export class EmpleadoService implements LiberiaApiService<Empleado> {
   constructor(private http: HttpClient) { }
 
   get(): Observable<Empleado[]> {
-    return this.http.get<Empleado[]>(`${this.base}${API_ROUTES.empleado.get}`);
+    return this.http.get<Empleado[]>(`${this.base}${API_ROUTES.empleados.get}`);
   }
 
   update(id: number, empleado: Empleado): Observable<Empleado> {
-    return this.http.put<Empleado>(`${this.base}${API_ROUTES.empleado.update}/${id}`,empleado);
+    return this.http.put<Empleado>(`${this.base}${API_ROUTES.empleados.update}/${id}`,empleado);
   }
 
   post(empleado: Empleado): Observable<Empleado> {
-    return this.http.post<Empleado>(`${this.base}${API_ROUTES.empleado.post}`,empleado);
+    return this.http.post<Empleado>(`${this.base}${API_ROUTES.empleados.post}`,empleado);
   }
 
   delete(id: number): Observable<Empleado> {
-    return this.http.delete<Empleado>(`${this.base}${API_ROUTES.empleado.delete}/${id}`);
+    return this.http.delete<Empleado>(`${this.base}${API_ROUTES.empleados.delete}/${id}`);
   }
 }

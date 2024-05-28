@@ -12,19 +12,19 @@ export class VentasService  implements LiberiaApiService<Ventas>{
   }
 base = API_ROUTES.baseurl
   get(): Observable<Ventas[]> {
-    return this.http.get<Ventas[]>(`${API_ROUTES.venta.get}`);
+    return this.http.get<Ventas[]>(`${API_ROUTES.ventas.get}`);
   }
 
   update(id: number, ventas:Ventas): Observable<Ventas> {
-    return this.http.put<Ventas>(`${this.base}${API_ROUTES.venta.update}/${id}`, ventas);
+    return this.http.put<Ventas>(`${this.base}${API_ROUTES.ventas.update}/${id}`, ventas);
   }
 
   post(ventas:Ventas): Observable<Ventas> {
-    return this.http.post<Ventas>(`${this.base}${API_ROUTES.venta.post}`, ventas);
+    return this.http.post<Ventas>(`${this.base}${API_ROUTES.ventas.post}`, ventas);
   }
 
   delete(id: number): Observable<Ventas> {
-    return this.http.delete<Ventas>(`${this.base}${API_ROUTES.venta.delete}/${id}`);
+    return this.http.delete<Ventas>(`${this.base}${API_ROUTES.ventas.delete}/${id}`);
   }
 
 

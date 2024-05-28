@@ -30,6 +30,7 @@ export class ModificarClienteComponent {
 
   putData(): void {
     this.id = this.localstorageService.obtenerDatos('idcliente');
+    this.localstorageService.eliminarDatos("idcliente")
     const cliente: Clientes = {
       id: this.id,
       nombre: this.nombre,

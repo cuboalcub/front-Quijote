@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Empleado } from '../../shared/models/empleados';
 import { EmpleadoService } from '../../shared/service/empleado.service';
+import { LocalstorageService } from '../../shared/service/localstorage.service';
 @Component({
   selector: 'app-empleados',
   standalone: true,
@@ -13,9 +14,11 @@ import { EmpleadoService } from '../../shared/service/empleado.service';
 })
 export class EmpleadosComponent {
 arr : Empleado[] = [];
-constructor(private service: EmpleadoService) {}
-NgOnInit(): void {
-  
+constructor(private service: EmpleadoService,
+            private local:LocalstorageService
+) {}
+ngOnInit(): void {
+  this.gettable();
 }
 gettable(){
   this.service.get().subscribe(

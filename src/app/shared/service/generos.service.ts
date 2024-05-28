@@ -12,18 +12,18 @@ export class GenerosService implements  LiberiaApiService<Genero> {
   base = API_ROUTES.baseurl;
   constructor(private http: HttpClient) { }
  get(): Observable<Genero[]> {
-    return this.http.get<Genero[]>(`${this.base}${API_ROUTES.genero.get}`);
+    return this.http.get<Genero[]>(`${this.base}${API_ROUTES.generos.get}`);
 }
 
 update(id: number, genero:Genero): Observable<Genero> {
-    return this.http.put<Genero>(`${this.base}${API_ROUTES.genero.update}${id}`,genero); 
+    return this.http.put<Genero>(`${this.base}${API_ROUTES.generos.update}${id}`,genero); 
 }
 
 post(genero: Genero): Observable<Genero> {
-    return this.http.post<Genero>(`${this.base}${API_ROUTES.genero.post}`, genero); 
+    return this.http.post<Genero>(`${this.base}${API_ROUTES.generos.post}`, genero); 
 }
 
 delete(id: number): Observable<Genero> {
-    return this.http.delete<Genero>(`${this.base}${API_ROUTES.genero.delete}${id}`);
+    return this.http.delete<Genero>(`${this.base}${API_ROUTES.generos.delete}${id}`);
 }
 }

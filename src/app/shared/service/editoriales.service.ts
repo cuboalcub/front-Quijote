@@ -13,17 +13,17 @@ export class EditorialesService implements  LiberiaApiService<Editorial> {
   constructor(private http: HttpClient) { }
 
   get(): Observable<Editorial[]> {
-    return this.http.get<Editorial[]>(`${this.base}${API_ROUTES.editorial.get}`);
+    return this.http.get<Editorial[]>(`${this.base}${API_ROUTES.editoriales.get}`);
   }
 
   update(id: number, Editorial:Editorial): Observable<Editorial> {
-    return this.http.put<Editorial>(`${this.base}${API_ROUTES.editorial.update}${id}`,Editorial);
+    return this.http.put<Editorial>(`${this.base}${API_ROUTES.editoriales.update}${id}`,Editorial);
   }
 
   post(editorial: Editorial): Observable<Editorial> {
-    return this.http.post<Editorial>(`${this.base}${API_ROUTES.editorial.post}`, editorial);
+    return this.http.post<Editorial>(`${this.base}${API_ROUTES.editoriales.post}`, editorial);
   }
   delete(id: number): Observable<Editorial> {
-    return this.http.delete<Editorial>(`${this.base}${API_ROUTES.editorial.delete}${id}`);
+    return this.http.delete<Editorial>(`${this.base}${API_ROUTES.editoriales.delete}${id}`);
   }
 }
