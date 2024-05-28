@@ -1,4 +1,4 @@
-export class Prestamo {
+export class Empleado{
     "id":number;
     "nombre":string;
     "telefono":number;

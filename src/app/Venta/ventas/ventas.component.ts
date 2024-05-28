@@ -16,14 +16,14 @@ constructor(private ventasService: VentasService) {}
 arrventas: Ventas[] = [];
 
 
-ngOnInit(): void {
-this.getVentas();
-}
-getVentas(): void {
-  this.ventasService.getTablas().subscribe((ventas: Ventas[]) => {
-    this.arrventas = ventas;
-    console.log(ventas);
-  })
-}
+// ngOnInit(): void {
+// this.getVentas();
+// }
+// getVentas(): void {
+//   this.ventasService.getTablas().subscribe((ventas: Ventas[]) => {
+//     this.arrventas = ventas;
+//     console.log(ventas);
+//   })
+// }
 
 }

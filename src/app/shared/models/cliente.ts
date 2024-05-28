@@ -3,4 +3,5 @@ export class Clientes {
     "nombre": string;
     "telefono": string;
     "direccion": string;
+    "estado": boolean;
 }

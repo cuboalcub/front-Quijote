@@ -1,50 +1,50 @@
-export const API_ROUTEs = {
+export const API_ROUTES = {
     baseurl: "",
     inventario:{
-        table:"",
-        create:"",
+        get:"",
+        post:"",
         update:"",
         delete:""
     },
     cliente:{
-        table:"",
-        create:"",
+        get:"",
+        post:"",
         update:"",
         delete:""
     },
     editorial:{
-        table:"",
-        create:"",
+        get:"",
+        post:"",
         update:"",
         delete:""
     },
     empleado:{
-        table:"",
-        create:"",
+        get:"",
+        post:"",
         update:"",
         delete:""
     },
     genero:{
-        table:"",
-        create:"",
+        get:"",
+        post:"",
         update:"",
         delete:""
     },
     prestamos:{
-        table:"",
-        create:"",
+        get:"",
+        post:"",
         update:"",
         delete:""
     },
     sucursal:{
-        table:"",
-        create:"",
+        get:"",
+        post:"",
         update:"",
         delete:""
     },
     venta:{
-        table:"",
-        create:"",
+        get:"",
+        post:"",
         update:"",
         delete:""
     }

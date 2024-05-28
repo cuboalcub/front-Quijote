@@ -3,27 +3,28 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Clientes } from '../models/cliente';
 import { LiberiaApiService } from './liberia-api.service'; 
+import { API_ROUTES } from '../../../environments/api_routes';
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService implements LiberiaApiService<Clientes> {
-
+  base = API_ROUTES.baseurl;
   constructor(private http : HttpClient ) { }
 
-  getTablas(): Observable<Clientes[]> {
-    return this.http.get<Clientes[]>('../assets/clientes.json');
+  get(): Observable<Clientes[]> {
+    return this.http.get<Clientes[]>(`${this.base}${API_ROUTES.cliente.get}`);
   }
 
-  updateTablasById(id: number): Observable<Clientes> {
-    return this.http.get<Clientes>(`../assets/clientes.json/${id}`);
+  update(id: number, cliente:Clientes): Observable<Clientes> {
+    return this.http.put<Clientes>(`${this.base}${API_ROUTES.cliente.update}${id}`,cliente);
   }
 
-  crearObjeto(): Clientes {
-    return new Clientes();
+  post(cliente: Clientes): Observable<Clientes> {
+    return this.http.post<Clientes>(`${this.base}${API_ROUTES.cliente.post}`,cliente);
   }
 
-  deleteTablasById(id: number): Observable<Clientes> {
-    return this.http.get<Clientes>(`../assets/clientes.json/${id}`);
+  delete(id: number): Observable<Clientes> {
+    return this.http.delete<Clientes>(`${this.base}${API_ROUTES.cliente.delete}${id}`);
   }
 
   

@@ -17,15 +17,15 @@ export class InventarioComponent { // Implementar OnInit
 
   constructor(private inventarioService: InvenatrioService) {} // Nombre corregido
 
-  ngOnInit(): void {
-    this.getInventario();
-  }
+  // ngOnInit(): void {
+  //   this.getInventario();
+  // }
 
-  getInventario(): void {
-    this.inventarioService.getTablas()
-      .subscribe((inventarios: Inventario[]) => {
-        this.arrInventarios = inventarios;
-        console.log(inventarios);
-      }); 
-  }
+  // getInventario(): void {
+  //   this.inventarioService.getTablas()
+  //     .subscribe((inventarios: Inventario[]) => {
+  //       this.arrInventarios = inventarios;
+  //       console.log(inventarios);
+  //     }); 
+  // }
 }  

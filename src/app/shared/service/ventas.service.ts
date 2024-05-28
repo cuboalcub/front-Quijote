@@ -3,26 +3,30 @@ import { LiberiaApiService } from './liberia-api.service';
 import { HttpClient } from '@angular/common/http';
 import { Ventas } from '../models/ventas';
 import { Observable } from 'rxjs';
+import { API_ROUTES } from '../../../environments/api_routes';
 @Injectable({
   providedIn: 'root'
 })
 export class VentasService  implements LiberiaApiService<Ventas>{
   constructor(private http: HttpClient) { 
   }
-    getTablas(): Observable<Ventas[]> {
-    return this.http.get<Ventas[]>('../assets/invetario.json')
+base = API_ROUTES.baseurl
+  get(): Observable<Ventas[]> {
+    return this.http.get<Ventas[]>(`${API_ROUTES.venta.get}`);
   }
 
-  updateTablasById(id: number): Observable<Ventas> {
-    return this.http.get<Ventas>(`../assets/invetario.json/${id}`)
+  update(id: number, ventas:Ventas): Observable<Ventas> {
+    return this.http.put<Ventas>(`${this.base}${API_ROUTES.venta.update}/${id}`, ventas);
   }
 
-  deleteTablasById(id: number): Observable<Ventas> {
-    return this.http.get<Ventas>(`../assets/invetario.json/${id}`)
+  post(ventas:Ventas): Observable<Ventas> {
+    return this.http.post<Ventas>(`${this.base}${API_ROUTES.venta.post}`, ventas);
   }
 
-  crearObjeto(): Ventas {
-    return new Ventas();
+  delete(id: number): Observable<Ventas> {
+    return this.http.delete<Ventas>(`${this.base}${API_ROUTES.venta.delete}/${id}`);
   }
+
+
 
 }

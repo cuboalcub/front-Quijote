@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
 
 export abstract class LiberiaApiService<T> {
-  abstract getTablas(): Observable<T[]>;
-  abstract updateTablasById(id: number): Observable<T>;
-  abstract crearObjeto(): T;
-  abstract deleteTablasById(id: number): Observable<T>;
+  abstract get(): Observable<T[]>;
+  abstract update(id: number, T:T): Observable<T>;
+  abstract post(T:T): Observable<T>;
+  abstract delete(id: number): Observable<T>;
 }

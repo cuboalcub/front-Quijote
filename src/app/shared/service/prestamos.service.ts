@@ -3,27 +3,26 @@ import { Prestamo } from '../models/prestamos';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LiberiaApiService } from './liberia-api.service';
-
+import { API_ROUTES } from '../../../environments/api_routes';
 @Injectable({
   providedIn: 'root'
 })
 export class PrestamosService implements LiberiaApiService<Prestamo> {
-
+base = API_ROUTES.baseurl
   constructor(private http: HttpClient) { }
 
-  getTablas(): Observable<Prestamo[]> {
-    return this.http.get<Prestamo[]>('http://localhost:3000/prestamos');
+  get(): Observable<Prestamo[]> {
+    return this.http.get<Prestamo[]>(`${this.base}${API_ROUTES.prestamos.get}`);
   }
 
-  updateTablasById(id: number): Observable<Prestamo> {
-    return this.http.get<Prestamo>(`http://localhost:3000/prestamos/${id}`);
+  update(id: number, prestamo: Prestamo): Observable<Prestamo> {
+    return this.http.put<Prestamo>(`${this.base}${API_ROUTES.prestamos.update}/${id}`, prestamo);
   }
 
-  crearObjeto(): Prestamo {
-    return new Prestamo();
+  post(prestamo: Prestamo): Observable<Prestamo> {
+    return this.http.post<Prestamo>(`${this.base}${API_ROUTES.prestamos.post}`, prestamo);
   }
-
-   deleteTablasById(id: number): Observable<Prestamo> {
-    return this.http.get<Prestamo>(`http://localhost:3000/prestamos/${id}`);
-  }
+  delete(id: number): Observable<Prestamo> {
+    return this.http.delete<Prestamo>(`${this.base}${API_ROUTES.prestamos.delete}/${id}`);
+  } 
 }

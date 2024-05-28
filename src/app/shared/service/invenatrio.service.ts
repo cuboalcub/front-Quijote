@@ -3,28 +3,28 @@ import { Inventario } from '../../shared/models/inventario';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LiberiaApiService } from './liberia-api.service';
-
+import { API_ROUTES } from '../../../environments/api_routes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InvenatrioService implements LiberiaApiService<Inventario> {
 
-  constructor(private http: HttpClient) { 
-  }
-    getTablas(): Observable<Inventario[]> {
-    return this.http.get<Inventario[]>('../assets/invetario.json')
+  constructor(private http: HttpClient) { }
+
+  get(): Observable<Inventario[]> { 
+    return this.http.get<Inventario[]>(`${API_ROUTES.inventario.get}`);
   }
 
-  updateTablasById(id: number): Observable<Inventario> {
-    return this.http.get<Inventario>(`../assets/invetario.json/${id}`)
+  update(id: number, inventario:Inventario): Observable<Inventario> {
+    return this.http.put<Inventario>(`${API_ROUTES.inventario.update}/${id}`, inventario);
   }
 
-  crearObjeto(): Inventario {
-    return new Inventario();
+  post(inventario: Inventario): Observable<Inventario> {
+    return this.http.post<Inventario>(`${API_ROUTES.inventario.post}`, inventario);
   }
 
-  deleteTablasById(id: number): Observable<Inventario> {
-    return this.http.get<Inventario>(`../assets/invetario.json/${id}`)
+  delete(id: number): Observable<Inventario> {
+    return this.http.delete<Inventario>(`${API_ROUTES.inventario.delete}/${id}`);
   }
 }

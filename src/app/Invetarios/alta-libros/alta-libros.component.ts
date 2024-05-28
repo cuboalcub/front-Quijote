@@ -17,16 +17,16 @@ constructor(private inventarioService: InvenatrioService,
             ) {}
 
 arr: Genero[] = [];
-ngOninit(){
-  this.getGeneros();
-}
-  getGeneros():void{
-    this.Genero.getTablas()
-    .subscribe(
-      (Genero:Genero[]) => {
-        this.arr = Genero;
-      })
-  }
+// ngOninit(){
+//   this.getGeneros();
+// }
+//   getGeneros():void{
+//     this.Genero.getTablas()
+//     .subscribe(
+//       (Genero:Genero[]) => {
+//         this.arr = Genero;
+//       })
+//   }
   nombre: string = '';
   fecha: string = '';
   cantidad: number = 0;
