@@ -27,4 +27,8 @@ gettable(){
     }
   )
 }
+getid(id:number){
+  this.local.guardarDatos("idempleado",id)
+}
+
 }

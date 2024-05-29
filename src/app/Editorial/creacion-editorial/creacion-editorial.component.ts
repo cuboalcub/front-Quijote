@@ -23,9 +23,9 @@ export class CreacionEditorialComponent {
   }
 
   postData(): void {
-    const editorial: Editorial = {
-      id: 0,
-      nombre: this.nombre
+    const editorial: any = {
+      nombre: this.nombre,
+      estado: true
     };
     this.editorialesService.post(editorial);
   }

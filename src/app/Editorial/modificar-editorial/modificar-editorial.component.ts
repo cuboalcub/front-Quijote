@@ -24,9 +24,9 @@ OnCancel(){
 }
 putData(){
   this.id = this.localstorageService.obtenerDatos('ideditorial');
-  const editorial: Editorial = {
-    id: this.id,
-    nombre: this.nombre
+  const editorial: any = {
+    nombre: this.nombre,
+    estado: true
   }
   this.editorialesService.update(this.id, editorial).subscribe();
   

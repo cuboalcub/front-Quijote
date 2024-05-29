@@ -3,7 +3,7 @@
     <div class="tabla-container">
       <table class="tabla">
         <thead>
-          <tr>
+          <tr >
             <th>ID Empleado</th>
             <th>Nombre</th>
             <th>Teléfono</th>
@@ -12,12 +12,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dato1</td>
-            <td>Dato2</td>
-            <td>Dato3</td>
-            <td>Dato4</td>
-            <a routerLink="/modificarEmpleado"><td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td></a>
+          <tr *ngFor="let empleado of arr">
+            <td>{{empleado.id}}</td>
+            <td>{{empleado.nombre}}</td>
+            <td>{{empleado.telefono}}</td>
+            <td>{{empleado.direccion}}</td>
+            <a routerLink="/modificarEmpleado"><td class="modificar" (click)="getid(empleado.id)"><img src="assets/modificar.png" alt="Modificar"></td></a>
           </tr>
           <!-- Agrega más filas según sea necesario -->
         </tbody>
