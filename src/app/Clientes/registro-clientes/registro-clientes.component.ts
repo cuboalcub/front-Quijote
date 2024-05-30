@@ -26,8 +26,7 @@ direccion: string = '';
 
   postData(): void {
 
-    const cliente: Clientes = {
-      id: 0,
+    const cliente: any= {
       nombre: this.nombre,
       telefono: this.telefono,
       direccion: this.direccion,

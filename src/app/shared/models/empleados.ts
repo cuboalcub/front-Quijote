@@ -3,4 +3,5 @@ export class Empleado{
     "nombre":string;
     "telefono":number;
     "direccion":string;
+    "estado":boolean
 }

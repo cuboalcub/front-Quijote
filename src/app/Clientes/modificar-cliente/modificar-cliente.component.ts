@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ClientesService } from '../../shared/service/clientes.service';
 import { Clientes } from '../../shared/models/cliente';
-import { LocalstorageService } from '../../shared/service/localstorage.service';
+import { SesionstorageService } from '../../shared/service/sesionstorage.service';
 @Component({
   selector: 'app-modificar-cliente',
   standalone: true,
@@ -15,11 +15,10 @@ export class ModificarClienteComponent {
   nombre: string = '';
   telefono: string = '';
   direccion: string = '';
+  id: number = 0;
   constructor(private clientesService: ClientesService,
-              private localstorageService: LocalstorageService
+              private sesionstorageService: SesionstorageService,
   ) {}
-  id = this.localstorageService.obtenerDatos('id');
-
   onSubmit(): void {
     this.putData();
   }
@@ -29,8 +28,8 @@ export class ModificarClienteComponent {
   }
 
   putData(): void {
-    this.id = this.localstorageService.obtenerDatos('idcliente');
-    this.localstorageService.eliminarDatos("idcliente")
+    this.id = this.sesionstorageService.get("idcliente");
+    this.sesionstorageService.remove("idcliente");
     const cliente: Clientes = {
       id: this.id,
       nombre: this.nombre,
@@ -42,6 +41,7 @@ export class ModificarClienteComponent {
   }
 
   onReset(): void {
+    this.sesionstorageService.remove("idcliente");
     this.nombre = '';
     this.telefono = '';
     this.direccion = '';

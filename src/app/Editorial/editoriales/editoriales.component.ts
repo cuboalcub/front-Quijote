@@ -4,8 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { EditorialesService } from '../../shared/service/editoriales.service';
 import { Editorial } from '../../shared/models/editorial';
-import { LocalstorageService } from '../../shared/service/localstorage.service';
-
+import { SesionstorageService } from '../../shared/service/sesionstorage.service';
 @Component({
   selector: 'app-editoriales',
   standalone: true,
@@ -15,7 +14,7 @@ import { LocalstorageService } from '../../shared/service/localstorage.service';
 })
 export class EditorialesComponent {
   constructor(private editorialesService: EditorialesService,
-              private localstorageService: LocalstorageService
+              private sesionstorageService: SesionstorageService
   ){}
 arr : Editorial[] = []
  ngOnInit(): void {
@@ -30,7 +29,7 @@ getEditoriales(): void {
     )
 }
 getId(id: number): void {
-  this.localstorageService.guardarDatos('ideditorial',id);  
+  this.sesionstorageService.set('ideditorial',id);  
 }
 
 

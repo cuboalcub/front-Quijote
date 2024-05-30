@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Empleado } from '../../shared/models/empleados';
 import { EmpleadoService } from '../../shared/service/empleado.service';
-import { LocalstorageService } from '../../shared/service/localstorage.service';
+import { SesionstorageService } from '../../shared/service/sesionstorage.service';
 @Component({
   selector: 'app-empleados',
   standalone: true,
@@ -15,7 +15,7 @@ import { LocalstorageService } from '../../shared/service/localstorage.service';
 export class EmpleadosComponent {
 arr : Empleado[] = [];
 constructor(private service: EmpleadoService,
-            private local:LocalstorageService
+            private sesionstorageService: SesionstorageService
 ) {}
 ngOnInit(): void {
   this.gettable();
@@ -28,7 +28,7 @@ gettable(){
   )
 }
 getid(id:number){
-  this.local.guardarDatos("idempleado",id)
+  this.sesionstorageService.set("idempleado",id)
 }
 
 }

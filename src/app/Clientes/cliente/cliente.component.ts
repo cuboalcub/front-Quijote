@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Clientes } from '../../shared/models/cliente';
 import { ClientesService } from '../../shared/service/clientes.service';
-import { LocalstorageService } from '../../shared/service/localstorage.service';
+import { SesionstorageService } from '../../shared/service/sesionstorage.service';
 @Component({
   selector: 'app-cliente',
   standalone: true,
@@ -14,13 +14,13 @@ import { LocalstorageService } from '../../shared/service/localstorage.service';
 })
 export class ClienteComponent {
 constructor(private clientesService: ClientesService,
-            private localstorageService: LocalstorageService
+            private sesionstorageService: SesionstorageService
 ) {}
 arrclientes: Clientes[] = [];
 key = 'idclientes';
 ngOnInit(): void {
   this.getClientes();
-}
+}      
 
 getClientes(): void {
   this.clientesService.get().subscribe((clientes: Clientes[]) => {
@@ -29,6 +29,6 @@ getClientes(): void {
   });
 }
 getId(id: number): void {
-  this.localstorageService.guardarDatos(this.key,id);
+  this.sesionstorageService.set(this.key,id);
 }
 }
