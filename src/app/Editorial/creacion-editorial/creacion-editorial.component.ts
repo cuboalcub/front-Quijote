@@ -14,7 +14,7 @@ export class CreacionEditorialComponent {
   nombre: String = "";
   constructor(private editorialesService: EditorialesService) {}
 
-  onSubmit(): void {  
+  onSubmit(): void {
     this.postData();
   }
 
@@ -23,9 +23,11 @@ export class CreacionEditorialComponent {
   }
 
   postData(): void {
+    const nombree = `"${this.nombre}"`;
+
     const editorial: any = {
+      estado: true,
       nombre: this.nombre,
-      estado: true
     };
     this.editorialesService.post(editorial);
     alert('yes')

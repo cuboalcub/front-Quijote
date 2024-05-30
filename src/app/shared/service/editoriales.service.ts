@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+import { HttpParamsOptions } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Editorial } from '../models/editorial';
 import { LiberiaApiService } from './liberia-api.service';
@@ -8,7 +10,9 @@ import { API_ROUTES } from '../../../environments/api_routes';
 @Injectable({
   providedIn: 'root'
 })
+
 export class EditorialesService implements  LiberiaApiService<Editorial> {
+  
   base = API_ROUTES.baseurl
   constructor(private http: HttpClient) { }
 
@@ -20,9 +24,7 @@ export class EditorialesService implements  LiberiaApiService<Editorial> {
     return this.http.put<Editorial>(`${this.base}${API_ROUTES.editoriales.update}${id}`,Editorial);
   }
 
-  post(editorial: Editorial): Observable<Editorial> {
-    console.log('s', editorial);
-    
+  post(editorial: any): Observable<any> {    
     return this.http.post<Editorial>(`${this.base}${API_ROUTES.editoriales.post}`, editorial);
 
   }
