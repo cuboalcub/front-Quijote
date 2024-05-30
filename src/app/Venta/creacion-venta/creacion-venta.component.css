@@ -2,7 +2,7 @@
     position: absolute;
     width: 512px;
     height: 164px;
-    left: 720px;
+    left: 790px;
     top: 80px;
     font-family: 'Amiri';
     font-style: normal;
@@ -290,7 +290,7 @@ footer {
 }
 
 /* Estilos para el título "Fecha Límite" */
-.fecha-limite-titulo {
+.subtotal-titulo {
     position: absolute;
     width: 612px;
     height: 164px;
@@ -305,7 +305,7 @@ footer {
 }
 
 /* Estilos para el input de tipo date */
-.fecha-limite-input {
+.subtotal-input {
     position: absolute;
     width: 200px; /* Ajusta el ancho según sea necesario */
     height: 40px; /* Ajusta la altura según sea necesario */
@@ -318,8 +318,8 @@ footer {
 
 
 /* Estilos para los botones de Confirmar y Cancelar préstamo */
-.confirmar-prestamo-btn,
-.cancelar-prestamo-btn {
+.confirmar-venta-btn,
+.cancelar-venta-btn {
     min-width: 220px; /* Ancho mínimo del botón */
     height: 50px; /* Altura del botón */
     color: #fff; /* Color del texto */
@@ -333,34 +333,34 @@ footer {
     margin-right: 70px
 }
 
-.confirmar-prestamo-btn {
+.confirmar-venta-btn {
     background: #00de34; /* Color de fondo */
     box-shadow: 0 5px #029300; /* Sombra */
 
 }
 
-.cancelar-prestamo-btn {
+.cancelar-venta-btn {
     background: #c82b00; /* Color de fondo */
     box-shadow: 0 5px #860000; /* Sombra */
 
 }
 
-.confirmar-prestamo-btn:hover {
+.confirmar-venta-btn:hover {
     box-shadow: 0 3px #17ac00; /* Sombra al pasar el mouse */
     top: 1px; /* Efecto de elevación */
 }
 
-.cancelar-prestamo-btn:hover {
+.cancelar-venta-btn:hover {
     box-shadow: 0 3px #b80000; /* Sombra al pasar el mouse */
     top: 1px; /* Efecto de elevación */
 }
 
-.confirmar-prestamo-btn:active {
+.confirmar-venta-btn:active {
     box-shadow: 0 0 #1aae00; /* Sombra al hacer clic */
     top: 5px; /* Efecto de hundimiento */
 }
 
-.cancelar-prestamo-btn:active {
+.cancelar-venta-btn:active {
     box-shadow: 0 0 #a90000; /* Sombra al hacer clic */
     top: 5px; /* Efecto de hundimiento */
 }

@@ -4,7 +4,7 @@ import { PrestamosComponent } from './Prestamo/prestamos/prestamos.component';
 import { InventarioComponent } from './Invetarios/inventario/inventario.component';
 import { RegistroClientesComponent } from './Clientes/registro-clientes/registro-clientes.component';
 import { CreacionEditorialComponent } from './Editorial/creacion-editorial/creacion-editorial.component';
-import { AltaLibrosComponent } from './Libros/alta-libros/alta-libros.component';
+import { AltaLibrosComponent } from './Invetarios/alta-libros/alta-libros.component';
 import { RegistroEmpleadosComponent } from './Empleado/registro-empleados/registro-empleados.component';
 import { CreacionPrestamosComponent } from './Prestamo/creacion-prestamos/creacion-prestamos.component';
 import { CreacionSucursalComponent } from './Sucursal/creacion-sucursal/creacion-sucursal.component';
@@ -18,7 +18,9 @@ import { ModificarGeneroComponent } from './Genero/modificar-genero/modificar-ge
 import { ModificarEmpleadoComponent } from './Empleado/modificar-empleado/modificar-empleado.component';
 import { ModificarClienteComponent } from './Clientes/modificar-cliente/modificar-cliente.component';
 import { ModificarEditorialComponent } from './Editorial/modificar-editorial/modificar-editorial.component';
-import { ModificarSucursalComponent } from './modificar-sucursal/modificar-sucursal.component';
+import { ModificarSucursalComponent } from './Sucursal/modificar-sucursal/modificar-sucursal.component';
+import { CreacionVentaComponent } from './Venta/creacion-venta/creacion-venta.component';
+
 
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
@@ -40,9 +42,10 @@ export const routes: Routes = [
     {path: 'empleados', component:EmpleadosComponent},
     {path: 'modificarGenero', component:ModificarGeneroComponent},
     {path: 'modificarEmpleado', component:ModificarEmpleadoComponent},
-    {path: 'empleados', component:EmpleadosComponent},
     {path: 'modificarCliente', component:ModificarClienteComponent},
     {path: 'modificarEditorial', component:ModificarEditorialComponent},
-    {path: 'modificarSucursal', component:ModificarSucursalComponent}];
+    {path: 'modificarSucursal', component:ModificarSucursalComponent},
+    {path: 'creacionVenta', component:CreacionVentaComponent},];
+
 
 
