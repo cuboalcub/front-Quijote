@@ -21,7 +21,10 @@ export class EditorialesService implements  LiberiaApiService<Editorial> {
   }
 
   post(editorial: Editorial): Observable<Editorial> {
+    console.log('s', editorial);
+    
     return this.http.post<Editorial>(`${this.base}${API_ROUTES.editoriales.post}`, editorial);
+
   }
   delete(id: number): Observable<Editorial> {
     return this.http.delete<Editorial>(`${this.base}${API_ROUTES.editoriales.delete}${id}`);

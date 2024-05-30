@@ -1,5 +1,5 @@
 export const API_ROUTES = {
-    baseurl: "http://192.168.124.16:8080/",
+    baseurl: "http://localhost:8080/libreria-quijote/",
     inventarios:{
         get:"libro/obtener",
         post:"libro/guadar",

@@ -11,7 +11,7 @@ import { EditorialesService } from '../../shared/service/editoriales.service';
   styleUrl: './creacion-editorial.component.css'
 })
 export class CreacionEditorialComponent {
-  nombre: string = '';
+  nombre: String = "";
   constructor(private editorialesService: EditorialesService) {}
 
   onSubmit(): void {  
@@ -28,6 +28,7 @@ export class CreacionEditorialComponent {
       estado: true
     };
     this.editorialesService.post(editorial);
+    alert('yes')
   }
 
   onReset(): void {
