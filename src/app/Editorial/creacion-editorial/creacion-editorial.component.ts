@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Editorial } from '../../shared/models/editorial';
 import { EditorialesService } from '../../shared/service/editoriales.service';
+import { HttpErrorResponse } from '@angular/common/http';
+
 @Component({
   selector: 'app-creacion-editorial',
   standalone: true,
@@ -23,14 +25,21 @@ export class CreacionEditorialComponent {
   }
 
   postData(): void {
-    const nombree = `"${this.nombre}"`;
-
-    const editorial: any = {
-      estado: true,
+    const editorial = {
       nombre: this.nombre,
+      estado: true,
     };
-    this.editorialesService.post(editorial);
-    alert('yes')
+
+    this.editorialesService.post(editorial).subscribe({
+      next: (response) => {
+        alert('Editorial guardada con éxito');
+        this.onReset();
+      },
+      error: (error: HttpErrorResponse) => {
+        console.error('Error al guardar la editorial:', error);
+        alert('Ocurrió un error al guardar la editorial');
+      }
+    });
   }
 
   onReset(): void {
