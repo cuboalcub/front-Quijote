@@ -32,6 +32,6 @@ export const routes: Routes = [
     {path: 'sucursales', component:SucursaleComponent},
     {path: 'generos', component:GenerosComponent},
     {path: 'empleados', component:EmpleadosComponent},
-    {path: 'detalleCompra', component:DetalleCompraComponent}];
+    ];
 
 
