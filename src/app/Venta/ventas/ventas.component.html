@@ -13,13 +13,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let venta of arrventas">
-            <td>venta.id</td>
-            <td>venta.fechaventa</td>
-            <td>venta.cliente</td>
-            <td>venta.subtotal</td>
-            <td>venta.total</td>
-            <td class="detalle"><img src="assets/ojo.png" alt="Detalle"></td>
+          <tr *ngFor="let venta of ventas; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+            <td>{{ venta.id }}</td>
+            <td>{{ venta.fechaVenta }}</td>
+            <td>{{ venta.cliente }}</td>
+            <td>{{ venta.subtotal }}</td>
+            <td>{{ venta.total }}</td>
+            <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->
         </tbody>

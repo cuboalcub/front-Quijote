@@ -10,10 +10,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let editorial of arr">
-            <td>{{editorial.id}}</td>
-            <td>{{editorial.nombre}}</td>
-            <a routerLink="/modificarEditorial"><td class="modificar" (click)="getId(editorial.id)"><img src="assets/modificar.png" alt="Modificar"></td></a>
+          <tr *ngFor="let editorial of arr; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+            <td>{{ editorial.id }}</td>
+            <td>{{ editorial.nombre }}</td>
+            <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
           </tr>
         </tbody>
       </table>

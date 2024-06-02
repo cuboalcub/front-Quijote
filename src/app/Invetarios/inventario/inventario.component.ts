@@ -1,3 +1,4 @@
+
 import { Component} from '@angular/core';
 import { InvenatrioService } from '../../shared/service/invenatrio.service';
 import { Inventario } from '../../shared/models/inventario';
@@ -26,4 +27,21 @@ export class InventarioComponent { // Implementar OnInit
       this.arrInventarios = inventarios;
     });
   }
-}  
+  filaSeleccionada: number | null = null;
+
+  seleccionarFila(index: number) {
+    console.log('Fila seleccionada:', index);
+    if (this.filaSeleccionada === index) {
+      this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo
+    } else {
+      this.filaSeleccionada = index;
+    }
+  }
+
+  eliminarFila() {
+   
+  }
+
+  
+}
+

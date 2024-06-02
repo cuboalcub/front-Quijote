@@ -1,5 +1,5 @@
 <div class="sucursales-container">
-    <h1 class="titulo">SUCRUSALES</h1>
+    <h1 class="titulo">SUCURSALES</h1>
     <div class="tabla-container">
       <table class="tabla">
         <thead>
@@ -11,11 +11,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dato1</td>
-            <td>Dato2</td>
-            <td>Dato3</td>
-            <a routerLink="/modificarSucursal"><td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td></a>
+          <tr *ngFor="let sucursal of sucursales; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+            <td>{{ sucursal.id }}</td>
+            <td>{{ sucursal.nombre }}</td>
+            <td>{{ sucursal.direccion }}</td>
+            <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->
         </tbody>

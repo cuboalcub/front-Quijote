@@ -16,15 +16,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let inventario of arrInventarios">
-            <td>{{ inventario.id }}</td>
-            <td>{{ inventario.nombre_libro }}</td>
-            <td>{{ inventario.Fecha_public }}</td>
-            <td>{{ inventario.id_sucur }}</td>
-            <td>{{ inventario.id_genero }}</td>
-            <td>{{ inventario.idEditorial }}</td>
-            <td>{{ inventario.precio}}</td>
-            <td>{{ inventario.existencias }}</td>
+          <tr *ngFor="let libro of arrInventarios; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+            <td>{{ libro.id }}</td>
+            <td>{{ libro.nombre_libro }}</td>
+            <td>{{ libro.Fecha_public }}</td>
+            <td>{{ libro.id_sucur }}</td>
+            <td>{{ libro.id_genero }}</td>
+            <td>{{ libro.idEditorial }}</td>
+            <td>{{ libro.precio }}</td>
+            <td>{{ libro.existencias }}</td>
             <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->

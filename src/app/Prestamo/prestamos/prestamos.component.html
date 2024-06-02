@@ -13,13 +13,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dato1</td>
-            <td>Dato2</td>
-            <td>Dato3</td>
-            <td>Dato4</td>
-            <td>Dato5</td>
-            <td class="detalle"><img src="assets/ojo.png" alt="Detalle"></td>
+          <tr *ngFor="let prestamo of prestamos; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+            <td>{{ prestamo.idPrestamo }}</td>
+            <td>{{ prestamo.idLibro }}</td>
+            <td>{{ prestamo.idCliente }}</td>
+            <td>{{ prestamo.cantidad }}</td>
+            <td>{{ prestamo.fechaLimite }}</td>
+            <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->
         </tbody>
