@@ -20,7 +20,10 @@ import { ModificarClienteComponent } from './Clientes/modificar-cliente/modifica
 import { ModificarEditorialComponent } from './Editorial/modificar-editorial/modificar-editorial.component';
 import { ModificarSucursalComponent } from './Sucursal/modificar-sucursal/modificar-sucursal.component';
 import { CreacionVentaComponent } from './Venta/creacion-venta/creacion-venta.component';
-import { DetalleVentaComponent } from './Venta/detalle-venta/detalle-venta.component';
+import { DetalleVentaComponent } from './detalle-venta/detalle-venta.component';
+import { DetalleCompraComponent } from './detalle-compra/detalle-compra.component';
+
+
 
 export const routes: Routes = [
     {path:"inventario", component:InventarioComponent},
@@ -47,7 +50,8 @@ export const routes: Routes = [
     {path: 'modificarSucursal', component:ModificarSucursalComponent},
     {path: 'creacionVenta', component:CreacionVentaComponent},
     {path: 'detalleVenta', component:DetalleVentaComponent},
-];
-
+    {path: 'empleados', component:EmpleadosComponent},
+    {path: 'detalleCompra', component:DetalleCompraComponent},
+    {path: 'detalleCompra', component:DetalleCompraComponent},];
 
 
