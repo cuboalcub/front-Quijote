@@ -3,6 +3,7 @@ import { LiberiaApiService } from './liberia-api.service';
 import { HttpClient } from '@angular/common/http';
 import { Ventas } from '../models/ventas';
 import { Observable } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
 import { API_ROUTES } from '../../../environments/api_routes';
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,9 @@ base = API_ROUTES.baseurl
     return this.http.put<Ventas>(`${this.base}${API_ROUTES.ventas.update}/${id}`, ventas);
   }
 
-  post(ventas:Ventas): Observable<Ventas> {
-    return this.http.post<Ventas>(`${this.base}${API_ROUTES.ventas.post}`, ventas);
+  post(ventas:any): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post<any>(`${this.base}${API_ROUTES.ventas.post}`, ventas, {headers});
   }
 
   delete(id: number): Observable<Ventas> {

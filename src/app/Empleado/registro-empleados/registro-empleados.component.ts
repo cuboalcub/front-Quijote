@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EmpleadoService } from '../../shared/service/empleado.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-registro-empleados',
@@ -31,7 +32,16 @@ export class RegistroEmpleadosComponent {
       direccion: this.direccion,
       estado: true
     }
-    this.empleadoService.post(empleado);
+    this.empleadoService.post(empleado).subscribe({
+      next: (response) => {
+        alert('Editorial guardada con éxito');
+        this.onReset();
+      },
+      error: (error: HttpErrorResponse) => {
+        console.error('Error al guardar la editorial:', error);
+        alert('Ocurrió un error al guardar la editorial');
+      }
+    });;
   }
   onReset(): void {
     this.nombre = '';

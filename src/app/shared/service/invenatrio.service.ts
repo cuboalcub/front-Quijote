@@ -3,6 +3,7 @@ import { Inventario } from '../../shared/models/inventario';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LiberiaApiService } from './liberia-api.service';
+import { HttpHeaders } from '@angular/common/http';
 import { API_ROUTES } from '../../../environments/api_routes';
 
 @Injectable({
@@ -20,8 +21,9 @@ export class InvenatrioService implements LiberiaApiService<Inventario> {
     return this.http.put<Inventario>(`${API_ROUTES.inventarios.update}/${id}`, inventario);
   }
 
-  post(inventario: Inventario): Observable<Inventario> {
-    return this.http.post<Inventario>(`${API_ROUTES.inventarios.post}`, inventario);
+  post(inventario: any): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post<any>(`${API_ROUTES.inventarios.post}`, inventario, {headers});
   }
 
   delete(id: number): Observable<Inventario> {

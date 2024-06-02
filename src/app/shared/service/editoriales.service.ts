@@ -25,7 +25,6 @@
     post(editorial: any): Observable<any> {    
       const headers = new HttpHeaders().set('Content-Type', 'application/json');
       return this.http.post<Editorial>(`${this.base}${API_ROUTES.editoriales.post}`, editorial, {headers});
-      alert('yes')
     }
     delete(id: number): Observable<Editorial> {
       return this.http.delete<Editorial>(`${this.base}${API_ROUTES.editoriales.delete}${id}`);

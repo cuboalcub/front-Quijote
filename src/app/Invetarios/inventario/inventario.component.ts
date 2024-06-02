@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { InvenatrioService } from '../../shared/service/invenatrio.service';
 import { Inventario } from '../../shared/models/inventario';
 import { CommonModule } from '@angular/common';
@@ -17,15 +17,13 @@ export class InventarioComponent { // Implementar OnInit
 
   constructor(private inventarioService: InvenatrioService) {} // Nombre corregido
 
-  // ngOnInit(): void {
-  //   this.getInventario();
-  // }
+  ngOnInit(): void { 
+    this.get();
+   }
 
-  // getInventario(): void {
-  //   this.inventarioService.getTablas()
-  //     .subscribe((inventarios: Inventario[]) => {
-  //       this.arrInventarios = inventarios;
-  //       console.log(inventarios);
-  //     }); 
-  // }
+  get(): void {
+    this.inventarioService.get().subscribe((inventarios) => {
+      this.arrInventarios = inventarios;
+    });
+  }
 }  

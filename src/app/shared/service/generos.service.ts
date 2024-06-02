@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Genero } from '../models/genero';
 import { LiberiaApiService } from './liberia-api.service';
+import { HttpHeaders } from '@angular/common/http';
 import { API_ROUTES } from '../../../environments/api_routes';
 
 @Injectable({
@@ -19,8 +20,9 @@ update(id: number, genero:Genero): Observable<Genero> {
     return this.http.put<Genero>(`${this.base}${API_ROUTES.generos.update}${id}`,genero); 
 }
 
-post(genero: Genero): Observable<Genero> {
-    return this.http.post<Genero>(`${this.base}${API_ROUTES.generos.post}`, genero); 
+post(genero:any): Observable<any> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post<any>(`${this.base}${API_ROUTES.generos.post}`, genero, {headers}); 
 }
 
 delete(id: number): Observable<Genero> {

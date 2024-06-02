@@ -3,42 +3,47 @@
     <form>
       <div class="form-group">
         <h2 class="titulo-secundario">Ingrese el Nombre:</h2>
-        <input type="text" id="nombre" name="nombre" placeholder="Nombre...">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre..." [(ngModel)] ="nombre">
       </div>
       <div class="form-group">
         <h2 class="titulo-secundario">Ingrese la Fecha de Publicación:</h2>
-        <input type="date" id="fecha" name="fecha">
+        <input type="date" id="fecha" name="fecha" [(ngModel)] ="fecha">
       </div>
       <div class="form-group">
         <h2 class="titulo-secundario">Ingrese la Cantidad:</h2>
-        <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad...">
+        <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad..." [(ngModel)] = "cantidad">
       </div>
       <div class="form-group">
         <h2 class="titulo-secundario">Ingrese el Precio:</h2>
-        <input type="text" id="precio" name="precio" placeholder="$ Precio...">
+        <input type="text" id="precio" name="precio" placeholder="$ Precio..." [(ngModel)] = "precio">
       </div>
       <div class="form-group">
         <h2 class="titulo-secundario">Escoja el Género:</h2>
-        <select id="genero" name="genero">
-          <option>Género...</option>
+        <select id="genero" name="genero" [(ngModel)]="genero">
+          <option  *ngFor="let genero of arrgeneros">{{genero.nombre}}</option>
         </select>
       </div>
       <div class="form-group">
         <h2 class="titulo-secundario">Escoja la Editorial:</h2>
-        <select id="editorial" name="editorial">
-          <option>Editorial...</option>
+        <select id="editorial" name="editorial" [(ngModel)]="selectedEditorial">
+          <option *ngFor="let editorial of arreditoriales">
+            {{editorial.nombre}}
+          </option>
         </select>
       </div>
       <div class="form-group">
         <h2 class="titulo-secundario">Escoja el Sucursal:</h2>
-        <select id="sucursal" name="sucursal">
-          <option>Sucursal...</option>
+        <select id="sucursal" name="sucursal" [(ngModel)]="selectedSucursal">
+          <option *ngFor="let sucursal of arrsucursales" >
+            {{sucursal.nombre_sucursal}}
+          </option>
         </select>
       </div>
+      
       <!-- Repite para editorial y sucursal -->
       <div class="button-group">
-        <button type="submit" class="agregar-btn">Agregar</button>
-        <button type="button" class="cancelar-btn">Cancelar</button>
+        <button type="submit" class="agregar-btn" (click)="onSubmit()">Agregar</button>
+        <button type="button" class="cancelar-btn" (click)="onCancel()">Cancelar</button>
       </div>
     </form>
   </div>
