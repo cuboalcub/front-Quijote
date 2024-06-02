@@ -12,11 +12,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dato1</td>
-            <td>Dato2</td>
-            <td>Dato3</td>
-            <td>Dato4</td>
+          <tr *ngFor="let empleado of empleados; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+            <td>{{ empleado.id }}</td>
+            <td>{{ empleado.nombre }}</td>
+            <td>{{ empleado.telefono }}</td>
+            <td>{{ empleado.direccion }}</td>
             <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->

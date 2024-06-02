@@ -16,15 +16,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dato1</td>
-            <td>Dato2</td>
-            <td>Dato3</td>
-            <td>Dato4</td>
-            <td>Dato5</td>
-            <td>Dato6</td>
-            <td>Dato7</td>
-            <td>Dato8</td>
+          <tr *ngFor="let libro of inventario; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+            <td>{{ libro.id }}</td>
+            <td>{{ libro.nombre }}</td>
+            <td>{{ libro.fechaPublicacion }}</td>
+            <td>{{ libro.idSucursal }}</td>
+            <td>{{ libro.idGenero }}</td>
+            <td>{{ libro.idEditorial }}</td>
+            <td>{{ libro.precio }}</td>
+            <td>{{ libro.existencias }}</td>
             <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->

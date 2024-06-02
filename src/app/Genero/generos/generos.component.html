@@ -10,9 +10,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dato1</td>
-            <td>Dato2</td>
+          <tr *ngFor="let genero of generos; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+            <td>{{ genero.id }}</td>
+            <td>{{ genero.nombre }}</td>
             <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->
