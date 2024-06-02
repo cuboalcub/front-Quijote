@@ -20,8 +20,8 @@ import { ModificarClienteComponent } from './Clientes/modificar-cliente/modifica
 import { ModificarEditorialComponent } from './Editorial/modificar-editorial/modificar-editorial.component';
 import { ModificarSucursalComponent } from './Sucursal/modificar-sucursal/modificar-sucursal.component';
 import { CreacionVentaComponent } from './Venta/creacion-venta/creacion-venta.component';
-import { DetalleVentaComponent } from './detalle-venta/detalle-venta.component';
-import { DetalleCompraComponent } from './detalle-compra/detalle-compra.component';
+import { DetalleVentaComponent } from './Prestamo/detalle-venta/detalle-venta.component';
+import { DetalleCompraComponent } from './Venta/creacion-venta/detalle-compra/detalle-compra.component';
 
 
 
