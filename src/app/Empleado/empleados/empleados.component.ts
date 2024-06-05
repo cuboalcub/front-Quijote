@@ -8,7 +8,7 @@ import { SesionstorageService } from '../../shared/service/sesionstorage.service
 @Component({
   selector: 'app-empleados',
   standalone: true,
-  imports: [],
+  imports: [ CommonModule, FormsModule, RouterLink],
   templateUrl: './empleados.component.html',
   styleUrl: './empleados.component.css'
 })
@@ -29,12 +29,7 @@ gettable(){
 }
 getid(id:number){
   this.sesionstorageService.set("idempleado",id)
-  empleados = [
-    { id: '1', nombre: 'Fany Rodriguez', telefono: '333-3333', direccion: 'El trebol Norte 1' },
-    { id: '2', nombre: 'Emiliano Torales', telefono: '555-6666', direccion: 'Fracc Villas de Orizaba' },
-    { id: '3', nombre: 'Felipe Abisai', telefono: '222-2222', direccion: 'Peñuela' }
-  ];
-
+}
   filaSeleccionada: number | null = null;
 
   seleccionarFila(index: number) {
@@ -47,11 +42,7 @@ getid(id:number){
   }
 
   eliminarFila() {
-    if (this.filaSeleccionada !== null) {
-      this.empleados.splice(this.filaSeleccionada, 1);
-      this.filaSeleccionada = null; // Resetea la selección
-    }
+
   }
 }
 
-}

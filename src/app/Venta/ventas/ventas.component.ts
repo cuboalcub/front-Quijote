@@ -7,7 +7,7 @@ import { Ventas } from '../../shared/models/ventas';
 @Component({
   selector: 'app-ventas',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './ventas.component.html',
   styleUrl: './ventas.component.css'
 })

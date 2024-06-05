@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let empleado of empleados; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+          <tr *ngFor="let empleado of arr; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
             <td>{{ empleado.id }}</td>
             <td>{{ empleado.nombre }}</td>
             <td>{{ empleado.telefono }}</td>

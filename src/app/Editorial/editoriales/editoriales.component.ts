@@ -33,12 +33,6 @@ getId(id: number): void {
 }
 
 
-  editoriales = [
-    { id: '1', nombre: 'Editorial Alfa' },
-    { id: '2', nombre: 'Editorial Beta' },
-    { id: '3', nombre: 'Editorial Gamma' }
-  ];
-
   filaSeleccionada: number | null = null;
 
   seleccionarFila(index: number) {
@@ -51,9 +45,6 @@ getId(id: number): void {
   }
 
   eliminarFila() {
-    if (this.filaSeleccionada !== null) {
-      this.editoriales.splice(this.filaSeleccionada, 1);
-      this.filaSeleccionada = null; // Resetea la selección
-    }
+    
   }
 }
