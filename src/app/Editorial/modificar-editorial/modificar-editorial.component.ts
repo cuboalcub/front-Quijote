@@ -13,8 +13,9 @@ import { Router } from '@angular/router';
   styleUrl: './modificar-editorial.component.css'
 })
 export class ModificarEditorialComponent {
-  id: number = 0;
-  nombre: string = '';
+  obj = this.sesionstorageService.get('editorial');
+  id: number = this.obj.id;
+  nombre: string = this.obj.nombre;
   constructor(private editorialesService: EditorialesService,
               private sesionstorageService: SesionstorageService,
               private router: Router) {}
@@ -25,8 +26,7 @@ OnCancel(){
   this.resetForm();
 }
 putData(){
-  this.id = this.sesionstorageService.get('ideditorial');
-  this.sesionstorageService.remove('ideditorial');
+  this.sesionstorageService.remove('editorial');
   const editorial: Editorial = {
     id: this.id,
     nombre: this.nombre,

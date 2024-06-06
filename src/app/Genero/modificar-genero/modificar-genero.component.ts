@@ -15,7 +15,9 @@ import { Router } from '@angular/router';
 export class ModificarGeneroComponent {
 
   constructor(private generosService: GenerosService, private sesionstorageService: SesionstorageService,private router: Router) { }
-  nombre: string = '';
+  obj = this.sesionstorageService.get('genero')
+  nombre: string = this.obj?.nombre || '';
+  id = this.obj?.id || 0;
 
   onSubmit(): void {
     this.putData();
@@ -27,7 +29,7 @@ export class ModificarGeneroComponent {
 
   putData(): void {
     const genero: Genero = {
-      id: this.sesionstorageService.get("idgenero"),
+      id: this.id,
       nombre: this.nombre,
       estado: true
     };

@@ -17,7 +17,7 @@ constructor(private clientesService: ClientesService,
             private sesionstorageService: SesionstorageService
 ) {}
 arrclientes: Clientes[] = [];
-key = 'idclientes';
+key = 'cliente';
 ngOnInit(): void {
   this.getClientes();
 }      
@@ -28,13 +28,13 @@ getClientes(): void {
     console.log(clientes);
   });
 }
-getId(id: number): void {
-  this.sesionstorageService.set(this.key,id);
+getId(obj: Clientes): void {
+  this.sesionstorageService.set(this.key, obj);
 }
 
   filaSeleccionada: number | null = null;
 
-  seleccionarFila(index: number) {
+seleccionarFila(index: number) {
     console.log('Fila seleccionada:', index);
     if (this.filaSeleccionada === index) {
       this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo

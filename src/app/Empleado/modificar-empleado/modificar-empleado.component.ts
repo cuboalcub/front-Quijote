@@ -14,20 +14,21 @@ import { Router } from '@angular/router';
 })
 export class ModificarEmpleadoComponent {
   constructor(private sesionstorageService: SesionstorageService, private empleadosService: EmpleadoService, private routes: Router) { }
-  nombre: string = '';
-  telefono: number = 0;
-  direccion: string = '';
-  id: number = 0;
+  obj = this.sesionstorageService.get('empleado')
+  nombre: string = this.obj?.nombre || '';
+  telefono: number = this.obj?.telefono || 0;
+  direccion: string = this.obj?.direccion || '';
+  id: number = this.obj?.id || 0;
 
   onSubmit(): void {
   this.putData()
   }
   onCancel(): void {
-
+    this.sesionstorageService.remove('empleado');
+    this.routes.navigate(['/empleados']);
   }
 
   putData(): void {
-    this.id = this.sesionstorageService.get('idempleado');
     this.sesionstorageService.remove('idempleado');
     const empleado: Empleado = {
       id: this.id,

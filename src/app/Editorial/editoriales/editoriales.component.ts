@@ -28,8 +28,8 @@ getEditoriales(): void {
       }
     )
 }
-getId(id: number): void {
-  this.sesionstorageService.set('ideditorial',id);  
+getId(obj: Editorial): void {
+  this.sesionstorageService.set("editorial",obj);  
 }
 
 

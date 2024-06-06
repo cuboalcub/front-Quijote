@@ -27,8 +27,8 @@ gettable(){
     }
   )
 }
-getid(id:number){
-  this.sesionstorageService.set("idempleado",id)
+getid(empleado: Empleado){
+  this.sesionstorageService.set("empleado",empleado)
 }
   filaSeleccionada: number | null = null;
 
