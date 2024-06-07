@@ -16,7 +16,7 @@ export class EditorialesComponent {
   constructor(private editorialesService: EditorialesService,
               private sesionstorageService: SesionstorageService
   ){}
-arr : Editorial[] = []
+arrEditoriales : Editorial[] = [];
  ngOnInit(): void {
    this.getEditoriales();
  }
@@ -24,20 +24,14 @@ getEditoriales(): void {
   this.editorialesService.get()
     .subscribe(
       (editoriales: Editorial[]) => {
-        this.arr = editoriales;
+        this.arrEditoriales = editoriales;
       }
     )
 }
-getId(id: number): void {
-  this.sesionstorageService.set('ideditorial',id);  
+getId(obj: Editorial): void {
+  this.sesionstorageService.set("editorial",obj);  
 }
 
-
-  editoriales = [
-    { id: '1', nombre: 'Editorial Alfa' },
-    { id: '2', nombre: 'Editorial Beta' },
-    { id: '3', nombre: 'Editorial Gamma' }
-  ];
 
   filaSeleccionada: number | null = null;
 
@@ -51,9 +45,6 @@ getId(id: number): void {
   }
 
   eliminarFila() {
-    if (this.filaSeleccionada !== null) {
-      this.editoriales.splice(this.filaSeleccionada, 1);
-      this.filaSeleccionada = null; // Resetea la selección
-    }
+    
   }
 }

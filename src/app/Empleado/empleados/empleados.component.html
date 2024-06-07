@@ -12,12 +12,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let empleado of empleados; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+          <tr *ngFor="let empleado of arr; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
             <td>{{ empleado.id }}</td>
             <td>{{ empleado.nombre }}</td>
             <td>{{ empleado.telefono }}</td>
             <td>{{ empleado.direccion }}</td>
-            <td class="modificar"><img src="assets/modificar.png" alt="Modificar"></td>
+            <td class="modificar" ><a routerLink="/modificarEmpleado"><img src="assets/modificar.png" alt="Modificar" (click)="getid(empleado)"></a></td>
           </tr>
         </tbody>
       </table>

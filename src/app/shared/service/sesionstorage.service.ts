@@ -7,10 +7,14 @@ export class SesionstorageService {
 
   constructor() { }
   get(key: string): any {
-    return sessionStorage.getItem(key);
+    const value = sessionStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
   }
   set(key: string, value: any): void {
-    sessionStorage.setItem(key, value);
+    const serializedValue = JSON.stringify(value);
+    console.log(serializedValue);
+    
+    sessionStorage.setItem(key, serializedValue);
   }
   remove(key: string): void {
     sessionStorage.removeItem(key);

@@ -26,8 +26,8 @@ getGeneros(): void {
   });
 }
 
-getid(id:number){
-  this.sesionstorageService.set("idgenero",id)  
+getid(genero: Genero) {
+  this.sesionstorageService.set("genero", genero);  
 }
 
 

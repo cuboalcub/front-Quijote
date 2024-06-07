@@ -7,4 +7,5 @@ export class Inventario{
     "idEditorial": number;
     "precio": number;
     "existencias": number;
+    "estado": boolean;
 }
