@@ -16,15 +16,10 @@ import { SesionstorageService } from '../../shared/service/sesionstorage.service
 export class ModificarSucursalComponent {
 
   constructor(private sucursalesService: SucursalesService, private sesionstorageService: SesionstorageService, private router: Router) { }
-  obj = this.sesionstorageService.get('sucursale')
-  
-  id = this.obj.id;
-  nombre: string = "a" ;
-  direccion: string = this.obj.ubicacion; 
-
-  ngOnInit(): void {
-    console.log(this.obj.id);
-  }
+  obj: Sucursal = this.sesionstorageService.get('sucursal');
+  id: number = this.obj.id;
+  nombre: string = this.obj?.nombre_sucursal || '';
+  direccion: string = this.obj?.ubicacion || '';
   onSubmit(): void {
     this.postData();
   }

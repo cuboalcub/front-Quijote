@@ -33,11 +33,11 @@ getid( sucursal: Sucursal): void {  // Prevenir la propagación del evento
   
   }
 
-  sucursales: Sucursal[] = [
-    { id: 1, nombre_sucursal: 'Sucursal A', ubicacion: 'Calle 1, Ciudad A',estado:true },
-    { id: 2, nombre_sucursal: 'Sucursal B', ubicacion: 'Calle 2, Ciudad B',estado:true },
-    { id: 3, nombre_sucursal: 'Sucursal C', ubicacion: 'Calle 3, Ciudad C',estado:true }
-  ];
+  // sucursales: Sucursal[] = [
+  //   { id: 1, nombre_sucursal: 'Sucursal A', ubicacion: 'Calle 1, Ciudad A',estado:true },
+  //   { id: 2, nombre_sucursal: 'Sucursal B', ubicacion: 'Calle 2, Ciudad B',estado:true },
+  //   { id: 3, nombre_sucursal: 'Sucursal C', ubicacion: 'Calle 3, Ciudad C',estado:true }
+  // ];
 
   filaSeleccionada: number | null = null;
 
@@ -51,10 +51,7 @@ getid( sucursal: Sucursal): void {  // Prevenir la propagación del evento
   }
 
   eliminarSucursal() {
-    if (this.filaSeleccionada !== null) {
-      this.sucursales.splice(this.filaSeleccionada, 1);
-      this.filaSeleccionada = null; // Resetea la selección
-    }
+    // Lógica para eliminar la sucursal seleccionada
   }
 
 }

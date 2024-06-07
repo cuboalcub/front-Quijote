@@ -40,11 +40,12 @@ export class ModificarClienteComponent {
       estado: true
     }
     this.clientesService.update(this.id,cliente)
+    this.routes.navigate(['/cliente']);
   }
 
   onReset(): void {
     this.sesionstorageService.remove("idcliente");
-    this.routes.navigate(['/modificarCliente']);
+    this.routes.navigate(['/cliente']);
   }
 
 }

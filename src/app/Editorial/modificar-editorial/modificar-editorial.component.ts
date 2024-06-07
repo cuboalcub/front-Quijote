@@ -33,11 +33,10 @@ putData(){
     estado: true
   }
   this.editorialesService.update(this.id, editorial)
-  
+  this.router.navigate(['/editoriales']);
 }
 resetForm(){
-  this.sesionstorageService.remove('ideditorial');
-  this.nombre = '';
+  this.sesionstorageService.remove('editorial');
   this.router.navigate(['/editoriales']);
 }
 }

@@ -21,7 +21,7 @@ import { ModificarEditorialComponent } from './Editorial/modificar-editorial/mod
 import { ModificarSucursalComponent } from './Sucursal/modificar-sucursal/modificar-sucursal.component';
 import { CreacionVentaComponent } from './Venta/creacion-venta/creacion-venta.component';
 import { DetalleVentaComponent } from './Prestamo/detalle-venta/detalle-venta.component';
-import { DetalleCompraComponent } from './Venta/creacion-venta/detalle-compra/detalle-compra.component';
+import { DetalleCompraComponent } from './Venta/detalle-compra/detalle-compra.component';
 import { LoginComponent } from './login/login.component';
 
 

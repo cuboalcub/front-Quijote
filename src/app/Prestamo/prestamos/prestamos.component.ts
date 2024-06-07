@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { Prestamo } from '../../shared/models/prestamos';
+import { PrestamosService } from '../../shared/service/prestamos.service';
+import { SesionstorageService } from '../../shared/service/sesionstorage.service';
 @Component({
   selector: 'app-prestamos',
   standalone: true,
@@ -10,12 +13,24 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./prestamos.component.css']
 })
 export class PrestamosComponent {
-  prestamos = [
-    { idPrestamo: '1', idLibro: '1', idCliente: '1', cantidad: '2', fechaLimite: '2023-06-01' },
-    { idPrestamo: '2', idLibro: '2', idCliente: '2', cantidad: '1', fechaLimite: '2023-06-15' },
-    { idPrestamo: '3', idLibro: '3', idCliente: '3', cantidad: '3', fechaLimite: '2023-07-01' }
-  ];
+  prestamos: Prestamo[] = [];
 
+  constructor(private prestamosService: PrestamosService,
+              private sesionstorageService: SesionstorageService    
+  ) {}
+
+  ngOnInit() {
+    this.get()
+  }
+  get(): void {
+    this.prestamosService.get().subscribe((prestamos: Prestamo[]) => {
+      this.prestamos = prestamos;
+    });
+  }
+
+  getid(id : number): void {
+    this.sesionstorageService.set('detalleprestamo', id);
+  }
   filaSeleccionada: number | null = null;
 
   seleccionarFila(index: number) {

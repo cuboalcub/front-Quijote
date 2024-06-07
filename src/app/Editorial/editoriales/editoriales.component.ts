@@ -16,7 +16,7 @@ export class EditorialesComponent {
   constructor(private editorialesService: EditorialesService,
               private sesionstorageService: SesionstorageService
   ){}
-arr : Editorial[] = []
+arrEditoriales : Editorial[] = [];
  ngOnInit(): void {
    this.getEditoriales();
  }
@@ -24,7 +24,7 @@ getEditoriales(): void {
   this.editorialesService.get()
     .subscribe(
       (editoriales: Editorial[]) => {
-        this.arr = editoriales;
+        this.arrEditoriales = editoriales;
       }
     )
 }

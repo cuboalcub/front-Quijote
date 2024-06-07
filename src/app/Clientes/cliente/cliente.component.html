@@ -17,7 +17,7 @@
             <td>{{ cliente.nombre }}</td>
             <td>{{ cliente.telefono }}</td>
             <td>{{ cliente.direccion }}</td>
-            <td class="modificar" (click)="getId(cliente)"><a routerLink="/modificarCliente"><img src="assets/modificar.png" alt="Modificar"></a></td>
+            <td class="modificar" ><a routerLink="/modificarCliente"><img src="assets/modificar.png" alt="Modificar" (click)="getId(cliente)"></a></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->
         </tbody>

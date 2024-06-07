@@ -1,8 +1,8 @@
 export class Ventas{
     "id":number;
-    "fechaventa": string;
+    "fecha_venta": Date;
     "cliente":string;
-    "subtotal":number;
-   "total":number;
+    "total":number;
     "detalle":string;
+    "estado":boolean;
 }

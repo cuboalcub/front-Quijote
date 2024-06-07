@@ -14,7 +14,7 @@
         <tbody>
           <tr *ngFor="let venta of ventas; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
             <td>{{ venta.id }}</td>
-            <td>{{ venta.fechaVenta }}</td>
+            <td>{{ venta.fecha_venta }}</td>
             <td>{{ venta.cliente }}</td>
             <td>{{ venta.total }}</td>
             <td class="modificar"><a routerLink="/detalleVenta"><img src="assets/modificar.png" alt="Modificar"></a></td>

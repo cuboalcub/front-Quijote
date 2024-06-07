@@ -4,4 +4,5 @@ export class Prestamo {
     "id_cliente":number;
     "cantidad":number;
     "fecha_limite":string;
+    "estado":boolean;
 }
