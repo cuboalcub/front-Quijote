@@ -18,6 +18,7 @@ export class ModificarEmpleadoComponent {
   nombre: string = this.obj?.nombre || '';
   telefono: number = this.obj?.telefono || 0;
   direccion: string = this.obj?.direccion || '';
+  contraseña: string = this.obj?.contraseña || '';
   id: number = this.obj?.id || 0;
 
   onSubmit(): void {
@@ -35,6 +36,7 @@ export class ModificarEmpleadoComponent {
       nombre: this.nombre,
       telefono: this.telefono,
       direccion: this.direccion,
+      contraseña: this.contraseña,
       estado: true
     }
     this.empleadosService.update(this.id,empleado)

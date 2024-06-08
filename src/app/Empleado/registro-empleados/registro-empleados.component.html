@@ -10,12 +10,18 @@
         <input type="text" id="telefono" name="telefono" placeholder="Teléfono..." [(ngModel)] ="telefono">
       </div>
       <div class="form-group">
-        <h2 class="titulo-secundario">Ingrese la ID:</h2>
-        <input type="text" id="idSucursal" name="idSucursal" placeholder="ID Sucursal..." [(ngModel)] ="sucursal">
+        <h2 class="titulo-secundario">Escoja la Sucursal:</h2>
+        <select id="sucursal" name="sucursal" [(ngModel)]="sucursal">
+          <option  *ngFor="let sucursal of arrsucursales">{{sucursal.nombre_sucursal}}</option>
+        </select>
       </div>
       <div class="form-group">
         <h2 class="titulo-secundario">Ingrese la Dirección:</h2>
         <input type="text" id="direccion" name="direccion" placeholder="Dirección..." [(ngModel)] ="direccion">
+      </div>
+      <div class="form-group">
+        <h2 class="titulo-secundario">Ingrese la contraseña:</h2>
+        <input type="password" id="direccion" name="direccion" placeholder="Dirección..." [(ngModel)] ="contrasenia">
       </div>
       <div class="button-group">
         <button type="submit" class="agregar-btn" (click)="onSubmit()">Agregar</button>
