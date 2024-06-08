@@ -2,8 +2,8 @@ export const API_ROUTES = {
     baseurl: "http://localhost:8080/libreria-quijote/",
     inventarios:{
         get:"libro/obtener",
-        post:"libro/guadar",
-        update:"libro/guadar",
+        post:"libro/guardar",
+        update:"libro/guardar",
         delete:"libro/borrar"
     },
     clientes:{
