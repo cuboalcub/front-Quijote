@@ -17,15 +17,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Dato1</td>
-                <td>Dato2</td>
-                <td>Dato3</td>
-                <td>Dato4</td>
-                <td>Dato5</td>
-                <td>Dato6</td>
-                <td>Dato7</td>
-                <td>Dato8</td>
+            <tr *ngFor="let libro of inventario; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i)" [class.selected]="filaSeleccionadaInventario === i">
+                <td>{{ libro.id }}</td>
+                <td>{{ libro.nombre }}</td>
+                <td>{{ libro.fechaPublicacion }}</td>
+                <td>{{ libro.idSucursal }}</td>
+                <td>{{ libro.idGenero }}</td>
+                <td>{{ libro.idEditorial }}</td>
+                <td>{{ libro.precio }}</td>
+                <td>{{ libro.existencias }}</td>
             </tr>
             <!-- Agrega más filas según sea necesario -->
         </tbody>
@@ -55,11 +55,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <td>Dato1</td>
-                <td>Dato2</td>
-                <td>Dato3</td>
-                <td>Dato4</td>
+                <tr *ngFor="let item of carrito; let j = index" [attr.data-index]="j" (click)="seleccionarFilaCarrito(j)" [class.selected]="filaSeleccionadaCarrito === j">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.nombre }}</td>
+                    <td>{{ item.precio }}</td>
+                    <td>{{ item.cantidad }}</td>
                 </tr>
                 <!-- Aquí se insertarán las filas según sea necesario -->
             </tbody>
