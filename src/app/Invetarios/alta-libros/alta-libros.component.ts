@@ -56,7 +56,7 @@ getSucursales(): void {
   cantidad: number = 0;
   
   onSubmit() {
-    
+    this.postdata();
   }
   postdata(): void {
     const libro ={
