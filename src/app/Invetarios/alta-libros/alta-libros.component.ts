@@ -72,12 +72,12 @@ getSucursales(): void {
     this.inventarioService.post(libro).subscribe(
       {
         next: (response) => {
-          alert('Editorial guardada con éxito');
+          alert('libro guardado con éxito');
           this.onReset();
         },
         error: (error: HttpErrorResponse) => {
-          console.error('Error al guardar la editorial:', error);
-          alert('Ocurrió un error al guardar la editorial');
+          console.error('Error al guardar el libro:', error);
+          alert('Ocurrió un error al guardar el libro');
         }
       }    );
   }
