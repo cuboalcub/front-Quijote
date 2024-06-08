@@ -37,7 +37,7 @@ export const API_ROUTES = {
         delete:"/borrar"
     },
     sucursales:{
-        get:"surcusal/obtener",
+        get:"sucursal/obtener",
         post:"sucursal/guardar",
         update:"sucursal/guadar",
         delete:"sucursal/borrar"
