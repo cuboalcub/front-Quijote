@@ -26,7 +26,7 @@ constructor(private inventarioService: InvenatrioService,
 arrgeneros: Genero[] = [];
 arreditoriales: Editorial[] = [];
 arrsucursales: Sucursal[] = [];
-ngOninit(){
+ngOnInit(){
   this.getGeneros();
   this.getEditoriales();
   this.getSucursales();
@@ -47,26 +47,27 @@ getSucursales(): void {
   })
 }
 
+  sucursal: string = '';
+  genero: string = '';
+  editorial: string = '';
   nombre: string = '';
   fecha: string = '';
-  cantidad: number = 0;
   precio: number = 0;
-  genero: string = '';
-  sucursal: string = '';
-  selectedEditorial: any;
-  selectedSucursal: any;
+  cantidad: number = 0;
+  
   onSubmit() {
     
   }
   postdata(): void {
     const libro ={
+      sucursal: this.sucursal,
+      genero: this.genero,
+      editorial: this.editorial,
       nombre: this.nombre,
       fecha: this.fecha,
+      precio: this.precio,  
       cantidad: this.cantidad,
-      precio: this.precio,
-      genero: this.genero,
-      editorial: this.selectedEditorial,
-      sucursal: this.selectedSucursal
+      estado: true
     }
     this.inventarioService.post(libro).subscribe(
       {
