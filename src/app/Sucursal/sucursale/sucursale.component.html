@@ -14,7 +14,7 @@
           <tr *ngFor="let sucursal of arrsucursales; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
             <td>{{ sucursal.id }}</td>
             <td>{{ sucursal.nombre_sucursal }}</td>
-            <td>{{ sucursal.ubicacion }}</td>
+            <td>{{ sucursal.direccion }}</td>
             <td class="modificar" ><a routerLink="/modificarSucursal"><img src="assets/modificar.png" alt="Modificar" (click)="getid(sucursal)"></a></td>
           </tr>
         </tbody>
