@@ -7,7 +7,7 @@
       </div>
       <div class="form-group">
         <h2 class="titulo-secundario">Ingrese la Dirección de la Nueva Sucursal:</h2>
-        <textarea id="direccionSucursal" name="direccionSucursal" placeholder="Dirección..." [(ngModel)] ="direccion"></textarea>
+        <input type="text" id="direccionSucursal" name="direccionSucursal" placeholder="Dirección..." [(ngModel)] ="direccion">
       </div>
       <div class="button-group">
         <button type="submit" class="agregar-btn" (click)="onSubmit()">Agregar</button>

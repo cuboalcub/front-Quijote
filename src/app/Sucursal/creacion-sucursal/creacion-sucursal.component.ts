@@ -21,6 +21,8 @@ export class CreacionSucursalComponent {
     this.onReset();
   }
   postData() {
+    console.log(this.direccion, this.nombre);
+    
     const sucursal:any = {
       nombre_sucursal:this.nombre,
       direccion:this.direccion
