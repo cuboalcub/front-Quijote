@@ -32,7 +32,13 @@ direccion: string = '';
       direccion: this.direccion,
       estado: true
     }
-    this.clientesService.post(cliente);
+    this.clientesService.post(cliente).subscribe(
+      (response) => {
+        console.log(response);
+        this.onReset();
+      }
+      
+    );
   }
 
   onReset(): void {
