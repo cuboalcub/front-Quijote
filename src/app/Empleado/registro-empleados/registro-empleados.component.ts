@@ -47,11 +47,11 @@ export class RegistroEmpleadosComponent {
     console.log(this.sucursal); 
     
     const empleado: any = {
+      nombre_sucursal: this.sucursal,
       nombre: this.nombre,
       telefono: this.telefono,
       direccion: this.direccion,
-      sucursal: this.sucursal,
-      contraseña: this.contrasenia,
+      contrasena: this.contrasenia,
       estado: true
     }
     this.empleadoService.post(empleado).subscribe({
@@ -60,8 +60,8 @@ export class RegistroEmpleadosComponent {
         this.onReset();
       },
       error: (error: HttpErrorResponse) => {
-        console.error('Error al guardar la editorial:', error);
-        alert('Ocurrió un error al guardar la editorial');
+        console.error('Error al guardar el empleado:', error);
+        alert('Ocurrió un error al guardar al empleado');
       }
     });;
   }
