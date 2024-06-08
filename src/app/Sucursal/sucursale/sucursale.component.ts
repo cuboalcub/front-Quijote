@@ -16,7 +16,7 @@ export class SucursaleComponent {
 
 constructor(private sucursalesService: SucursalesService,private sesionstorageService: SesionstorageService) { }
 
-arrsucursales: Sucursal[] = [{}];
+arrsucursales: Sucursal[] = [];
 ngOnInit(): void {
   this.get();
 }
