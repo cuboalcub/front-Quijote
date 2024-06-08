@@ -25,7 +25,8 @@ export class CreacionSucursalComponent {
     
     const sucursal:any = {
       nombre_sucursal:this.nombre,
-      direccion:this.direccion
+      direccion:this.direccion,
+      estado:true
     }
     this.sucursalesService.post(sucursal).subscribe(
       (response) => {
