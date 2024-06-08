@@ -19,7 +19,7 @@ export class ModificarSucursalComponent {
   obj: Sucursal = this.sesionstorageService.get('sucursal');
   id: number = this.obj.id;
   nombre: string = this.obj?.nombre_sucursal || '';
-  direccion: string = this.obj?.ubicacion || '';
+  direccion: string = this.obj?.direccion || '';
   onSubmit(): void {
     this.postData();
   }
@@ -31,7 +31,7 @@ export class ModificarSucursalComponent {
     const sucursal: Sucursal = {
       id: this.id,
       nombre_sucursal: this.nombre,
-      ubicacion: this.direccion,
+      direccion: this.direccion,
       estado: true
     };
     this.sucursalesService.update(sucursal.id,sucursal).subscribe(() => {
