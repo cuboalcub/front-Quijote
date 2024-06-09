@@ -16,8 +16,9 @@ export class GenerosService implements  LiberiaApiService<Genero> {
     return this.http.get<Genero[]>(`${this.base}${API_ROUTES.generos.get}`);
 }
 
-update(id: number, genero:Genero): Observable<Genero> {
-    return this.http.put<Genero>(`${this.base}${API_ROUTES.generos.update}${id}`,genero); 
+update( genero:Genero): Observable<Genero> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.put<Genero>(`${this.base}${API_ROUTES.generos.update}`,genero, {headers}); 
 }
 
 post(genero:any): Observable<any> {

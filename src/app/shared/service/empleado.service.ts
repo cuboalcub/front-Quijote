@@ -16,8 +16,9 @@ export class EmpleadoService implements LiberiaApiService<Empleado> {
     return this.http.get<Empleado[]>(`${this.base}${API_ROUTES.empleados.get}`);
   }
 
-  update(id: number, empleado: Empleado): Observable<Empleado> {
-    return this.http.put<Empleado>(`${this.base}${API_ROUTES.empleados.update}/${id}`,empleado);
+  update( empleado: Empleado): Observable<Empleado> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.put<Empleado>(`${this.base}${API_ROUTES.empleados.update}`,empleado , {headers});
   }
 
   post(empleado:any): Observable <any> {

@@ -16,8 +16,9 @@ base = API_ROUTES.baseurl
     return this.http.get<Ventas[]>(`${API_ROUTES.ventas.get}`);
   }
 
-  update(id: number, ventas:Ventas): Observable<Ventas> {
-    return this.http.put<Ventas>(`${this.base}${API_ROUTES.ventas.update}/${id}`, ventas);
+  update( ventas:Ventas): Observable<Ventas> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.put<Ventas>(`${this.base}${API_ROUTES.ventas.update}`, ventas, {headers});
   }
 
   post(ventas:any): Observable<any> {

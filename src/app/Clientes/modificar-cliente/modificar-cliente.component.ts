@@ -39,7 +39,7 @@ export class ModificarClienteComponent {
       direccion: this.direccion,
       estado: true
     }
-    this.clientesService.update(this.id,cliente)
+    this.clientesService.update(cliente)
     this.routes.navigate(['/cliente']);
   }
 

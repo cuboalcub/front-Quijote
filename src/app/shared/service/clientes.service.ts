@@ -16,9 +16,9 @@ export class ClientesService implements LiberiaApiService<Clientes> {
     return this.http.get<Clientes[]>(`${this.base}${API_ROUTES.clientes.get}`);
   }
 
-  update(id: number, cliente:Clientes): Observable<Clientes> {
+  update(cliente:Clientes): Observable<Clientes> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.put<Clientes>(`${this.base}${API_ROUTES.clientes.update}${id}`,cliente);
+    return this.http.put<Clientes>(`${this.base}${API_ROUTES.clientes.update}`,cliente, {headers});
   }
 
   post(cliente: any): Observable<any> {

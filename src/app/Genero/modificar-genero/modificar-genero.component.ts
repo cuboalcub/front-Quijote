@@ -33,7 +33,13 @@ export class ModificarGeneroComponent {
       nombre: this.nombre,
       estado: true
     };
-    this.generosService.update(genero.id, genero).subscribe();
+    this.generosService.update(genero.id, genero).subscribe(
+      (response) => {
+        alert('Genero modificado con exito');
+        this.router.navigate(['/generos']);
+      }
+      
+    );
   }
 
   onReset(): void {

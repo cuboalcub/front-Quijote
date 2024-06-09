@@ -32,7 +32,7 @@ putData(){
     nombre: this.nombre,
     estado: true
   }
-  this.editorialesService.update(this.id, editorial)
+  this.editorialesService.update(editorial)
   this.router.navigate(['/editoriales']);
 }
 resetForm(){

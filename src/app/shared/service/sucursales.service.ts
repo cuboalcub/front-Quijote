@@ -16,8 +16,9 @@ base = API_ROUTES.baseurl
     return this.http.get<Sucursal[]>(`${this.base}${API_ROUTES.sucursales.get}`);
   }
 
-  update(id: number, sucursal:Sucursal): Observable<Sucursal> {
-    return this.http.put<Sucursal>(`${this.base}${API_ROUTES.sucursales.update}/${id}`, sucursal);
+  update( sucursal:Sucursal): Observable<Sucursal> {
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.put<Sucursal>(`${this.base}${API_ROUTES.sucursales.update}`, sucursal, {headers});
   }
 
   post(sucursal:any): Observable<any> {

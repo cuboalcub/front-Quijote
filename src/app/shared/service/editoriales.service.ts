@@ -18,8 +18,9 @@
       return this.http.get<Editorial[]>(`${this.base}${API_ROUTES.editoriales.get}`);
     }
 
-    update(id: number, Editorial:Editorial): Observable<Editorial> {
-      return this.http.put<Editorial>(`${this.base}${API_ROUTES.editoriales.update}${id}`,Editorial);
+    update( Editorial:Editorial): Observable<Editorial> {
+      const headers = new HttpHeaders().set('Content-Type', 'application/json');
+      return this.http.put<Editorial>(`${this.base}${API_ROUTES.editoriales.update}`,Editorial , {headers});
     }
 
     post(editorial: any): Observable<any> {    
