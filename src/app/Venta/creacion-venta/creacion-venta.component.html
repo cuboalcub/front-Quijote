@@ -2,35 +2,36 @@
     NUEVA VENTA
 </div>
 
-<div class="tabla-container">
-    <table class="tabla">
-        <thead>
-            <tr>
-                <th>ID del Libro</th>
-                <th>Nombre del Libro</th>
-                <th>Fecha de Publicación</th>
-                <th>Id de la Sucursal</th>
-                <th>Id del Género</th>
-                <th>Id de la Editorial</th>
-                <th>Precio</th>
-                <th>Existencias</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let libro of inventario; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i)" [class.selected]="filaSeleccionadaInventario === i">
-                <td>{{ libro.id }}</td>
-                <td>{{ libro.nombre }}</td>
-                <td>{{ libro.fechaPublicacion }}</td>
-                <td>{{ libro.idSucursal }}</td>
-                <td>{{ libro.idGenero }}</td>
-                <td>{{ libro.idEditorial }}</td>
-                <td>{{ libro.precio }}</td>
-                <td>{{ libro.existencias }}</td>
-            </tr>
-            <!-- Agrega más filas según sea necesario -->
-        </tbody>
-    </table>
-</div>
+<section class="inventario-section">
+    <div class="tabla-container inventario-container">
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>ID del Libro</th>
+                    <th>Nombre del Libro</th>
+                    <th>Fecha de Publicación</th>
+                    <th>Id de la Sucursal</th>
+                    <th>Id del Género</th>
+                    <th>Id de la Editorial</th>
+                    <th>Precio</th>
+                    <th>Existencias</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let libro of inventario; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i)" [class.selected]="filaSeleccionadaInventario === i">
+                    <td>{{ libro.id }}</td>
+                    <td>{{ libro.nombre }}</td>
+                    <td>{{ libro.fechaPublicacion }}</td>
+                    <td>{{ libro.idSucursal }}</td>
+                    <td>{{ libro.idGenero }}</td>
+                    <td>{{ libro.idEditorial }}</td>
+                    <td>{{ libro.precio }}</td>
+                    <td>{{ libro.existencias }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 
 <div class="texto-disponibles">
     <p>Libros disponibles:</p>
@@ -42,9 +43,9 @@
     <button class="mostrar-todo">Mostrar todo</button>
 </div>
 
-<div class="carrito-container">
+<section class="carrito-section">
     <h2 class="carrito-titulo">Carrito de Préstamo</h2>
-    <div class="tabla-container">
+    <div class="tabla-container carrito-container-scroll">
         <table class="tabla-carrito">
             <thead>
                 <tr>
@@ -61,11 +62,10 @@
                     <td>{{ item.precio }}</td>
                     <td>{{ item.cantidad }}</td>
                 </tr>
-                <!-- Aquí se insertarán las filas según sea necesario -->
             </tbody>
         </table>
     </div>
-</div>
+</section>
 
 <div class="eliminar-btn-container">
     <button class="eliminar-producto-btn">Eliminar Producto</button>
