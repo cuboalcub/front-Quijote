@@ -3,43 +3,43 @@ export const API_ROUTES = {
     inventarios:{
         get:"libro/obtener",
         post:"libro/guardar",
-        update:"libro/guardar",
+        update:"libro/actualizar",
         delete:"libro/borrar"
     },
     clientes:{
         get:"cliente/obtener",
         post:"cliente/guardar",
-        update:"cliente/guardar",
+        update:"cliente/actualizar",
         delete:"cliente/borrar"
     },
     editoriales:{
         get:"editorial/obtener",
         post:"editorial/guardar",
-        update:"editorial/guardar",
+        update:"editorial/actualizar",
         delete:"editorial/borrar"
     },
     empleados:{
         get:"empleados/obtener",
         post:"empleados/guardar",
-        update:"empleados/guardar",
+        update:"empleados/actualizar",
         delete:"empleados/borrar"
     },
     generos:{
         get:"genero/obtener",
         post:"genero/guardar",
-        update:"genero/guardar",
+        update:"genero/actualizar",
         delete:"genero/borrar"
     },
     prestamos:{
         get:"prestamo/obtener",
         post:"prestamo/guardar",
-        update:"/guardar",
+        update:"prestamo/actualizar",
         delete:"/borrar"
     },
     sucursales:{
         get:"sucursal/obtener",
         post:"sucursal/guardar",
-        update:"sucursal/guardar",
+        update:"sucursal/actualizar",
         delete:"sucursal/borrar"
     },
     ventas:{
@@ -51,13 +51,13 @@ export const API_ROUTES = {
     detalleVentas:{
         get:"detalleVenta/obtener",
         post:"detalleVenta/guardar",
-        update:"detalleVenta/guardar",
+        update:"detalleVenta/actualizar",
         delete:"detalleVenta/borrar"
     },
     detallePrestamos:{
         get:"detallePrestamo/obtener",
         post:"detallePrestamo/guardar",
-        update:"detallePrestamo/guardar",
+        update:"detallePrestamo/actualizar",
         delete:"detallePrestamo/borrar"
     }
 }
