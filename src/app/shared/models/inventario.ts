@@ -1,10 +1,10 @@
 export class Inventario{
     "id": number;
+    "sucursal": string;
+    "genero": string;
+    "editorial": string;
     "nombre_libro": string;
     "Fecha_public": string;
-    "id_sucur": number;
-    "id_genero": number;
-    "idEditorial": number;
     "precio": number;
     "existencias": number;
     "estado": boolean;

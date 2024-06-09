@@ -48,7 +48,6 @@ getid(empleado: Empleado){
       this.service.delete(this.id).subscribe(
         (response) => {
           alert('Empleado eliminado con exito');
-          this.filaSeleccionada = null;
           this.gettable();
         },
         (error) => {
