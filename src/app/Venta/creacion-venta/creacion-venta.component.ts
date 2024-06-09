@@ -110,9 +110,12 @@ export class CreacionVentaComponent {
   confirmarVenta() {
     // Aquí iría la lógica para confirmar la venta
     console.log('Venta confirmada:', this.carrito);
-    this.ventasService.post(this.carrito).subscribe((response) => {
-      
-    })
+    this.carrito.forEach(element => {
+      this.ventasService.post(element).subscribe((response) => {
+        alert('Venta realizada con exito');
+      },
+    )
+    });
     this.carrito = [];
     this.total = 0;
   }

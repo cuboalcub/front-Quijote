@@ -17,6 +17,7 @@ export class EditorialesComponent {
               private sesionstorageService: SesionstorageService
   ){}
 arrEditoriales : Editorial[] = [];
+id : number = 0;
  ngOnInit(): void {
    this.getEditoriales();
  }
@@ -35,19 +36,19 @@ getId(obj: Editorial): void {
 
   filaSeleccionada: number | null = null;
 
-  seleccionarFila(index: number) {
+  seleccionarFila(index: number, id: number) {
     console.log('Fila seleccionada:', index);
     if (this.filaSeleccionada === index) {
       this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo
     } else {
       this.filaSeleccionada = index;
+      this.id = id;
     }
   }
 
   eliminarFila() {
     if (this.filaSeleccionada !== null) {
-      this.filaSeleccionada++;
-      this.editorialesService.delete(this.filaSeleccionada).subscribe(
+      this.editorialesService.delete(this.id).subscribe(
         (response) => {
           alert('Editorial eliminada con exito');
           this.filaSeleccionada = null;
