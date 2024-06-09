@@ -73,6 +73,17 @@ export class CreacionVentaComponent {
           precio: libroSeleccionado.precio,
           cantidad: this.cantidad
         });
+        const libro = {
+          id_libro: libroSeleccionado.id,
+          id_prestamo: 1,
+          cantidad:this.cantidad,
+          fecha: libroSeleccionado.Fecha_public,
+          estado: true
+        }
+        this.detalleVentaService.post(libro).subscribe((response) => {
+          alert('Libro agregado al carrito de compras');
+        });
+
       }
 
       this.actualizarTotal();
@@ -81,15 +92,27 @@ export class CreacionVentaComponent {
 
   eliminarDelCarrito() {
     if (this.filaSeleccionadaCarrito !== null) {
+      console.log('Fila carrito eliminada:', this.filaSeleccionadaCarrito);
       this.carrito.splice(this.filaSeleccionadaCarrito, 1);
+      this.detalleVentaService.delete(this.filaSeleccionadaCarrito+1).subscribe((response) => {
+        alert('Libro eliminado del carrito de compras');
+      },
+      (error) => {
+        console.error(error);
+        alert('Error al eliminar el libro del carrito de compras');
+      });
       this.filaSeleccionadaCarrito = null;
       this.actualizarTotal();
     }
+
   }
 
   confirmarVenta() {
     // Aquí iría la lógica para confirmar la venta
     console.log('Venta confirmada:', this.carrito);
+    this.ventasService.post(this.carrito).subscribe((response) => {
+      
+    })
     this.carrito = [];
     this.total = 0;
   }
