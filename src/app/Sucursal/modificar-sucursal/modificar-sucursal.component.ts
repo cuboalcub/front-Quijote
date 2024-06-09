@@ -34,7 +34,7 @@ export class ModificarSucursalComponent {
       direccion: this.direccion,
       estado: true
     };
-    this.sucursalesService.update(sucursal.id,sucursal).subscribe(() => {
+    this.sucursalesService.update(sucursal).subscribe(() => {
       this.router.navigate(['/sucursale']);
     });
   }

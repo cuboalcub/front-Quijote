@@ -39,7 +39,7 @@ export class ModificarEmpleadoComponent {
       contraseña: this.contraseña,
       estado: true
     }
-    this.empleadosService.update(this.id,empleado)
+    this.empleadosService.update(empleado)
   }
 
   cancelar(): void {
