@@ -1,6 +1,6 @@
 export class Inventario{
     "id": number;
-    "nombre_libro": String;
+    "nombre_libro": string;
     "Fecha_public": string;
     "id_sucur": number;
     "id_genero": number;

@@ -15,6 +15,7 @@ export class CreacionPrestamosComponent {
     { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
     { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
     { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+<<<<<<< HEAD
     { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
     { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
     { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
@@ -24,6 +25,19 @@ export class CreacionPrestamosComponent {
     { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
     { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
     { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' }
+=======
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+>>>>>>> 0b30f6d861e514c3fd2159f74b2cc6019b4658ea
   ];
 
   carrito = [
@@ -47,8 +61,9 @@ export class CreacionPrestamosComponent {
   filaSeleccionadaCarrito: number | null = null;
   subtotal: number = 0;
 
-  seleccionarFilaInventario(index: number) {
-    console.log('Fila inventario seleccionada:', index);
+  seleccionarFilaInventario(index: number, objeto: any) {
+    console.log(objeto);
+    console.log('Fila inventario seleccionada:', index+1);
     if (this.filaSeleccionadaInventario === index) {
       this.filaSeleccionadaInventario = null; // Deselecciona la fila si se hace clic de nuevo
     } else {
@@ -56,7 +71,7 @@ export class CreacionPrestamosComponent {
     }
   }
 
-  seleccionarFilaCarrito(index: number) {
+  seleccionarFilaCarrito(index: number, ) {
     console.log('Fila carrito seleccionada:', index);
     if (this.filaSeleccionadaCarrito === index) {
       this.filaSeleccionadaCarrito = null; // Deselecciona la fila si se hace clic de nuevo
