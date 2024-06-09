@@ -47,6 +47,17 @@ export const API_ROUTES = {
         post:"venta/guardar",
         update:"venta/guadar",
         delete:"venta/borrar"
+    },
+    detalleVentas:{
+        get:"detalleVenta/obtener",
+        post:"detalleVenta/guardar",
+        update:"detalleVenta/guadar",
+        delete:"detalleVenta/borrar"
+    },
+    detallePrestamos:{
+        get:"detallePrestamo/obtener",
+        post:"detallePrestamo/guardar",
+        update:"detallePrestamo/guadar",
+        delete:"detallePrestamo/borrar"
     }
-    
 }

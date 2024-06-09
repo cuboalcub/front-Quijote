@@ -1,3 +1,7 @@
+
+.selected {
+    background-color: rgb(10, 233, 166); /* Cambia este valor para modificar el color */
+}
 .titulo {
     position: absolute;
     width: 512px;
@@ -173,7 +177,7 @@ footer {
     border-collapse: collapse; /* Combina los bordes de la tabla */
     text-align: center; /* Centra el texto en las celdas */
     position: relative; /* Posición relativa para posicionar con bottom y right */
-    bottom: -450px; /* Mueve la tabla hacia abajo */
+    bottom: -380px; /* Mueve la tabla hacia abajo */
     right: -470px; /* Mueve la tabla hacia la derecha */
 }
 
@@ -305,7 +309,7 @@ footer {
 }
 
 /* Estilos para el input de tipo date */
-.subtotal-input {
+.subtotal {
     position: absolute;
     width: 200px; /* Ajusta el ancho según sea necesario */
     height: 40px; /* Ajusta la altura según sea necesario */
@@ -313,6 +317,8 @@ footer {
     top: 775px; /* Ajusta la posición vertical según sea necesario */
     font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
     padding: 5px; /* Ajusta el relleno según sea necesario */
+    border-radius: 5px; /* Ajusta el redondeo del borde para que se vea redondeado */
+    font-size: 20px;
 }
 
 

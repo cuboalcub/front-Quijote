@@ -17,15 +17,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Dato1</td>
-                <td>Dato2</td>
-                <td>Dato3</td>
-                <td>Dato4</td>
-                <td>Dato5</td>
-                <td>Dato6</td>
-                <td>Dato7</td>
-                <td>Dato8</td>
+            <tr *ngFor="let libro of inventario; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i, libro)" [class.selected]="filaSeleccionadaInventario === i">
+                <td>{{ libro.id }}</td>
+                <td>{{ libro.nombre_libro}}</td>
+                <td>{{ libro.Fecha_public }}</td>
+                <td>{{ libro.id_sucur }}</td>
+                <td>{{ libro.id_genero }}</td>
+                <td>{{ libro.idEditorial }}</td>
+                <td>{{ libro.precio }}</td>
+                <td>{{ libro.existencias }}</td>
             </tr>
             <!-- Agrega más filas según sea necesario -->
         </tbody>
@@ -52,14 +52,16 @@
                     <th>Nombre Libro</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
+                    <th>Subtotal</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <td>Dato1</td>
-                <td>Dato2</td>
-                <td>Dato3</td>
-                <td>Dato4</td>
+                <tr *ngFor="let item of carrito; let j = index" [attr.data-index]="j" (click)="seleccionarFilaCarrito(j)" [class.selected]="filaSeleccionadaCarrito === j">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.nombre }}</td>
+                    <td>{{ item.precio }}</td>
+                    <td>{{ item.cantidad }}</td>
+                    <td>{{ item.precio * item.cantidad }}</td>
                 </tr>
                 <!-- Aquí se insertarán las filas según sea necesario -->
             </tbody>
@@ -68,25 +70,25 @@
 </div>
 
 <div class="eliminar-btn-container">
-    <button class="eliminar-producto-btn">Eliminar Producto</button>
+    <button class="eliminar-producto-btn" (click)="eliminarDelCarrito()">Eliminar Producto</button>
 </div>
 
 <div class="subtotal-container">
-    <h2 class="subtotal-titulo">Subtotal:</h2>
-    <input type="int" id="subtotal" class="subtotal-input">
+    <h2 class="subtotal-titulo">Total:</h2>
+    <p class="subtotal">${{ total }}</p>
 </div>
 
 <!-- Botones de Confirmar y Cancelar Préstamo -->
 <div class="buttons">
-    <button class="confirmar-venta-btn">Confirmar Venta</button>
-    <button class="cancelar-venta-btn">Cancelar Venta</button>
+    <button class="confirmar-venta-btn" (click)="confirmarVenta()">Confirmar Venta</button>
+    <button class="cancelar-venta-btn" (click)="cancelarVenta()">Cancelar Venta</button>
 </div>
 
 <div class="cliente-container">
     <h3 class="cantidad-titulo">Cantidad de libros a agregar:</h3>
     <div class="cantidad-wrapper">
-        <input type="number" id="cantidadProductos" min="1" value="1">
-        <button class="agregar-btn">Agregar</button>
+        <input type="number" id="cantidadProductos" min="1" value="1" [(ngModel)]="cantidad">
+        <button class="agregar-btn" (click)="agregarDetalleVenta()">Agregar</button>
     </div>
     <h2 class="cliente-titulo">Ingrese el Nombre del Cliente:</h2>
     <div class="input-wrapper">
@@ -94,4 +96,3 @@
         <select id="listaClientes"></select>
     </div>
 </div>
-
