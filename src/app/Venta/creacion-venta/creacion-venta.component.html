@@ -2,7 +2,6 @@
     NUEVA VENTA
 </div>
 
-<<<<<<< HEAD
 <section class="inventario-section">
     <div class="tabla-container inventario-container">
         <table class="tabla">
@@ -19,12 +18,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let libro of inventario; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i)" [class.selected]="filaSeleccionadaInventario === i">
+                <tr *ngFor="let libro of inventario; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i, libro)" [class.selected]="filaSeleccionadaInventario === i">
                     <td>{{ libro.id }}</td>
-                    <td>{{ libro.nombre }}</td>
-                    <td>{{ libro.fechaPublicacion }}</td>
-                    <td>{{ libro.idSucursal }}</td>
-                    <td>{{ libro.idGenero }}</td>
+                    <td>{{ libro.nombre_libro }}</td>
+                    <td>{{ libro.Fecha_public }}</td>
+                    <td>{{ libro.id_sucur }}</td>
+                    <td>{{ libro.id_genero }}</td>
                     <td>{{ libro.idEditorial }}</td>
                     <td>{{ libro.precio }}</td>
                     <td>{{ libro.existencias }}</td>
@@ -33,37 +32,7 @@
         </table>
     </div>
 </section>
-=======
-<div class="tabla-container">
-    <table class="tabla">
-        <thead>
-            <tr>
-                <th>ID del Libro</th>
-                <th>Nombre del Libro</th>
-                <th>Fecha de Publicación</th>
-                <th>Id de la Sucursal</th>
-                <th>Id del Género</th>
-                <th>Id de la Editorial</th>
-                <th>Precio</th>
-                <th>Existencias</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let libro of inventario; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i, libro)" [class.selected]="filaSeleccionadaInventario === i">
-                <td>{{ libro.id }}</td>
-                <td>{{ libro.nombre_libro}}</td>
-                <td>{{ libro.Fecha_public }}</td>
-                <td>{{ libro.id_sucur }}</td>
-                <td>{{ libro.id_genero }}</td>
-                <td>{{ libro.idEditorial }}</td>
-                <td>{{ libro.precio }}</td>
-                <td>{{ libro.existencias }}</td>
-            </tr>
-            <!-- Agrega más filas según sea necesario -->
-        </tbody>
-    </table>
-</div>
->>>>>>> 0b30f6d861e514c3fd2159f74b2cc6019b4658ea
+
 
 <div class="texto-disponibles">
     <p>Libros disponibles:</p>

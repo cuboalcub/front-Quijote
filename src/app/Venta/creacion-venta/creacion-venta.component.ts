@@ -16,44 +16,44 @@ import { VentasService } from '../../shared/service/ventas.service';
 })
 export class CreacionVentaComponent {
   
-<<<<<<< HEAD
-  inventario = [
-    { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
-    { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
-    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
-    { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
-    { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
-    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
-    { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
-    { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
-    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
-    { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
-    { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
-    { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' }
-  ];
 
-  carrito = [
-    { id: '1', nombre: 'Libro A', precio: '100', cantidad: '1' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-    { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' }
-  ];
+  // inventario = [
+  //   { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
+  //   { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
+  //   { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+  //   { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
+  //   { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
+  //   { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+  //   { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
+  //   { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
+  //   { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
+  //   { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
+  //   { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
+  //   { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' }
+  // ];
 
-=======
+  // carrito = [
+  //   { id: '1', nombre: 'Libro A', precio: '100', cantidad: '1' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
+  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' }
+  // ];
+
+
   constructor(private inventarioService: InvenatrioService, private detalleVentaService: DetalleventaService, private ventasService: VentasService) { }
   inventario: Inventario[] = [];
   carrito: Carrito[] = [];
->>>>>>> 0b30f6d861e514c3fd2159f74b2cc6019b4658ea
+
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   total: number = 0;
