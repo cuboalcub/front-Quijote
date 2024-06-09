@@ -16,7 +16,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class SucursaleComponent {
 
 constructor(private sucursalesService: SucursalesService,private sesionstorageService: SesionstorageService) { }
-
+id : number = 0;
 arrsucursales: Sucursal[] = [];
 ngOnInit(): void {
   this.get();
@@ -42,22 +42,21 @@ getid( sucursal: Sucursal): void {  // Prevenir la propagación del evento
 
   filaSeleccionada: number | null = null;
 
-  seleccionarFila(index: number) {
+  seleccionarFila(index: number , id: number) {
     console.log('Fila seleccionada:', index);
     if (this.filaSeleccionada === index) {
       this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo
     } else {
       this.filaSeleccionada = index;
+      this.id = id;
     }
   }
 
   eliminarSucursal() {
     if (this.filaSeleccionada !== null) {
-      this.filaSeleccionada += 1;
-      this.sucursalesService.delete(this.filaSeleccionada).subscribe(
+      this.sucursalesService.delete(this.id).subscribe(
         Response => {
           alert('Sucursal eliminada con exito');
-          this.filaSeleccionada = null;
           this.get();
         },
          (error: HttpErrorResponse) => {

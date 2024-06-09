@@ -18,6 +18,7 @@ constructor(private clientesService: ClientesService,
 ) {}
 arrclientes: Clientes[] = [{id: 1, nombre: 'a', telefono: 'a', direccion: 'a', estado: true}];
 key = 'cliente';
+id: number = 0;
 ngOnInit(): void {
   this.getClientes();
 }      
@@ -34,19 +35,20 @@ getId(obj: Clientes): void {
 
   filaSeleccionada: number | null = null;
 
-seleccionarFila(index: number) {
+seleccionarFila(index: number, id: number) {
     console.log('Fila seleccionada:', index);
     if (this.filaSeleccionada === index) {
       this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo
+      this.id = 0;
     } else {
       this.filaSeleccionada = index;
+      this.id = id; 
     }
   }
 
   eliminarCliente() {
     if(this.filaSeleccionada !== null) {
-      this.filaSeleccionada++;
-      this.clientesService.delete(this.filaSeleccionada).subscribe(
+      this.clientesService.delete(this.id).subscribe(
         (response) => {
         alert('Cliente eliminado con exito');
         this.filaSeleccionada = null;

@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let libro of arrInventarios; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+          <tr *ngFor="let libro of arrInventarios; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i,libro.id)" [class.selected]="filaSeleccionada === i">
             <td>{{ libro.id }}</td>
             <td>{{ libro.nombre_libro }}</td>
             <td>{{ libro.Fecha_public }}</td>

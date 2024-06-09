@@ -11,7 +11,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let sucursal of arrsucursales; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+          <tr *ngFor="let sucursal of arrsucursales; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i ,sucursal.id)" [class.selected]="filaSeleccionada === i">
             <td>{{ sucursal.id }}</td>
             <td>{{ sucursal.nombre_sucursal }}</td>
             <td>{{ sucursal.direccion }}</td>

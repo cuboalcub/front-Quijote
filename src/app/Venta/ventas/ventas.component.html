@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let venta of ventas; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+          <tr *ngFor="let venta of ventas; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i, venta.id)" [class.selected]="filaSeleccionada === i">
             <td>{{ venta.id }}</td>
             <td>{{ venta.fecha_venta }}</td>
             <td>{{ venta.cliente }}</td>

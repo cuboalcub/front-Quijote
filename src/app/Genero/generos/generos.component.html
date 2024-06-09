@@ -10,7 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let genero of generos; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i)" [class.selected]="filaSeleccionada === i">
+          <tr *ngFor="let genero of generos; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i,genero.id)" [class.selected]="filaSeleccionada === i">
             <td>{{ genero.id }}</td>
             <td>{{ genero.nombre }}</td>
             <td class="modificar"><a routerLink="/modificarGenero"><img src="assets/modificar.png" alt="Modificar" (click)="getid(genero)"></a></td>

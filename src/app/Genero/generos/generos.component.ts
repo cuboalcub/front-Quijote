@@ -16,6 +16,7 @@ import { SesionstorageService } from '../../shared/service/sesionstorage.service
 export class GenerosComponent {
 constructor(private generosService: GenerosService, private sesionstorageService: SesionstorageService ) {}
 generos: Genero[] = [];
+id: number = 0;
 ngOnInit(): void {
   this.getGeneros();
 }
@@ -33,19 +34,19 @@ getid(genero: Genero) {
 
   filaSeleccionada: number | null = null;
 
-  seleccionarFila(index: number) {
+  seleccionarFila(index: number, id: number) {
     console.log('Fila seleccionada:', index);
     if (this.filaSeleccionada === index) {
       this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo
     } else {
       this.filaSeleccionada = index;
+      this.id   = id;
     }
   }
 
   eliminarFila() {
   if (this.filaSeleccionada !== null) {
-    this.filaSeleccionada++;
-    this.generosService.delete(this.filaSeleccionada).subscribe(
+    this.generosService.delete(this.id).subscribe(
       Response => {
       alert('Genero eliminado con exito');
       this.filaSeleccionada = null;

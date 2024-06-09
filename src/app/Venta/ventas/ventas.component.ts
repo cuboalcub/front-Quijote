@@ -13,6 +13,7 @@ import { Ventas } from '../../shared/models/ventas';
 })
 export class VentasComponent {
   ventas: Ventas[] = [];
+  id: number = 0;
   constructor(private ventasService: VentasService) {}
   ngOnInit(): void {
   this.get()
@@ -25,19 +26,29 @@ export class VentasComponent {
   }
   filaSeleccionada: number | null = null;
 
-  seleccionarFila(index: number) {
+  seleccionarFila(index: number, id: number) {
     console.log('Fila seleccionada:', index);
     if (this.filaSeleccionada === index) {
       this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo
     } else {
       this.filaSeleccionada = index;
+      this.id   = id;
     }
   }
 
   eliminarVenta() {
     if (this.filaSeleccionada !== null) {
-      this.ventas.splice(this.filaSeleccionada, 1);
-      this.filaSeleccionada = null; // Resetea la selección
+      this.ventasService.delete(this.id).subscribe(
+        Response => {
+        alert('Venta eliminada con exito');
+        this.get();
+      }, error => {
+        alert('Error al eliminar la venta');
+        console.log(error);
+      });
+    }
+    else {
+      alert('Fila no seleccionada');
     }
   }
 

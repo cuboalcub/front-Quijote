@@ -39,7 +39,8 @@ getId(obj: Editorial): void {
   seleccionarFila(index: number, id: number) {
     console.log('Fila seleccionada:', index);
     if (this.filaSeleccionada === index) {
-      this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo
+      this.filaSeleccionada = null; 
+      id = 0;// Deselecciona la fila si se hace clic de nuevo
     } else {
       this.filaSeleccionada = index;
       this.id = id;

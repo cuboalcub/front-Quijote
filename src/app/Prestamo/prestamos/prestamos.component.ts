@@ -15,7 +15,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class PrestamosComponent {
   prestamos: Prestamo[] = [];
-
+  id: number = 0;
   constructor(private prestamosService: PrestamosService,
               private sesionstorageService: SesionstorageService    
   ) {}
@@ -34,19 +34,19 @@ export class PrestamosComponent {
   }
   filaSeleccionada: number | null = null;
 
-  seleccionarFila(index: number) {
+  seleccionarFila(index: number , id: number) {
     console.log('Fila seleccionada:', index);
     if (this.filaSeleccionada === index) {
       this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo
     } else {
       this.filaSeleccionada = index;
+      this.id = id;
     }
   }
 
   borrarPrestamo() {
   if (this.filaSeleccionada !== null) {
-    this.filaSeleccionada += 1;
-    this.prestamosService.delete(this.filaSeleccionada).subscribe(
+    this.prestamosService.delete(this.id).subscribe(
       Response => {
         alert('Prestamo eliminado con exito');
         this.filaSeleccionada = null;

@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
 })
 export class InventarioComponent { // Implementar OnInit
   arrInventarios: Inventario[] = [];
-
+  id: number = 0;
   constructor(private inventarioService: InvenatrioService) {} // Nombre corregido
 
   ngOnInit(): void { 
@@ -29,19 +29,19 @@ export class InventarioComponent { // Implementar OnInit
   }
   filaSeleccionada: number | null = null;
 
-  seleccionarFila(index: number) {
+  seleccionarFila(index: number, id: number) {
     console.log('Fila seleccionada:', index);
     if (this.filaSeleccionada === index) {
       this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo
     } else {
       this.filaSeleccionada = index;
+      this.id = id
     }
   }
 
   eliminarFila() {
     if (this.filaSeleccionada !== null) {
-      this.filaSeleccionada += 1;
-      this.inventarioService.delete(this.filaSeleccionada).subscribe(
+      this.inventarioService.delete(this.id).subscribe(
         Response => {
           alert('Inventario eliminado con exito');
           this.filaSeleccionada = null;

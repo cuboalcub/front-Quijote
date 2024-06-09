@@ -14,6 +14,7 @@ import { SesionstorageService } from '../../shared/service/sesionstorage.service
 })
 export class EmpleadosComponent {
 arr : Empleado[] = [];
+id: number = 0;
 constructor(private service: EmpleadoService,
             private sesionstorageService: SesionstorageService
 ) {}
@@ -32,19 +33,19 @@ getid(empleado: Empleado){
 }
   filaSeleccionada: number | null = null;
 
-  seleccionarFila(index: number) {
+  seleccionarFila(index: number, id: number) {
     console.log('Fila seleccionada:', index);
     if (this.filaSeleccionada === index) {
       this.filaSeleccionada = null; // Deselecciona la fila si se hace clic de nuevo
     } else {
       this.filaSeleccionada = index;
+      this.id = id;
     }
   }
 
   eliminarFila() {
     if (this.filaSeleccionada !== null) {
-      this.filaSeleccionada++;
-      this.service.delete(this.filaSeleccionada).subscribe(
+      this.service.delete(this.id).subscribe(
         (response) => {
           alert('Empleado eliminado con exito');
           this.filaSeleccionada = null;
