@@ -27,7 +27,9 @@ export class CreacionVentaComponent {
   subtotal: number = 0;
 
 
-  seleccionarFilaInventario(index: number) {
+  seleccionarFilaInventario(index: number, objeto: any) {
+    console.log(objeto);
+    
     console.log('Fila inventario seleccionada:', index);
     if (this.filaSeleccionadaInventario === index) {
       this.filaSeleccionadaInventario = null; // Deselecciona la fila si se hace clic de nuevo
