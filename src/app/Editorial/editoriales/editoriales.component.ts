@@ -45,6 +45,21 @@ getId(obj: Editorial): void {
   }
 
   eliminarFila() {
-    
+    if (this.filaSeleccionada !== null) {
+      this.filaSeleccionada++;
+      this.editorialesService.delete(this.filaSeleccionada).subscribe(
+        (response) => {
+          alert('Editorial eliminada con exito');
+          this.filaSeleccionada = null;
+          this.getEditoriales();
+        },
+        (error) => {
+          alert('Error al eliminar la editorial');
+          console.log(error);
+        }
+      );
+  }else{
+    alert('Fila no seleccionada');
   }
+}
 }

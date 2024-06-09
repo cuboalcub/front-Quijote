@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Sucursal } from '../../shared/models/sucursal';
 import { SucursalesService } from '../../shared/service/sucursales.service';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-creacion-sucursal',
   standalone: true,
@@ -32,7 +33,12 @@ export class CreacionSucursalComponent {
       (response) => {
         alert('Sucursal guardada con exito');
         this.onReset();
+      },
+      (error: HttpErrorResponse) => {
+        console.error('Error al guardar la sucursal:', error);
+        alert('Ocurrio un error al guardar la sucursal');
       }
+    
     );
   }
 

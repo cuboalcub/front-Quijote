@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Clientes } from '../../shared/models/cliente';
 import { ClientesService } from '../../shared/service/clientes.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-registro-clientes',
@@ -36,6 +37,10 @@ direccion: string = '';
       (response) => {
         console.log(response);
         this.onReset();
+      },                      
+      (error: HttpErrorResponse) => {
+        console.error('Error al guardar el cliente:', error);
+        alert('Ocurrio un error al guardar el cliente');
       }
       
     );

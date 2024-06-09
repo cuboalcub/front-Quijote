@@ -26,6 +26,6 @@ post(genero:any): Observable<any> {
 }
 
 delete(id: number): Observable<Genero> {
-    return this.http.delete<Genero>(`${this.base}${API_ROUTES.generos.delete}${id}`);
+    return this.http.delete<Genero>(`${this.base}${API_ROUTES.generos.delete}/${id}`);
 }
 }

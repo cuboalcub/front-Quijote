@@ -27,6 +27,6 @@
       return this.http.post<Editorial>(`${this.base}${API_ROUTES.editoriales.post}`, editorial, {headers});
     }
     delete(id: number): Observable<Editorial> {
-      return this.http.delete<Editorial>(`${this.base}${API_ROUTES.editoriales.delete}${id}`);
+      return this.http.delete<Editorial>(`${this.base}${API_ROUTES.editoriales.delete}/${id}`);
     }
   }

@@ -39,7 +39,22 @@ export class InventarioComponent { // Implementar OnInit
   }
 
   eliminarFila() {
-   
+    if (this.filaSeleccionada !== null) {
+      this.filaSeleccionada += 1;
+      this.inventarioService.delete(this.filaSeleccionada).subscribe(
+        Response => {
+          alert('Inventario eliminado con exito');
+          this.filaSeleccionada = null;
+          this.get();
+        },
+        error => {
+          alert('Error al eliminar el inventario');
+          console.log(error);
+        }
+      );
+    } else {
+      alert('Fila no seleccionada');
+    }
   }
 
   

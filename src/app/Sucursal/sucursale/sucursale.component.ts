@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { SesionstorageService } from '../../shared/service/sesionstorage.service';
 import { SucursalesService } from '../../shared/service/sucursales.service'; 
 import { Sucursal } from '../../shared/models/sucursal';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-sucursale',
   standalone: true,
@@ -51,7 +52,21 @@ getid( sucursal: Sucursal): void {  // Prevenir la propagación del evento
   }
 
   eliminarSucursal() {
-    // Lógica para eliminar la sucursal seleccionada
+    if (this.filaSeleccionada !== null) {
+      this.filaSeleccionada += 1;
+      this.sucursalesService.delete(this.filaSeleccionada).subscribe(
+        Response => {
+          alert('Sucursal eliminada con exito');
+          this.filaSeleccionada = null;
+          this.get();
+        },
+         (error: HttpErrorResponse) => {
+        alert(error.message);
+        console.log(error);
+      });
+    }else{
+      alert('Fila no seleccionada');
+    }
   }
 
 }

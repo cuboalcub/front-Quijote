@@ -42,7 +42,21 @@ getid(empleado: Empleado){
   }
 
   eliminarFila() {
-
+    if (this.filaSeleccionada !== null) {
+      this.filaSeleccionada++;
+      this.service.delete(this.filaSeleccionada).subscribe(
+        (response) => {
+          alert('Empleado eliminado con exito');
+          this.filaSeleccionada = null;
+          this.gettable();
+        },
+        (error) => {
+          alert('Error al eliminar el empleado');
+          console.log(error);
+        }
+      );
+  }else{
+    alert('Fila no seleccionada');
+  }
   }
 }
-

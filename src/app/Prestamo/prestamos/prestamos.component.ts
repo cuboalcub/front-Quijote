@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { Prestamo } from '../../shared/models/prestamos';
 import { PrestamosService } from '../../shared/service/prestamos.service';
 import { SesionstorageService } from '../../shared/service/sesionstorage.service';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-prestamos',
   standalone: true,
@@ -43,7 +44,20 @@ export class PrestamosComponent {
   }
 
   borrarPrestamo() {
-   
+  if (this.filaSeleccionada !== null) {
+    this.filaSeleccionada += 1;
+    this.prestamosService.delete(this.filaSeleccionada).subscribe(
+      Response => {
+        alert('Prestamo eliminado con exito');
+        this.filaSeleccionada = null;
+        this.get();
+      },
+       (error: HttpErrorResponse) => {
+      alert(error.message);
+      console.log(error);
+    });
+  }else{
+    alert('Fila no seleccionada');
   }
 }
-
+}

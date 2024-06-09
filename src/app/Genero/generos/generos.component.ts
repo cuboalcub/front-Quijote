@@ -43,6 +43,20 @@ getid(genero: Genero) {
   }
 
   eliminarFila() {
-   
+  if (this.filaSeleccionada !== null) {
+    this.filaSeleccionada++;
+    this.generosService.delete(this.filaSeleccionada).subscribe(
+      Response => {
+      alert('Genero eliminado con exito');
+      this.filaSeleccionada = null;
+      this.getGeneros();
+    }, error => {
+      alert('Error al eliminar el genero');
+      console.log(error);
+    });
   }
+  else {
+    alert('Fila no seleccionada');
+  }
+}
 }

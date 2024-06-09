@@ -27,7 +27,7 @@ export class ClientesService implements LiberiaApiService<Clientes> {
   }
 
   delete(id: number): Observable<Clientes> {
-    return this.http.delete<Clientes>(`${this.base}${API_ROUTES.clientes.delete}${id}`);
+    return this.http.delete<Clientes>(`${this.base}${API_ROUTES.clientes.delete}/${id}`);
   }
 
   
