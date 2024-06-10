@@ -17,13 +17,13 @@
         <tbody>
           <tr *ngFor="let libro of arrInventarios; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i,libro.id)" [class.selected]="filaSeleccionada === i">
             <td>{{ libro.id }}</td>
-            <td>{{ libro.nombre_libro }}</td>
-            <td>{{ libro.Fecha_public }}</td>
+            <td>{{ libro.nombre }}</td>
+            <td>{{ libro.fecha }}</td>
             <td>{{ libro.sucursal }}</td>
             <td>{{ libro.genero }}</td>
             <td>{{ libro.editorial }}</td>
             <td>{{ libro.precio }}</td>
-            <td>{{ libro.existencias }}</td>
+            <td>{{ libro.cantidad }}</td>
           </tr>
           <!-- Agrega más filas según sea necesario -->
         </tbody>

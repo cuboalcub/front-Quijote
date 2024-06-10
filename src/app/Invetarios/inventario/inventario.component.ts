@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./inventario.component.css'] // Corrección aquí: 'styleUrls' en lugar de 'styleUrl'
 })
 export class InventarioComponent { // Implementar OnInit
-  arrInventarios: Inventario[] = [];
+  arrInventarios: any[] = [];
   id: number = 0;
   constructor(private inventarioService: InvenatrioService) {} // Nombre corregido
 
