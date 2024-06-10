@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Sucursal } from '../../shared/models/sucursal';
 import { SucursalesService } from '../../shared/service/sucursales.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-creacion-sucursal',
   standalone: true,
@@ -14,7 +15,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class CreacionSucursalComponent {
   nombre = '';
   direccion = '';
-  constructor(private sucursalesService: SucursalesService) { }
+  constructor(private sucursalesService: SucursalesService, private router: Router) { }
   onSubmit() {
     this.postData();
   }
@@ -33,6 +34,7 @@ export class CreacionSucursalComponent {
       (response) => {
         alert('Sucursal guardada con exito');
         this.onReset();
+
       },
       (error: HttpErrorResponse) => {
         console.error('Error al guardar la sucursal:', error);
@@ -45,6 +47,7 @@ export class CreacionSucursalComponent {
   onReset() {
     this.direccion = '';
     this.nombre = '';
+    this.router.navigate(['/sucursales']);
   }
 
 }

@@ -35,7 +35,7 @@ export class ModificarSucursalComponent {
       estado: true
     };
     this.sucursalesService.update(sucursal).subscribe(() => {
-      this.router.navigate(['/sucursale']);
+      this.router.navigate(['/sucursales']);
     });
   }
 

@@ -39,7 +39,16 @@ export class ModificarEmpleadoComponent {
       contraseña: this.contraseña,
       estado: true
     }
-    this.empleadosService.update(empleado)
+    this.empleadosService.update(empleado).subscribe(
+      (response) => {
+        alert('Empleado modificado con exito');
+        this.routes.navigate(['/empleados']);
+      },
+      (error) => {
+        alert('Error al modificar el empleado');
+        console.log(error);
+      }
+    )
   }
 
   cancelar(): void {

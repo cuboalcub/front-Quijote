@@ -39,8 +39,16 @@ export class ModificarClienteComponent {
       direccion: this.direccion,
       estado: true
     }
-    this.clientesService.update(cliente)
-    this.routes.navigate(['/cliente']);
+    this.clientesService.update(cliente).subscribe(
+      (response) => {
+        alert('Cliente modificado con exito');
+        this.routes.navigate(['/cliente']);
+      },
+      (error) => {
+        alert('Error al modificar el cliente');
+        console.log(error);
+      }
+    )
   }
 
   onReset(): void {

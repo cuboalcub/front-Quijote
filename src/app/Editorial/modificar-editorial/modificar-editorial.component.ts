@@ -32,7 +32,16 @@ putData(){
     nombre: this.nombre,
     estado: true
   }
-  this.editorialesService.update(editorial)
+  this.editorialesService.update(editorial).subscribe(
+    (response) => {
+      alert('Editorial modificado con exito');
+      this.router.navigate(['/editoriales']);
+    },
+    (error) => {
+      alert('Error al modificar la editorial');
+      console.log(error);
+    }
+  )
   this.router.navigate(['/editoriales']);
 }
 resetForm(){

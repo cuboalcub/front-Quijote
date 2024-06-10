@@ -36,6 +36,7 @@ direccion: string = '';
     this.clientesService.post(cliente).subscribe(
       (response) => {
         console.log(response);
+        alert('Cliente guardado con exito');
         this.onReset();
       },                      
       (error: HttpErrorResponse) => {
