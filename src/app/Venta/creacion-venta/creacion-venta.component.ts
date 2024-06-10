@@ -6,7 +6,8 @@ import { Carrito } from '../../shared/models/carrito';
 import { InvenatrioService } from '../../shared/service/invenatrio.service';
 import { DetalleventaService } from '../../shared/service/detalleventa.service';
 import { VentasService } from '../../shared/service/ventas.service';
-
+import { ClientesService } from '../../shared/service/clientes.service';
+import { Clientes } from '../../shared/models/cliente';
 @Component({
   selector: 'app-creacion-venta',
   standalone: true,
@@ -15,14 +16,16 @@ import { VentasService } from '../../shared/service/ventas.service';
   styleUrls: ['./creacion-venta.component.css']
 })
 export class CreacionVentaComponent {
-  constructor(private inventarioService: InvenatrioService, private detalleVentaService: DetalleventaService, private ventasService: VentasService) { }
+  constructor(private inventarioService: InvenatrioService, private detalleVentaService: DetalleventaService, private ventasService: VentasService, private clientesService: ClientesService) { }
   inventario: any[] = [];
   carrito: Carrito[] = [];
+  clientes: Clientes[] = [];
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   total: number = 0;
   objeto: any;
   cantidad: number = 1;
+  cliente: string = '';
 
   inventarioFiltrado: any[] = [...this.inventario]; 
   terminoBusqueda: string = '';
@@ -31,6 +34,14 @@ export class CreacionVentaComponent {
     this.actualizarTotal();
     this.getInventario();
   }
+
+  getClientes(): void {
+    this.clientesService.get().subscribe((clientes) => {
+      this.clientes = clientes;
+    }
+    );
+  }
+
   getInventario(): void {
     this.inventarioService.get().subscribe((inventario) => {
       this.inventario = inventario;

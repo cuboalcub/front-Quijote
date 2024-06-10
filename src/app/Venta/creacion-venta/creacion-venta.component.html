@@ -92,6 +92,9 @@
     <h2 class="cliente-titulo">Ingrese el Nombre del Cliente:</h2>
     <div class="input-wrapper">
         <input type="text" id="nombreCliente" placeholder="Ingrese el nombre del cliente">
-        <select id="listaClientes"></select>
+        <select id="listaClientes"  [(ngModel)]="cliente">
+            <option *ngFor="let cliente of clientes">{{ cliente.nombre }}</option>
+        </select>
+
     </div>
 </div>

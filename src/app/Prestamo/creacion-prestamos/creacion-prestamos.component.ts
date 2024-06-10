@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Inventario } from '../../shared/models/inventario';
+import { InvenatrioService } from '../../shared/service/invenatrio.service';
+import { ClientesService } from '../../shared/service/clientes.service';
+import { DetalleventaService } from '../../shared/service/detalleventa.service';
 import { Carrito } from '../../shared/models/carrito';
 
 @Component({
@@ -12,16 +15,16 @@ import { Carrito } from '../../shared/models/carrito';
   styleUrls: ['./creacion-prestamos.component.css']
 })
 export class CreacionPrestamosComponent {
-//datos de ejemplo para las tablas
-  inventario: Inventario[] = [];
-
+  constructor(private inventarioService: InvenatrioService, private clientesService: ClientesService, private detalleventaService: DetalleventaService) {}
+  inventario: any[] = [];
+  clientes: any[] = [];
   carrito: Carrito[] = [];
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   cantidad: number = 1;
   maxLibros: number = 3;
 
-  inventarioFiltrado: Inventario[] = [...this.inventario]; // Declarar inventarioFiltrado
+  inventarioFiltrado: any[] = [...this.inventario]; // Declarar inventarioFiltrado
   terminoBusqueda: string = ''; // Variable para almacenar el término de búsqueda actual
 
 
@@ -97,13 +100,7 @@ export class CreacionPrestamosComponent {
   }
 
   // Datos de ejemplo para la lista de clientes
-  clientes: string[] = [
-    "Cliente 1",
-    "Cliente 2",
-    "Cliente 3",
-    "Otro Cliente",
-    "Cliente de Prueba"
-  ];
+  
 
   // Función para actualizar las opciones de la lista desplegable
   actualizarListaDesplegable(input: HTMLInputElement): void {
@@ -127,6 +124,18 @@ export class CreacionPrestamosComponent {
     this.actualizarListaDesplegable(inputNombreCliente);
   }
 
+  getInvetario() {
+    this.inventarioService.get().subscribe(
+      (inventario) => (this.inventario = inventario)
+    )
+  }
+
+  getClientes() {
+    this.clientesService.get().subscribe(
+      (clientes) => (this.clientes = clientes)
+    )
+  }
+
   // Inicializar la lista desplegable
   ngOnInit(): void {
     const inputNombreCliente: HTMLInputElement = document.getElementById("nombreCliente") as HTMLInputElement;
@@ -134,7 +143,10 @@ export class CreacionPrestamosComponent {
       this.onInputChange(event);
     });
     this.actualizarListaDesplegable(inputNombreCliente);
+    this.getInvetario();
+    this.getClientes();
   }
+  
 }
 
 
