@@ -34,11 +34,11 @@
             <tbody>
                 <tr *ngFor="let libro of inventario; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i ,libro)" [class.selected]="filaSeleccionadaInventario === i">
                     <td>{{ libro.id }}</td>
-                    <td>{{ libro.nombre }}</td>
-                    <td>{{ libro.fechaPublicacion }}</td>
-                    <td>{{ libro.idSucursal }}</td>
-                    <td>{{ libro.idGenero }}</td>
-                    <td>{{ libro.idEditorial }}</td>
+                    <td>{{ libro.nombre_libro }}</td>
+                    <td>{{ libro.Fecha_public }}</td>
+                    <td>{{ libro.sucursal}}</td>
+                    <td>{{ libro.genero }}</td>
+                    <td>{{ libro.editorial }}</td>
                     <td>{{ libro.precio }}</td>
                     <td>{{ libro.existencias }}</td>
                 </tr>
