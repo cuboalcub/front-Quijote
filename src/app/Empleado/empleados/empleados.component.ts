@@ -13,7 +13,15 @@ import { SesionstorageService } from '../../shared/service/sesionstorage.service
   styleUrl: './empleados.component.css'
 })
 export class EmpleadosComponent {
-arr : Empleado[] = [];
+arr : Empleado[] = [{
+  id: 0,
+  nombre: 'a',
+  nombre_sucursal: 'a',
+  telefono: 0,
+  direccion: 'a',
+  contraseña: 'baaa',
+  estado: true
+}];
 id: number = 0;
 constructor(private service: EmpleadoService,
             private sesionstorageService: SesionstorageService
