@@ -22,15 +22,16 @@ export class AppComponent {
   pass = true;
 
   login(){
-    token: this.loginService.login(this.usuario, this.contrasena).subscribe(
-      (response: any)=>{
-        alert('Login exitoso')
-        this.pass = false
-        this.sesionstorageService.set('token', response);
-      },
-      (error: any)=>{
-        alert('Error al iniciar sesion')
-      }
-    );
+    this.pass = false
+    // token: this.loginService.login(this.usuario, this.contrasena).subscribe(
+    //   (response: any)=>{
+    //     alert('Login exitoso')
+    //     this.pass = false
+    //     this.sesionstorageService.set('token', response);
+    //   },
+    //   (error: any)=>{
+    //     alert('Error al iniciar sesion')
+    //   }
+    // );
   }
 }
