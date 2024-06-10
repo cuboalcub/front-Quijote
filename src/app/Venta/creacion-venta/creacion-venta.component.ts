@@ -16,7 +16,7 @@ import { VentasService } from '../../shared/service/ventas.service';
 })
 export class CreacionVentaComponent {
   constructor(private inventarioService: InvenatrioService, private detalleVentaService: DetalleventaService, private ventasService: VentasService) { }
-  inventario: Inventario[] = [];
+  inventario: Inventario[] = [{id: 0, nombre_libro: 'a', existencias: 5, sucursal: 'a', editorial: 'a', genero: 'a', precio: 0, Fecha_public: 'a', estado: true}];
   carrito: Carrito[] = [];
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
@@ -74,10 +74,9 @@ export class CreacionVentaComponent {
   actualizarTotal(): void {
     this.total = this.carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
   }
-
   agregarDetalleVenta() {
     if (this.filaSeleccionadaInventario !== null) {
-      const libroSeleccionado = this.inventario[this.filaSeleccionadaInventario];
+      const libroSeleccionado = this.inventarioFiltrado[this.filaSeleccionadaInventario]; // Utiliza el inventario filtrado en lugar del inventario completo
       const itemCarrito = this.carrito.find(item => item.id === libroSeleccionado.id);
   
       if (itemCarrito) {
@@ -120,19 +119,31 @@ export class CreacionVentaComponent {
   eliminarDelCarrito() {
     if (this.filaSeleccionadaCarrito !== null) {
       console.log('Fila carrito eliminada:', this.filaSeleccionadaCarrito);
+      const itemEliminado = this.carrito[this.filaSeleccionadaCarrito];
+      const libroEnInventario = this.inventario.find(libro => libro.id === itemEliminado.id);
+  
+      if (libroEnInventario) {
+        // Sumar la cantidad eliminada del carrito a las existencias del libro en el inventario
+        libroEnInventario.existencias += itemEliminado.cantidad;
+      } else {
+        console.error('El libro no se encuentra en el inventario.');
+        return;
+      }
+  
       this.carrito.splice(this.filaSeleccionadaCarrito, 1);
-      this.detalleVentaService.delete(this.filaSeleccionadaCarrito+1).subscribe((response) => {
+      this.detalleVentaService.delete(this.filaSeleccionadaCarrito + 1).subscribe((response) => {
         alert('Libro eliminado del carrito de compras');
       },
-      (error) => {
-        console.error(error);
-        alert('Error al eliminar el libro del carrito de compras');
-      });
+        (error) => {
+          console.error(error);
+          alert('Error al eliminar el libro del carrito de compras');
+        });
       this.filaSeleccionadaCarrito = null;
       this.actualizarTotal();
     }
-
   }
+  
+  
 
   confirmarVenta() {
     // Aquí iría la lógica para confirmar la venta
