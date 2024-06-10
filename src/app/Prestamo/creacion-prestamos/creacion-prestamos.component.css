@@ -2,6 +2,56 @@
 .selected {
     background-color: rgb(10, 233, 166); /* Cambia este valor para modificar el color */
 }
+
+.inventario-container, .carrito-container-scroll {
+    max-height: 100px;
+    overflow-y: auto;
+    margin: 20px 0;
+}
+.inventario-container {
+    max-width: 90%; /* Ajusta el ancho máximo de la tabla de inventario */
+}
+
+.inventario-section {
+    position: absolute;
+    top: 280px; /* Ajusta el valor para mover hacia abajo */
+    left: 400px; /* Ajusta el valor para mover hacia la derecha */
+}
+
+.carrito-section {
+    position: absolute;
+    top: 550px; /* Ajusta el valor para mover más hacia abajo */
+    left: 1000px; /* Ajusta el valor para mover más hacia la derecha */
+}
+
+.carrito-container-scroll {
+    max-width: 100%; /* Ajusta el ancho máximo de la tabla del carrito */
+}
+
+/* Estilos opcionales para personalizar las barras de desplazamiento */
+
+.inventario-container, .carrito-container-scroll {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.inventario-container::-webkit-scrollbar, .carrito-container-scroll::-webkit-scrollbar {
+    width: 12px;
+}
+
+.inventario-container::-webkit-scrollbar-track, .carrito-container-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.inventario-container::-webkit-scrollbar-thumb, .carrito-container-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+.inventario-container::-webkit-scrollbar-thumb:hover, .carrito-container-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 .titulo {
     position: absolute;
     width: 512px;
@@ -33,14 +83,14 @@
 .carrito-titulo {
     position: absolute;
     width: 412px;
-    height: 164px;
-    left: 1100px;
-    top: 420px;
+    height: 50px;
+    left: 50px;
+    top: -60px;
     font-family: 'Amiri';
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
-    line-height: 176px;
+    font-size: 32px;
+    line-height: 50px;
     color: #C35F01;
 }
 
@@ -103,89 +153,63 @@
 
 .busqueda button {
     box-shadow: 0 4px 2px -3px #ccc, 0 4px 5px 1px #ccc, 0 2px 7px 1px #ccc;
-  }
+}
 
 
 .tabla-container {
     display: flex;
     justify-content: center;
-    margin-top:  10px; /* Ajusta el margen superior */
-    margin-right: 100px; /* Ajusta el margen derecho */
+    margin: 20px 0;
 }
 
 th {
-    background-color: #823F00; /* Color de fondo del encabezado */
-    color: white; /* Color del texto */
-    height: 35px; /* Altura del encabezado */
-    border-bottom: 1px solid rgb(210, 220, 250); /* Borde inferior */
+    background-color: #823F00;
+    color: white;
+    height: 35px;
+    border-bottom: 1px solid rgb(210, 220, 250);
 }
 
 td {
-    color: rgba(100, 100, 100, 60); /* Color del texto */
-    height: 30px; /* Altura de las celdas */
-    border: 0.5px solid rgba(240, 240, 240, 10); /* Borde de las celdas */
+    color: rgba(100, 100, 100, 0.6);
+    height: 30px;
+    border: 0.5px solid rgba(240, 240, 240, 0.1);
 }
 
-/* Pseudo-clases */
 th:hover {
-    background-color: rgba(20, 20, 20, 90); /* Color de fondo al pasar el mouse sobre el encabezado */
+    background-color: rgba(20, 20, 20, 0.9);
 }
 
 tr:hover {
-    background-color: rgba(15, 25, 25, 90); /* Color de fondo al pasar el mouse sobre las filas */
+    background-color: rgba(15, 25, 25, 0.9);
 }
 
 footer {
-    margin-top: 40px; /* Margen superior */
-    text-align: center; /* Centrado del texto */
+    margin-top: 40px;
+    text-align: center;
 }
 
-.tabla {
-    max-height: 300px;
-    overflow-y: auto;
-    width: 100%; /* Ancho de la tabla */
-    max-width: 1300px; /* Ancho máximo de la tabla */
-    margin-top: 20px; /* Margen superior */
-    border-collapse: collapse; /* Combina los bordes de la tabla */
-    text-align: center; /* Centra el texto en las celdas */
-    position: relative; /* Posición relativa para posicionar con bottom y right */
-    bottom: -295px; /* Mueve la tabla hacia abajo */
-    right: -170px; /* Mueve la tabla hacia la derecha */
+.tabla, .tabla-carrito {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: center;
 }
 
-.tabla th {
-    font-size: 21px; /* Tamaño de fuente más grande */
-    font-weight: bold; /* Texto en negrita */
-}
-.tabla td {
-    font-size: 18px; /* Tamaño de fuente más grande para los datos */
+.tabla th, .tabla-carrito th {
+    font-size: 21px;
+    font-weight: bold;
 }
 
-.tabla tbody tr:hover {
-    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el mouse */
-}
-.tabla thead th:hover {
-    background-color: #553000; /* Cambia el color de fondo al pasar el mouse */
+.tabla td, .tabla-carrito td {
+    font-size: 18px;
 }
 
-.tabla-carrito {
-    max-height: 300px;
-    overflow-y: auto;
-    width: 100%; /* Ancho de la tabla */
-    max-width: 460px; /* Ancho máximo de la tabla */
-    margin-top: 20px; /* Margen superior */
-    border-collapse: collapse; /* Combina los bordes de la tabla */
-    text-align: center; /* Centra el texto en las celdas */
-    position: relative; /* Posición relativa para posicionar con bottom y right */
-    bottom: -370px; /* Mueve la tabla hacia abajo */
-    right: -470px; /* Mueve la tabla hacia la derecha */
+.tabla tbody tr:hover, .tabla-carrito tbody tr:hover {
+    background-color: #f0f0f0;
 }
 
-.tabla-carrito tbody tr:hover {
-    background-color: #f0f0f0; 
-}
-.tabla-carrito thead th:hover {
-    background-color: #553000; 
+.tabla thead th:hover, .tabla-carrito thead th:hover {
+    background-color: #553000;
 }
 
 .cliente-container {
@@ -198,9 +222,9 @@ footer {
     background-color: #fff;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  .input-wrapper {
+}
+
+.input-wrapper {
     display: flex; /* Utiliza flexbox para alinear los elementos en línea */
     align-items: center; /* Alinea los elementos verticalmente */
 }
@@ -264,8 +288,8 @@ footer {
 
 .eliminar-btn-container {
     position: absolute; /* Posicionamiento absoluto para controlar la ubicación */
-    top: 700px; /* Ajusta la posición vertical */
-    left: 75%; /* Ajusta la posición horizontal */
+    top: 650px; /* Ajusta la posición vertical */
+    left: 90%; /* Ajusta la posición horizontal */
     transform: translateX(-50%); /* Centra horizontalmente el botón */
 }
 
@@ -299,12 +323,12 @@ footer {
     width: 612px;
     height: 164px;
     left: 1040px;
-    top: 680px;
+    top: 745px;
     font-family: 'Amiri';
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
-    line-height: 176px;
+    line-height: 80px;
     color: #C35F01;
 }
 
@@ -314,7 +338,7 @@ footer {
     width: 200px; /* Ajusta el ancho según sea necesario */
     height: 40px; /* Ajusta la altura según sea necesario */
     left: 1270px; /* Ajusta la posición horizontal según sea necesario */
-    top: 775px; /* Ajusta la posición vertical según sea necesario */
+    top: 790px; /* Ajusta la posición vertical según sea necesario */
     font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
     padding: 5px; /* Ajusta el relleno según sea necesario */
 }
