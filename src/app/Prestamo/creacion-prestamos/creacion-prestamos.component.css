@@ -69,14 +69,14 @@
 .texto-disponibles {
     position: absolute;
     width: 412px;
-    height: 164px;
+    height: 50px;
     left: 820px;
-    top: 95px;
+    top: 160px;
     font-family: 'Amiri';
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
-    line-height: 176px;
+    line-height: 50px;
     color: #C35F01;
 }
 
@@ -130,31 +130,6 @@
     font-size: 17px;
     margin-right: 10px; /* Espacio entre el cuadro de búsqueda y el botón */
 }
-
-.busqueda button {
-    font-weight: bold; /* Texto del botón en negrita */
-    font-size: 15px;
-    height: 36px; /* Altura del botón */
-    min-width: 130px;
-    height: 40px;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    background-color: #3a86ff;
-    box-shadow: 0 3px 1px -2px #ccc, 0 2px 2px 0 #ccc, 0 1px 5px 0 #ccc;
-}
-
-.busqueda button {
-    box-shadow: 0 4px 2px -3px #ccc, 0 4px 5px 1px #ccc, 0 2px 7px 1px #ccc;
-}
-
 
 .tabla-container {
     display: flex;

@@ -13,13 +13,26 @@ import { Carrito } from '../../shared/models/carrito';
 })
 export class CreacionPrestamosComponent {
 //datos de ejemplo para las tablas
-  inventario: Inventario[] = [];
+  inventario: Inventario[] = [
+    {id:1,sucursal:"Sucursal 1",genero:"Ficcion",editorial:"Editorial 1",nombre_libro:"Libro 1",Fecha_public:"2022-01-01", precio:10,existencias:5,estado:true},
+    {id:2,sucursal:"Sucursal 2",genero:"Ficcion",editorial:"Editorial 1",nombre_libro:"Libro 2",Fecha_public:"2022-01-01", precio:10,existencias:5,estado:true},
+    {id:3,sucursal:"Sucursal 3",genero:"Ficcion",editorial:"Editorial 1",nombre_libro:"Libro 3",Fecha_public:"2022-01-01", precio:10,existencias:5,estado:true},
+    {id:4,sucursal:"Sucursal 4",genero:"Ficcion",editorial:"Editorial 1",nombre_libro:"Libro 4",Fecha_public:"2022-01-01", precio:10,existencias:5,estado:true},
+    {id:5,sucursal:"Sucursal 5",genero:"Ficcion",editorial:"Editorial 1",nombre_libro:"Libro 5",Fecha_public:"2022-01-01", precio:10,existencias:5,estado:true},
+    {id:6,sucursal:"Sucursal 6",genero:"Ficcion",editorial:"Editorial 1",nombre_libro:"Libro 6",Fecha_public:"2022-01-01", precio:10,existencias:5,estado:true},
+    {id:7,sucursal:"Sucursal 7",genero:"Ficcion",editorial:"Editorial 1",nombre_libro:"Libro 7",Fecha_public:"2022-01-01", precio:10,existencias:5,estado:true},
+    {id:8,sucursal:"Sucursal 8",genero:"Ficcion",editorial:"Editorial 1",nombre_libro:"Libro 8",Fecha_public:"2022-01-01", precio:10,existencias:5,estado:true}
+  ];
 
   carrito: Carrito[] = [];
 
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   subtotal: number = 0;
+
+  inventarioFiltrado: Inventario[] = [...this.inventario]; // Declarar inventarioFiltrado
+  terminoBusqueda: string = ''; // Variable para almacenar el término de búsqueda actual
+
 
   seleccionarFilaInventario(index: number, objeto: any) {
     console.log(objeto);
@@ -40,6 +53,19 @@ export class CreacionPrestamosComponent {
     }
   }
 
+  filtrarInventario(busqueda: string) {
+    this.terminoBusqueda = busqueda; // Almacena el término de búsqueda actual
+    console.log('Buscando:', busqueda); // Agrega un log para depuración
+    this.inventarioFiltrado = this.inventario.filter(libro =>
+      libro.nombre_libro.toLowerCase().includes(busqueda.toLowerCase())
+    );
+    console.log('Resultado filtrado:', this.inventarioFiltrado); // Agrega un log para depuración
+  }
+
+  onInput(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.filtrarInventario(inputElement.value);
+  }
 
   // Datos de ejemplo para la lista de clientes
   clientes: string[] = [

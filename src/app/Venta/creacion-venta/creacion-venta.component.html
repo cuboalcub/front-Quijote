@@ -2,6 +2,11 @@
     NUEVA VENTA
 </div>
 
+<div class="busqueda">
+    <label for="busqueda">Buscar:</label>
+    <input type="text" id="busqueda" name="busqueda" placeholder="Ingrese su búsqueda..." (input)="onInput($event)">
+</div>
+
 <section class="inventario-section">
 <div class="tabla-container inventario-container">
     <table class="tabla">
@@ -18,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let libro of inventario; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i, libro)" [class.selected]="filaSeleccionadaInventario === i">
+            <tr *ngFor="let libro of inventarioFiltrado; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i ,libro)" [class.selected]="filaSeleccionadaInventario === i">
                 <td>{{ libro.id }}</td>
                 <td>{{ libro.nombre_libro}}</td>
                 <td>{{ libro.Fecha_public }}</td>
@@ -35,12 +40,6 @@
 </section>
 <div class="texto-disponibles">
     <p>Libros disponibles:</p>
-</div>
-
-<div class="busqueda">
-    <label for="busqueda">Buscar:</label>
-    <input type="text" id="busqueda" name="busqueda" placeholder="Ingrese su búsqueda...">
-    <button class="mostrar-todo">Mostrar todo</button>
 </div>
 
 <section class="carrito-section">
