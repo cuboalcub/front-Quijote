@@ -16,7 +16,7 @@ import { VentasService } from '../../shared/service/ventas.service';
 })
 export class CreacionVentaComponent {
   constructor(private inventarioService: InvenatrioService, private detalleVentaService: DetalleventaService, private ventasService: VentasService) { }
-  inventario: Inventario[] = [{id: 0, nombre_libro: 'a', existencias: 5, sucursal: 'a', editorial: 'a', genero: 'a', precio: 0, Fecha_public: 'a', estado: true}];
+  inventario: any[] = [];
   carrito: Carrito[] = [];
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
@@ -24,15 +24,15 @@ export class CreacionVentaComponent {
   objeto: any;
   cantidad: number = 1;
 
-  inventarioFiltrado: Inventario[] = [...this.inventario]; // Declarar inventarioFiltrado
-  terminoBusqueda: string = ''; // Variable para almacenar el término de búsqueda actual
+  inventarioFiltrado: any[] = [...this.inventario]; 
+  terminoBusqueda: string = '';
 
   ngOnInit(): void {
     this.actualizarTotal();
     this.getInventario();
   }
   getInventario(): void {
-    this.inventarioService.get().subscribe((inventario: Inventario[]) => {
+    this.inventarioService.get().subscribe((inventario) => {
       this.inventario = inventario;
     }
     );
@@ -41,7 +41,7 @@ export class CreacionVentaComponent {
   seleccionarFilaInventario(index: number, objeto: any) {
     console.log('Fila inventario seleccionada:', index);
     if (this.filaSeleccionadaInventario === index) {
-      this.filaSeleccionadaInventario = null; // Deselecciona la fila si se hace clic de nuevo
+      this.filaSeleccionadaInventario = null;
     } else {
       this.filaSeleccionadaInventario = index;
       this.objeto = objeto;
@@ -51,7 +51,7 @@ export class CreacionVentaComponent {
   seleccionarFilaCarrito(index: number) {
     console.log('Fila carrito seleccionada:', index);
     if (this.filaSeleccionadaCarrito === index) {
-      this.filaSeleccionadaCarrito = null; // Deselecciona la fila si se hace clic de nuevo
+      this.filaSeleccionadaCarrito = null; 
     } else {
       this.filaSeleccionadaCarrito = index;
     }
@@ -76,7 +76,7 @@ export class CreacionVentaComponent {
   }
   agregarDetalleVenta() {
     if (this.filaSeleccionadaInventario !== null) {
-      const libroSeleccionado = this.inventarioFiltrado[this.filaSeleccionadaInventario]; // Utiliza el inventario filtrado en lugar del inventario completo
+      const libroSeleccionado = this.inventarioFiltrado[this.filaSeleccionadaInventario];
       const itemCarrito = this.carrito.find(item => item.id === libroSeleccionado.id);
   
       if (itemCarrito) {
