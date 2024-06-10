@@ -10,22 +10,22 @@ header{
     
     .titulo-principal {
         position: absolute;
-        top: -130px; /* ajusta la posición vertical según sea necesario */
-        left: 50%; /* centra horizontalmente */
-        transform: translateX(-50%); /* centra horizontalmente */
-        width: 400px; /* ajusta el ancho según sea necesario */
-        height: auto; /* ajusta la altura automáticamente según el ancho */
-      }
+        top: -130px; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        width: 400px; 
+        height: auto;
+    }
     a{
         text-decoration: none;
     }
     .logo {
         position: absolute;
-        top: -19px; /* ajusta la posición vertical según sea necesario */
-        left: 45px; /* ajusta la posición horizontal según sea necesario */
-        width: 165px; /* ajusta el ancho según sea necesario */
-        height: auto; /* ajusta la altura automáticamente según el ancho */
-      }
+        top: -19px; 
+        left: 45px; 
+        width: 165px; 
+        height: auto;
+    }
     
     header p{
         font-family: 'Inter';

@@ -77,13 +77,13 @@ input[type="text"] {
 }
 
 .cancelar-btn:hover {
-    box-shadow: 0 3px #b80000; /* Sombra al pasar el mouse */
-    top: 1px; /* Efecto de elevación */
+    box-shadow: 0 3px #b80000; 
+    top: 1px; 
 }
 
 .agregar-btn:active {
-    box-shadow: 0 0 #1aae00; /* Sombra al hacer clic */
-    top: 5px; /* Efecto de hundimiento */
+    box-shadow: 0 0 #1aae00; 
+    top: 5px; 
 }
 
 .cancelar-btn:active {

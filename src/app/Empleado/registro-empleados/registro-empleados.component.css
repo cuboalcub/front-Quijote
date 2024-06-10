@@ -72,8 +72,8 @@ input[type="text"] {
 }
 
 .agregar-btn:hover {
-    box-shadow: 0 3px #17ac00; /* Sombra al pasar el mouse */
-    top: 1px; /* Efecto de elevación */
+    box-shadow: 0 3px #17ac00; 
+    top: 1px; 
 }
 
 .cancelar-btn:hover {
@@ -82,8 +82,8 @@ input[type="text"] {
 }
 
 .agregar-btn:active {
-    box-shadow: 0 0 #1aae00; /* Sombra al hacer clic */
-    top: 5px; /* Efecto de hundimiento */
+    box-shadow: 0 0 #1aae00;
+    top: 5px; 
 }
 
 .cancelarbtn:active {

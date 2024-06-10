@@ -1,11 +1,11 @@
-/* Estilos personalizados para la tabla */
+
 .selected {
     background-color: rgba(1, 210, 225, 0.751);
 }
 
 .inventario-container {
-    text-align: center; /* Centra horizontalmente el contenido */
-    margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+    text-align: center; 
+    margin-top: 50px;
 }
 
 .titulo {
@@ -28,60 +28,60 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 50px; /* Ajusta el margen superior */
-    margin-right: 100px; /* Ajusta el margen derecho */
+    margin-top: 50px; 
+    margin-right: 100px; 
     margin-left: 225px;
     margin-top: 200px;
 }
 
 th {
-    background-color: #823F00; /* Color de fondo del encabezado */
-    color: white; /* Color del texto */
-    height: 35px; /* Altura del encabezado */
-    border-bottom: 1px solid rgb(210, 220, 250); /* Borde inferior */
+    background-color: #823F00; 
+    color: white; 
+    height: 35px; 
+    border-bottom: 1px solid rgb(210, 220, 250); 
 }
 
 td {
-    color: rgba(100, 100, 100, 60); /* Color del texto */
-    height: 30px; /* Altura de las celdas */
-    border: 0.5px solid rgba(240, 240, 240, 10); /* Borde de las celdas */
+    color: rgba(100, 100, 100, 60); 
+    height: 30px; 
+    border: 0.5px solid rgba(240, 240, 240, 10); 
 }
 
 /* Pseudo-clases */
 th:hover {
-    background-color: rgba(20, 20, 20, 90); /* Color de fondo al pasar el mouse sobre el encabezado */
+    background-color: rgba(20, 20, 20, 90); 
 }
 
 tr:hover {
-    background-color: rgba(15, 25, 25, 90); /* Color de fondo al pasar el mouse sobre las filas */
+    background-color: rgba(15, 25, 25, 90); 
 }
 
 footer {
-    margin-top: 40px; /* Margen superior */
-    text-align: center; /* Centrado del texto */
+    margin-top: 40px; 
+    text-align: center; 
 }
 
 .tabla {
-    width: 100%; /* Ancho de la tabla */
-    max-width: 900px; /* Ancho máximo de la tabla */
-    margin-top: 20px; /* Margen superior */
+    width: 100%; 
+    max-width: 900px; 
+    margin-top: 20px; 
     border-collapse: collapse; /* Combina los bordes de la tabla */
-    text-align: center; /* Centra el texto en las celdas */
-    position: relative; /* Posición relativa para posicionar con bottom y right */
+    text-align: center; 
+    position: relative; 
     max-height: 1000px;
 }
 
 .tabla th {
-    font-size: 21px; /* Tamaño de fuente más grande */
-    font-weight: bold; /* Texto en negrita */
+    font-size: 21px; 
+    font-weight: bold; 
 }
 .tabla td {
-    font-size: 18px; /* Tamaño de fuente más grande para los datos */
+    font-size: 18px;
 }
 
 .modificar img {
-    width: 30px; /* Ancho de la imagen del ojo */
-    height: auto; /* Altura automática para mantener la proporción */
+    width: 30px; 
+    height: auto; 
     transition: transform 0.3s ease; /* Transición suave al pasar el mouse */
 }
 
@@ -91,10 +91,10 @@ footer {
 }
 
 .tabla tbody tr:hover {
-    background-color: #f0f0f0; /* Cambia el color de fondo al pasar el mouse */
+    background-color: #f0f0f0; 
 }
 .tabla thead th:hover {
-    background-color: #553000; /* Cambia el color de fondo al pasar el mouse */
+    background-color: #553000; 
 }
 .boton-nuevo, .boton-borrar {
     min-width: 130px;

@@ -1,6 +1,6 @@
 
 .selected {
-    background-color: rgb(10, 233, 166); /* Cambia este valor para modificar el color */
+    background-color: rgb(10, 233, 166);
 }
 
 .inventario-container, .carrito-container-scroll {
@@ -9,19 +9,19 @@
     margin: 20px 0;
 }
 .inventario-container {
-    max-width: 90%; /* Ajusta el ancho máximo de la tabla de inventario */
+    max-width: 90%; 
 }
 
 .inventario-section {
     position: absolute;
-    top: 280px; /* Ajusta el valor para mover hacia abajo */
-    left: 400px; /* Ajusta el valor para mover hacia la derecha */
+    top: 280px; 
+    left: 400px; 
 }
 
 .carrito-section {
     position: absolute;
-    top: 550px; /* Ajusta el valor para mover más hacia abajo */
-    left: 1000px; /* Ajusta el valor para mover más hacia la derecha */
+    top: 550px; 
+    left: 1000px; 
 }
 
 .carrito-container-scroll {
@@ -121,20 +121,20 @@
 }
 
 .busqueda label {
-    font-size: 28px; /* Tamaño de letra para el texto "Buscar" */
+    font-size: 28px; 
 }
 
 .busqueda input {
-    width: 250px; /* Ancho del cuadro de búsqueda */
-    height: 30px; /* Altura del cuadro de búsqueda */
+    width: 250px; 
+    height: 30px; 
     font-size: 17px;
     margin-right: 10px; /* Espacio entre el cuadro de búsqueda y el botón */
 }
 
 .busqueda button {
-    font-weight: bold; /* Texto del botón en negrita */
+    font-weight: bold; 
     font-size: 15px;
-    height: 36px; /* Altura del botón */
+    height: 36px; 
     min-width: 130px;
     height: 40px;
     color: #fff;
@@ -214,29 +214,28 @@ footer {
 
 .cliente-container {
     position: absolute;
-    left: 400px; /* Ajusta la posición horizontal según sea necesario */
-    top: 550px; /* Ajusta la posición vertical según sea necesario */
-    /* Otros estilos opcionales */
-    width: 500px; /* Ajusta el ancho según sea necesario */
-    height: 300px; /* Ajusta la altura según sea necesario */
+    left: 400px; 
+    top: 550px; 
+    width: 500px;
+    height: 300px; 
     background-color: #fff;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .input-wrapper {
-    display: flex; /* Utiliza flexbox para alinear los elementos en línea */
-    align-items: center; /* Alinea los elementos verticalmente */
+    display: flex; 
+    align-items: center; 
 }
 #nombreCliente {
-    width: 300px; /* Ancho del cuadro de entrada de texto */
-    height: 40px; /* Altura del cuadro de entrada de texto */
+    width: 300px; 
+    height: 40px; 
     margin-right: 20px; /* Espacio entre el cuadro de entrada de texto y el selector */
 }
 
 #listaClientes {
-    width: 200px; /* Ancho del selector de lista desplegable */
-    height: 40px; /* Altura del selector de lista desplegable */
+    width: 200px; 
+    height: 40px; 
 }
 
 .cantidad-titulo {
@@ -245,76 +244,76 @@ footer {
     font-weight: 700;
     font-size: 24px;
     color: #C35F01;
-    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    margin-top: 20px; 
 }
 
 .cantidad-wrapper {
-    display: flex; /* Utiliza flexbox para alinear los elementos en línea */
-    align-items: center; /* Alinea los elementos verticalmente */
-    margin-top: 10px; /* Ajusta el margen superior según sea necesario */
+    display: flex; 
+    align-items: center;
+    margin-top: 10px; 
 }
 
 #cantidadProductos {
-    width: 80px; /* Ancho del cuadro de número */
-    height: 40px; /* Altura del cuadro de número */
-    margin-right: 20px; /* Espacio entre el cuadro de número y el botón */
+    width: 80px; 
+    height: 40px; 
+    margin-right: 20px; 
     font-size: 20px;
     font-weight: bold;
 }
 
 .agregar-btn {
-    min-width: 100px; /* Ancho mínimo del botón */
-    height: 40px; /* Altura del botón */
-    color: #fff; /* Color del texto */
-    font-weight: bold; /* Texto en negrita */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    min-width: 100px; 
+    height: 40px; 
+    color: #fff; 
+    font-weight: bold;
+    cursor: pointer; 
     transition: all 0.3s ease; /* Transición suave */
     outline: none; /* Sin contorno al enfocar */
     border-radius: 5px; /* Borde redondeado */
     border: none; /* Sin borde */
-    background: #0ed100; /* Color de fondo */
-    box-shadow: 0 5px #009700; /* Sombra */
+    background: #0ed100;
+    box-shadow: 0 5px #009700; 
 }
 
 .agregar-btn:hover {
-    box-shadow: 0 3px #17ac00; /* Sombra al pasar el mouse */
-    top: 1px; /* Efecto de elevación */
+    box-shadow: 0 3px #17ac00; 
+    top: 1px; 
 }
 
 .agregar-btn:active {
-    box-shadow: 0 0 #19a500; /* Sombra al hacer clic */
-    top: 5px; /* Efecto de hundimiento */
+    box-shadow: 0 0 #19a500; 
+    top: 5px; 
 }
 
 .eliminar-btn-container {
-    position: absolute; /* Posicionamiento absoluto para controlar la ubicación */
-    top: 650px; /* Ajusta la posición vertical */
-    left: 90%; /* Ajusta la posición horizontal */
-    transform: translateX(-50%); /* Centra horizontalmente el botón */
+    position: absolute; 
+    top: 650px; 
+    left: 90%;
+    transform: translateX(-50%); 
 }
 
 .eliminar-producto-btn {
-    min-width: 100px; /* Ancho mínimo del botón */
-    height: 40px; /* Altura del botón */
-    color: #fff; /* Color del texto */
-    font-weight: bold; /* Texto en negrita */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    min-width: 100px; 
+    height: 40px; 
+    color: #fff; 
+    font-weight: bold; 
+    cursor: pointer; 
     transition: all 0.3s ease; /* Transición suave */
     outline: none; /* Sin contorno al enfocar */
     border-radius: 5px; /* Borde redondeado */
     border: none; /* Sin borde */
-    background: #c82b00; /* Color de fondo */
-    box-shadow: 0 5px #970000; /* Sombra */
+    background: #c82b00;
+    box-shadow: 0 5px #970000; 
 }
 
 .eliminar-producto-btn:hover {
-    box-shadow: 0 3px #ac0000; /* Sombra al pasar el mouse */
-    top: 1px; /* Efecto de elevación */
+    box-shadow: 0 3px #ac0000; 
+    top: 1px; 
 }
 
 .eliminar-producto-btn:active {
-    box-shadow: 0 0 #a50000; /* Sombra al hacer clic */
-    top: 5px; /* Efecto de hundimiento */
+    box-shadow: 0 0 #a50000; 
+    top: 5px; 
 }
 
 /* Estilos para el título "Fecha Límite" */
@@ -335,27 +334,26 @@ footer {
 /* Estilos para el input de tipo date */
 .subtotal {
     position: absolute;
-    width: 200px; /* Ajusta el ancho según sea necesario */
-    height: 40px; /* Ajusta la altura según sea necesario */
-    left: 1270px; /* Ajusta la posición horizontal según sea necesario */
-    top: 775px; /* Ajusta la posición vertical según sea necesario */
-    font-size: 16px; /* Ajusta el tamaño de fuente según sea necesario */
+    width: 200px; 
+    height: 40px; 
+    left: 1270px;
+    top: 775px; 
+    font-size: 16px; 
     padding: 5px; /* Ajusta el relleno según sea necesario */
     border-radius: 5px; /* Ajusta el redondeo del borde para que se vea redondeado */
     font-size: 20px;
 }
 
 
-
 /* Estilos para los botones de Confirmar y Cancelar préstamo */
 .confirmar-venta-btn,
 .cancelar-venta-btn {
-    min-width: 220px; /* Ancho mínimo del botón */
-    height: 50px; /* Altura del botón */
-    color: #fff; /* Color del texto */
-    font-weight: bold; /* Texto en negrita */
+    min-width: 220px; 
+    height: 50px; 
+    color: #fff; 
+    font-weight: bold; 
     font-size: 20px;
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    cursor: pointer; 
     transition: all 0.3s ease; /* Transición suave */
     outline: none; /* Sin contorno al enfocar */
     border-radius: 5px; /* Borde redondeado */
@@ -364,42 +362,40 @@ footer {
 }
 
 .confirmar-venta-btn {
-    background: #00de34; /* Color de fondo */
-    box-shadow: 0 5px #029300; /* Sombra */
-
+    background: #00de34;
+    box-shadow: 0 5px #029300; 
 }
 
 .cancelar-venta-btn {
-    background: #c82b00; /* Color de fondo */
-    box-shadow: 0 5px #860000; /* Sombra */
-
+    background: #c82b00; 
+    box-shadow: 0 5px #860000;
 }
 
 .confirmar-venta-btn:hover {
-    box-shadow: 0 3px #17ac00; /* Sombra al pasar el mouse */
-    top: 1px; /* Efecto de elevación */
+    box-shadow: 0 3px #17ac00; 
+    top: 1px; 
 }
 
 .cancelar-venta-btn:hover {
-    box-shadow: 0 3px #b80000; /* Sombra al pasar el mouse */
-    top: 1px; /* Efecto de elevación */
+    box-shadow: 0 3px #b80000; 
+    top: 1px; 
 }
 
 .confirmar-venta-btn:active {
-    box-shadow: 0 0 #1aae00; /* Sombra al hacer clic */
-    top: 5px; /* Efecto de hundimiento */
+    box-shadow: 0 0 #1aae00; 
+    top: 5px; 
 }
 
 .cancelar-venta-btn:active {
-    box-shadow: 0 0 #a90000; /* Sombra al hacer clic */
-    top: 5px; /* Efecto de hundimiento */
+    box-shadow: 0 0 #a90000; 
+    top: 5px;
 }
 
 .buttons {
-    position: absolute; /* Posicionamiento absoluto para controlar la ubicación */
-    top: 1000px; /* Ajusta la posición vertical */
-    left: 60%; /* Ajusta la posición horizontal */
-    transform: translateX(-50%); /* Centra horizontalmente el botón */
+    position: absolute;
+    top: 1000px; 
+    left: 60%; 
+    transform: translateX(-50%); 
 }
 
 thead{

@@ -7,7 +7,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: absolute;
-    margin-top: 10px; /* Ajusta según necesites */
+    margin-top: 10px; 
     left: 570px;
     top: 150px;
     width: 40%; /* Ajusta el ancho del contenedor */
@@ -15,7 +15,7 @@
   }
   
   .titulo-principal {
-    text-align: center; /* Centra el texto horizontalmente */
+    text-align: center; 
     font-family: 'Amiri', serif;
     font-weight: 900;
     font-size: 50px;
@@ -79,8 +79,8 @@
     top: 1px; /* Efecto de elevación */
   }
   .cancelar-btn:hover {
-    box-shadow: 0 3px #b80000; /* Sombra al pasar el mouse */
-    top: 1px; /* Efecto de elevación */
+    box-shadow: 0 3px #b80000; 
+    top: 1px; 
   }
   
   .agregar-btn:active{

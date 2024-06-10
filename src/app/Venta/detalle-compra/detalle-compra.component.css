@@ -8,7 +8,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Más resaltado */
     background-color: #fff; /* Asegurar fondo blanco */
     position: absolute;
-    left: 55%; /* Centrar horizontalmente */
+    left: 55%;
     top: 180px;
     transform: translateX(-50%);
     width: 35%; /* Menos ancho */
@@ -62,13 +62,13 @@ input[type="text"], textarea {
 }
 
 .cerrar-btn:hover {
-    box-shadow: 0 3px #b80000; /* Sombra al pasar el mouse */
-    top: 1px; /* Efecto de elevación */
+    box-shadow: 0 3px #b80000; 
+    top: 1px; 
 }
 
 .cerrar-btn:active {
-    box-shadow: 0 0 #a90000; /* Sombra al hacer clic */
-    top: 5px; /* Efecto de hundimiento */
+    box-shadow: 0 0 #a90000;
+    top: 5px; 
 }
 
 

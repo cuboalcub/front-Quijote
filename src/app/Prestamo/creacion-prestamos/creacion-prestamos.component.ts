@@ -22,13 +22,13 @@ export class CreacionPrestamosComponent {
   maxLibros: number = 3;
 
   inventarioFiltrado: Inventario[] = [...this.inventario]; // Declarar inventarioFiltrado
-  terminoBusqueda: string = ''; // Variable para almacenar el término de búsqueda actual
+  terminoBusqueda: string = ''; 
 
 
   seleccionarFilaInventario(index: number, objeto: any) {
     console.log('Fila inventario seleccionada:', index + 1);
     if (this.filaSeleccionadaInventario === index) {
-      this.filaSeleccionadaInventario = null; // Deselecciona la fila si se hace clic de nuevo
+      this.filaSeleccionadaInventario = null; 
     } else {
       this.filaSeleccionadaInventario = index;
     }
@@ -37,7 +37,7 @@ export class CreacionPrestamosComponent {
   seleccionarFilaCarrito(index: number) {
     console.log('Fila carrito seleccionada:', index);
     if (this.filaSeleccionadaCarrito === index) {
-      this.filaSeleccionadaCarrito = null; // Deselecciona la fila si se hace clic de nuevo
+      this.filaSeleccionadaCarrito = null; 
     } else {
       this.filaSeleccionadaCarrito = index;
     }

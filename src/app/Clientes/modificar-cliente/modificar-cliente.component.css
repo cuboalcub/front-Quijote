@@ -71,21 +71,21 @@ input[type="text"], textarea {
 }
 
 .aceptar-btn:hover {
-    box-shadow: 0 3px #17ac00; /* Sombra al pasar el mouse */
-    top: 1px; /* Efecto de elevación */
+    box-shadow: 0 3px #17ac00; 
+    top: 1px; 
 }
 
 .cancelar-btn:hover {
-    box-shadow: 0 3px #b80000; /* Sombra al pasar el mouse */
-    top: 1px; /* Efecto de elevación */
+    box-shadow: 0 3px #b80000; 
+    top: 1px; 
 }
 
 .aceptar-btn:active {
-    box-shadow: 0 0 #1aae00; /* Sombra al hacer clic */
-    top: 5px; /* Efecto de hundimiento */
+    box-shadow: 0 0 #1aae00; 
+    top: 5px; 
 }
 
 .cancelar-btn:active {
-    box-shadow: 0 0 #a90000; /* Sombra al hacer clic */
-    top: 5px; /* Efecto de hundimiento */
+    box-shadow: 0 0 #a90000; 
+    top: 5px; 
 }
