@@ -16,43 +16,19 @@ import { VentasService } from '../../shared/service/ventas.service';
 })
 export class CreacionVentaComponent {
   
+  inventario: Inventario[] = [
+    { id: 1, nombre_libro: 'Libro A', Fecha_public: '2020-01-01', sucursal: "Sucursal 1", genero: "Ficcion", editorial: "Editorial 1", precio: 100, existencias: 10, estado: true }, 
+    
+  ];
 
-  // inventario = [
-  //   { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
-  //   { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
-  //   { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
-  //   { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
-  //   { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
-  //   { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
-  //   { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
-  //   { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
-  //   { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' },
-  //   { id: '1', nombre: 'Libro A', fechaPublicacion: '2020-01-01', idSucursal: '1', idGenero: '1', idEditorial: '1', precio: '100', existencias: '10' },
-  //   { id: '2', nombre: 'Libro B', fechaPublicacion: '2019-05-15', idSucursal: '2', idGenero: '2', idEditorial: '2', precio: '150', existencias: '5' },
-  //   { id: '3', nombre: 'Libro C', fechaPublicacion: '2018-07-23', idSucursal: '3', idGenero: '3', idEditorial: '3', precio: '200', existencias: '8' }
-  // ];
+  carrito: Carrito[] = [
 
-  // carrito = [
-  //   { id: '1', nombre: 'Libro A', precio: '100', cantidad: '1' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' },
-  //   { id: '2', nombre: 'Libro B', precio: '150', cantidad: '2' }
-  // ];
+  ];
 
 
   constructor(private inventarioService: InvenatrioService, private detalleVentaService: DetalleventaService, private ventasService: VentasService) { }
-  inventario: Inventario[] = [];
-  carrito: Carrito[] = [];
+  // inventario: Inventario[] = [];
+  // carrito: Carrito[] = [];
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   total: number = 0;
@@ -97,7 +73,7 @@ export class CreacionVentaComponent {
     if (this.filaSeleccionadaInventario !== null) {
       const libroSeleccionado = this.inventario[this.filaSeleccionadaInventario];
       const itemCarrito = this.carrito.find(item => item.id === libroSeleccionado.id);
-
+  
       if (itemCarrito) {
         itemCarrito.cantidad += this.cantidad;
       } else {
@@ -107,22 +83,33 @@ export class CreacionVentaComponent {
           precio: libroSeleccionado.precio,
           cantidad: this.cantidad
         });
-        const libro = {
-          id_libro: libroSeleccionado.id,
-          id_prestamo: 1,
-          cantidad:this.cantidad,
-          fecha: libroSeleccionado.Fecha_public,
-          estado: true
-        }
-        this.detalleVentaService.post(libro).subscribe((response) => {
-          alert('Libro agregado al carrito de compras');
-        });
-
       }
-
+  
+      // Reducir la cantidad de existencias del libro en el inventario
+      libroSeleccionado.existencias -= this.cantidad;
+  
+      const libro = {
+        id_libro: libroSeleccionado.id,
+        id_prestamo: 1,
+        cantidad: this.cantidad,
+        fecha: libroSeleccionado.Fecha_public,
+        estado: true
+      };
+  
+      this.detalleVentaService.post(libro).subscribe(
+        response => {
+          alert('Libro agregado al carrito de compras');
+        },
+        error => {
+          console.error(error);
+          alert('Error al agregar el libro al carrito de compras');
+        }
+      );
+  
       this.actualizarTotal();
     }
   }
+  
 
   eliminarDelCarrito() {
     if (this.filaSeleccionadaCarrito !== null) {

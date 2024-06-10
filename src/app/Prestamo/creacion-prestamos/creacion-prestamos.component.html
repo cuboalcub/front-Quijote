@@ -76,7 +76,7 @@
 </section>
 
 <div class="eliminar-btn-container">
-    <button class="eliminar-producto-btn">Eliminar Producto</button>
+    <button class="eliminar-producto-btn" (click)="eliminarDelCarrito()">Eliminar Producto</button>
 </div>
 
 <div class="fecha-limite-container">
@@ -94,7 +94,7 @@
     <div class="input-wrapper">
         <input type="text" id="nombreCliente" placeholder="Ingrese el nombre del cliente">
         <select id="listaClientes"></select><br>        
-    <button class="agregar-btn">Agregar</button>
+    <button class="agregar-btn" (click)="agregarAlCarrito()">Agregar</button>
     </div>
 </div>
 

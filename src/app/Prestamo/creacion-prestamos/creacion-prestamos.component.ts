@@ -7,23 +7,23 @@ import { Carrito } from '../../shared/models/carrito';
 @Component({
   selector: 'app-creacion-prestamos',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './creacion-prestamos.component.html',
-  styleUrl: './creacion-prestamos.component.css'
+  styleUrls: ['./creacion-prestamos.component.css']
 })
 export class CreacionPrestamosComponent {
-//datos de ejemplo para las tablas
-  inventario: Inventario[] = [];
+  inventario: Inventario[] = [
+    { id: 1, sucursal: "Sucursal 1", genero: "Ficcion", editorial: "Editorial 1", nombre_libro: "Libro 1", Fecha_public: "2022-01-01", precio: 10, existencias: 5, estado: true }
+  ];
 
   carrito: Carrito[] = [];
-
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
-  subtotal: number = 0;
+  cantidad: number = 1;
+  maxLibros: number = 3;
 
   seleccionarFilaInventario(index: number, objeto: any) {
-    console.log(objeto);
-    console.log('Fila inventario seleccionada:', index+1);
+    console.log('Fila inventario seleccionada:', index + 1);
     if (this.filaSeleccionadaInventario === index) {
       this.filaSeleccionadaInventario = null; // Deselecciona la fila si se hace clic de nuevo
     } else {
@@ -31,7 +31,7 @@ export class CreacionPrestamosComponent {
     }
   }
 
-  seleccionarFilaCarrito(index: number, ) {
+  seleccionarFilaCarrito(index: number) {
     console.log('Fila carrito seleccionada:', index);
     if (this.filaSeleccionadaCarrito === index) {
       this.filaSeleccionadaCarrito = null; // Deselecciona la fila si se hace clic de nuevo
@@ -40,6 +40,45 @@ export class CreacionPrestamosComponent {
     }
   }
 
+  agregarAlCarrito() {
+    if (this.filaSeleccionadaInventario !== null) {
+      const libroSeleccionado = this.inventario[this.filaSeleccionadaInventario];
+      const cantidadTotal = this.carrito.reduce((total, item) => total + item.cantidad, 0);
+  
+      if (cantidadTotal + this.cantidad > this.maxLibros) {
+        alert('No puedes agregar más de 3 libros al carrito.');
+        return;
+      }
+  
+      const itemCarrito = this.carrito.find(item => item.id === libroSeleccionado.id);
+  
+      if (itemCarrito) {
+        itemCarrito.cantidad += this.cantidad;
+      } else {
+        this.carrito.push({
+          id: libroSeleccionado.id,
+          nombre: libroSeleccionado.nombre_libro,
+          precio: libroSeleccionado.precio,
+          cantidad: this.cantidad
+        });
+      }
+  
+      // Disminuir la cantidad de existencias del libro en el inventario
+      libroSeleccionado.existencias -= this.cantidad;
+    }
+  }
+  
+
+  eliminarDelCarrito() {
+    if (this.filaSeleccionadaCarrito !== null) {
+      this.carrito.splice(this.filaSeleccionadaCarrito, 1);
+      this.filaSeleccionadaCarrito = null;
+    }
+  }
+
+  cantidadTotalEnCarrito(): number {
+    return this.carrito.reduce((total, item) => total + item.cantidad, 0);
+  }
 
   // Datos de ejemplo para la lista de clientes
   clientes: string[] = [
