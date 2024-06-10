@@ -12,15 +12,18 @@ import { Carrito } from '../../shared/models/carrito';
   styleUrls: ['./creacion-prestamos.component.css']
 })
 export class CreacionPrestamosComponent {
-  inventario: Inventario[] = [
-    { id: 1, sucursal: "Sucursal 1", genero: "Ficcion", editorial: "Editorial 1", nombre_libro: "Libro 1", Fecha_public: "2022-01-01", precio: 10, existencias: 5, estado: true }
-  ];
+//datos de ejemplo para las tablas
+  inventario: Inventario[] = [];
 
   carrito: Carrito[] = [];
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   cantidad: number = 1;
   maxLibros: number = 3;
+
+  inventarioFiltrado: Inventario[] = [...this.inventario]; // Declarar inventarioFiltrado
+  terminoBusqueda: string = ''; // Variable para almacenar el término de búsqueda actual
+
 
   seleccionarFilaInventario(index: number, objeto: any) {
     console.log('Fila inventario seleccionada:', index + 1);
@@ -78,6 +81,19 @@ export class CreacionPrestamosComponent {
 
   cantidadTotalEnCarrito(): number {
     return this.carrito.reduce((total, item) => total + item.cantidad, 0);
+  }
+  filtrarInventario(busqueda: string) {
+    this.terminoBusqueda = busqueda; // Almacena el término de búsqueda actual
+    console.log('Buscando:', busqueda); // Agrega un log para depuración
+    this.inventarioFiltrado = this.inventario.filter(libro =>
+      libro.nombre_libro.toLowerCase().includes(busqueda.toLowerCase())
+    );
+    console.log('Resultado filtrado:', this.inventarioFiltrado); // Agrega un log para depuración
+  }
+
+  onInput(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.filtrarInventario(inputElement.value);
   }
 
   // Datos de ejemplo para la lista de clientes

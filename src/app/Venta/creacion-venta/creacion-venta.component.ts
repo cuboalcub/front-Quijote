@@ -15,25 +15,17 @@ import { VentasService } from '../../shared/service/ventas.service';
   styleUrls: ['./creacion-venta.component.css']
 })
 export class CreacionVentaComponent {
-  
-  inventario: Inventario[] = [
-    { id: 1, nombre_libro: 'Libro A', Fecha_public: '2020-01-01', sucursal: "Sucursal 1", genero: "Ficcion", editorial: "Editorial 1", precio: 100, existencias: 10, estado: true }, 
-    
-  ];
-
-  carrito: Carrito[] = [
-
-  ];
-
-
   constructor(private inventarioService: InvenatrioService, private detalleVentaService: DetalleventaService, private ventasService: VentasService) { }
-  // inventario: Inventario[] = [];
-  // carrito: Carrito[] = [];
+  inventario: Inventario[] = [];
+  carrito: Carrito[] = [];
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   total: number = 0;
   objeto: any;
   cantidad: number = 1;
+
+  inventarioFiltrado: Inventario[] = [...this.inventario]; // Declarar inventarioFiltrado
+  terminoBusqueda: string = ''; // Variable para almacenar el término de búsqueda actual
 
   ngOnInit(): void {
     this.actualizarTotal();
@@ -63,6 +55,20 @@ export class CreacionVentaComponent {
     } else {
       this.filaSeleccionadaCarrito = index;
     }
+  }
+  
+  filtrarInventario(busqueda: string) {
+    this.terminoBusqueda = busqueda; // Almacena el término de búsqueda actual
+    console.log('Buscando:', busqueda); // Agrega un log para depuración
+    this.inventarioFiltrado = this.inventario.filter(libro =>
+      libro.nombre_libro.toLowerCase().includes(busqueda.toLowerCase())
+    );
+    console.log('Resultado filtrado:', this.inventarioFiltrado); // Agrega un log para depuración
+  }
+
+  onInput(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.filtrarInventario(inputElement.value);
   }
 
   actualizarTotal(): void {
