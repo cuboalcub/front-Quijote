@@ -33,6 +33,7 @@ export class CreacionVentaComponent {
   ngOnInit(): void {
     this.actualizarTotal();
     this.getInventario();
+    this.getClientes();
   }
 
   getClientes(): void {
