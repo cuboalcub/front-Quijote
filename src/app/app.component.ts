@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from './shared/service/login.service';
-
+import { SesionstorageService } from './shared/service/sesionstorage.service';
 
 @Component({
   selector: 'app-root',
@@ -16,18 +16,19 @@ import { LoginService } from './shared/service/login.service';
 })
 export class AppComponent {
   title = 'LiberiaQuijote';
-  constructor(private loginService: LoginService){}
+  constructor(private loginService: LoginService, private sesionstorageService: SesionstorageService){}
   usuario = '';
   contrasena = '';
   pass = true;
 
   login(){
     token: this.loginService.login(this.usuario, this.contrasena).subscribe(
-      (response: string)=>{
+      (response: any)=>{
         alert('Login exitoso')
         this.pass = false
+        this.sesionstorageService.set('token', response);
       },
-      (error: string)=>{
+      (error: any)=>{
         alert('Error al iniciar sesion')
       }
     );
