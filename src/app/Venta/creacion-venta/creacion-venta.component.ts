@@ -53,7 +53,6 @@ export class CreacionVentaComponent {
   constructor(private inventarioService: InvenatrioService, private detalleVentaService: DetalleventaService, private ventasService: VentasService) { }
   inventario: Inventario[] = [];
   carrito: Carrito[] = [];
-
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   total: number = 0;
