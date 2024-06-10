@@ -59,5 +59,8 @@ export const API_ROUTES = {
         post:"detallePrestamo/guardar",
         update:"detallePrestamo/actualizar",
         delete:"detallePrestamo/borrar"
+    },
+    login:{
+        login:"login"
     }
 }

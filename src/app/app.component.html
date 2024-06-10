@@ -3,7 +3,7 @@
   <img src="assets/nombreLibreria.png" alt="Título principal de la librería Quijote" class="titulo-principal">
 </header>
 <!-- ng if aqui -->
-<div class="login" *ngIf="false">
+<div class="login" *ngIf="pass">
   <div class="login-container">
       <div class="logo-login">
           <img src="assets/logoSinNombre.png" alt="El Quijote">
@@ -13,17 +13,17 @@
       <form>
           <div class="input-group">
               <label for="user-id">Ingrese ID:</label>
-              <input type="text" id="user-id" placeholder="Inserte su ID para acceder al sistema">
+              <input type="text" id="user-id" placeholder="Inserte su usuario para acceder al sistema" [(ngModel)] = "usuario">
           </div>
           <div class="input-group">
               <label for="password">Ingrese Contraseña:</label>
-              <input type="password" id="password" placeholder="Inserte su contraseña">
+              <input type="password" id="password" placeholder="Inserte su contraseña" [(ngModel)] = "contrasena">
           </div>
-          <button type="submit">Ingresar</button>
+          <button type="submit" (click)="login()">Ingresar</button>
       </form>
   </div>
   </div>
-<aside *ngIf="true" >
+<aside *ngIf="!pass" >
   <ul>
     <a routerLink="inventario"><li>Inventario</li></a>
     <a routerLink="ventas"><li>Ventas</li></a>
@@ -35,4 +35,4 @@
     <a routerLink="generos"><li>Géneros</li></a>
   </ul>
 </aside>
-<router-outlet *ngIf="true"></router-outlet> 
+<router-outlet *ngIf="!pass"></router-outlet> 
