@@ -63,7 +63,6 @@ export class CreacionVentaComponent {
     {id:8,sucursal:"Sucursal 8",genero:"Ficcion",editorial:"Editorial 1",nombre_libro:"Libro 8",Fecha_public:"2022-01-01", precio:10,existencias:5,estado:true}
   ];
   carrito: Carrito[] = [];
-
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   total: number = 0;
