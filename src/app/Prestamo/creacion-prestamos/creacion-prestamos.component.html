@@ -77,7 +77,7 @@
 
 <div class="fecha-limite-container">
     <h2 class="fecha-limite-titulo">Fecha Límite:</h2>
-    <input type="date" id="fechaLimite" class="fecha-limite-input">
+    <input type="date" id="fechaLimite" class="fecha-limite-input" [(ngModel)]="fechaLimite">
 </div>
 
 <div class="buttons">
@@ -89,7 +89,9 @@
     <h2 class="cliente-titulo">Ingrese el Nombre del Cliente:</h2>
     <div class="input-wrapper">
         <input type="text" id="nombreCliente" placeholder="Ingrese el nombre del cliente">
-        <select id="listaClientes"></select><br>        
+        <select id="listaClientes"  [(ngModel)]="cliente">
+            <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">{{ cliente }}</option>
+        </select><br>        
     <button class="agregar-btn" (click)="agregarAlCarrito()">Agregar</button>
     </div>
 </div>

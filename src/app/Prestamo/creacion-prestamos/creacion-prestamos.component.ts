@@ -6,7 +6,7 @@ import { InvenatrioService } from '../../shared/service/invenatrio.service';
 import { ClientesService } from '../../shared/service/clientes.service';
 import { DetalleventaService } from '../../shared/service/detalleventa.service';
 import { Carrito } from '../../shared/models/carrito';
-
+import { DetalleprestamoService } from '../../shared/service/detalleprestamo.service';
 @Component({
   selector: 'app-creacion-prestamos',
   standalone: true,
@@ -16,19 +16,21 @@ import { Carrito } from '../../shared/models/carrito';
 })
 export class CreacionPrestamosComponent implements OnInit {
   inventario: any[] = [];
-  clientes: string[] = [];
+  clientes: any[] = [];
   carrito: Carrito[] = [];
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   cantidad: number = 1;
   maxLibros: number = 3;
+  DP: any[] = [];
   inventarioFiltrado: any[] = [...this.inventario];
   terminoBusqueda: string = '';
-
+  cliente: number = 0;
+  fechaLimite: string = '';
   constructor(
     private inventarioService: InvenatrioService,
     private clientesService: ClientesService,
-    private detalleventaService: DetalleventaService
+    private detalleprestamo: DetalleprestamoService,
   ) {}
 
   ngOnInit(): void {
@@ -89,6 +91,26 @@ export class CreacionPrestamosComponent implements OnInit {
 
       libroSeleccionado.existencias -= this.cantidad;
       this.inventarioFiltrado = [...this.inventario];
+      
+      this.detalleprestamo.get().subscribe((detalleprestamo: any[]) => {
+        this.DP = detalleprestamo
+      })
+
+      const libro = {
+        id_libro: libroSeleccionado.id,
+        idPrestamo: this.DP.length + 1,
+        cantidad: this.cantidad,
+        fecha: this.fechaLimite,
+        estado: true,
+      }
+
+      this.detalleprestamo.post(libro).subscribe(
+        (response) => {
+          console.log('Libro registrado exitosamente:', response);
+        },
+        (error) => console.error('Error al registrar el libro:', error)
+      );
+
     }
   }
 
@@ -100,9 +122,15 @@ export class CreacionPrestamosComponent implements OnInit {
       if (libroEnInventario) {
         libroEnInventario.existencias += itemEliminado.cantidad;
       }
-
+      this.detalleprestamo.delete(this.filaSeleccionadaCarrito+1).subscribe(
+        (response) => {
+          console.log('Libro eliminado exitosamente:', response);
+        },
+        (error) => console.error('Error al eliminar el libro:', error)
+      )
       this.carrito.splice(this.filaSeleccionadaCarrito, 1);
       this.filaSeleccionadaCarrito = null;
+
     }
   }
 

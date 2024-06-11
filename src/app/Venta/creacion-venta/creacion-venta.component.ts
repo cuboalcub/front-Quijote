@@ -109,7 +109,7 @@ export class CreacionVentaComponent implements OnInit {
         });
       }
       libroSeleccionado.existencias -= this.cantidad;
-      
+      this.inventarioFiltrado = [...this.inventario];
       this.ventasService.get().subscribe((inventario:any[]) => {
         this.DV = inventario;
       })
