@@ -25,7 +25,7 @@ export class CreacionVentaComponent implements OnInit {
   total: number = 0;
   objeto: any;
   cantidad: number = 1;
-  cliente: string = '';
+  cliente: number = 0;
   inventarioFiltrado: any[] = [...this.inventario];
   terminoBusqueda: string = '';
   DV: any[] = [];
@@ -103,12 +103,11 @@ export class CreacionVentaComponent implements OnInit {
       } else {
         this.carrito.push({
           id: libroSeleccionado.id,
-          nombre: libroSeleccionado.nombre_libro,
+          nombre: libroSeleccionado.nombre,
           precio: libroSeleccionado.precio,
           cantidad: this.cantidad
         });
       }
-  
       libroSeleccionado.existencias -= this.cantidad;
       
       this.ventasService.get().subscribe((inventario:any[]) => {
@@ -163,14 +162,20 @@ export class CreacionVentaComponent implements OnInit {
   }
 
   confirmarVenta(): void {
-    // this.carrito.forEach(element => {
-    //   this.ventasService.post(element).subscribe(
-    //     () => alert('Venta realizada con éxito'),
-    //     error => console.error('Error al realizar la venta', error)
-    //   );
-    // });
-    // this.carrito = [];
-    // this.total = 0;
+    let cantidadtotal = 0
+    this.carrito.forEach(item => {
+      cantidadtotal += item.cantidad
+    })
+    const venta = {
+      id_cliente: this.cliente,
+      cantidad: cantidadtotal,
+      total: this.total,
+      estado:true
+    }
+
+    this.ventasService.post(venta).subscribe(
+      
+    )
   }
 
   cancelarVenta(): void {

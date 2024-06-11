@@ -92,7 +92,7 @@
     <div class="input-wrapper">
         <input type="text" id="nombreCliente" placeholder="Ingrese el nombre del cliente">
         <select id="listaClientes"  [(ngModel)]="cliente">
-            <option *ngFor="let cliente of clientes">{{ cliente.nombre }}</option>
+            <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">{{ cliente.nombre }}</option>
         </select>
 
     </div>
