@@ -61,9 +61,8 @@ export class CreacionPrestamosComponent implements OnInit {
   getClientes(): void {
     this.clientesService.get().subscribe(
       (clientes) => {
-        this.clientes = clientes.map(cliente => cliente.nombre);
-      },
-      (error) => console.error('Error al obtener los clientes:', error)
+        this.clientes = clientes;
+      }
     );
   }
 
