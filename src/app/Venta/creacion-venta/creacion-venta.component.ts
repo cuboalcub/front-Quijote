@@ -20,6 +20,7 @@ export class CreacionVentaComponent implements OnInit {
   inventario: any[] = [];
   carrito: Carrito[] = [];
   clientes: Clientes[] = [];
+
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
   total: number = 0;
@@ -27,8 +28,10 @@ export class CreacionVentaComponent implements OnInit {
   cantidad: number = 1;
   cliente: number = 0;
   inventarioFiltrado: any[] = [...this.inventario];
+  clientesFiltrados: Clientes[] = [...this.clientes];
   terminoBusqueda: string = '';
   DV: any[] = [];
+  
   constructor(
     private inventarioService: InvenatrioService,
     private detalleVentaService: DetalleventaService, 
@@ -41,6 +44,13 @@ export class CreacionVentaComponent implements OnInit {
     this.getClientes();
     this.actualizarTotal();
     this.inventarioFiltrado = [...this.inventario];
+    this.clientesFiltrados = [...this.clientes]; 
+
+    const inputNombreCliente: HTMLInputElement = document.getElementById("nombreCliente") as HTMLInputElement;
+    inputNombreCliente.addEventListener("input", (event) => {
+      this.onInputChange(event);
+    });
+    this.actualizarListaDesplegable(inputNombreCliente);
   }
 
   getClientes(): void {
@@ -72,7 +82,7 @@ export class CreacionVentaComponent implements OnInit {
       this.filaSeleccionadaCarrito = index;
     }
   }
-  
+  //filtrar un libro buscandolo por su nombre--------------------
   filtrarInventario(busqueda: string): void {
     this.terminoBusqueda = busqueda; 
     console.log('Buscando:', busqueda); 
@@ -88,7 +98,29 @@ export class CreacionVentaComponent implements OnInit {
     const inputElement = event.target as HTMLInputElement;
     this.filtrarInventario(inputElement.value);
   }
+  //-------------------------------------------------
 
+  // Función para actualizar las opciones de la lista desplegable
+  actualizarListaDesplegable(input: HTMLInputElement): void {
+    const listaClientes: HTMLSelectElement = document.getElementById("listaClientes") as HTMLSelectElement;
+    listaClientes.innerHTML = ""; // Limpiar la lista desplegable
+    const filtro: string = input.value.toLowerCase();
+    const opcionesFiltradas: Clientes[] = this.clientes.filter(cliente => cliente.nombre.toLowerCase().includes(filtro));
+    opcionesFiltradas.forEach(cliente => {
+      const opcion: HTMLOptionElement = document.createElement("option");
+      opcion.value = cliente.id.toString();
+      opcion.textContent = cliente.nombre;
+      listaClientes.appendChild(opcion);
+    });
+  }
+
+  // Evento para detectar cambios en el campo de entrada y actualizar la lista desplegable
+  onInputChange(event: Event): void {
+    const inputNombreCliente: HTMLInputElement = event.target as HTMLInputElement;
+    this.actualizarListaDesplegable(inputNombreCliente);
+  }
+  //-----------------------------------------------------
+  
   actualizarTotal(): void {
     this.total = this.carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
   }
