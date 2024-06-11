@@ -9,7 +9,7 @@
 
 <div class="busqueda">
     <label for="busqueda">Buscar:</label>
-    <input type="text" id="busqueda" name="busqueda" placeholder="Ingrese su búsqueda..." (input)="onInput($event)">
+    <input type="text" id="busqueda" name="busqueda" placeholder="Ingrese su búsqueda..." (input)="onInputChange($event)">
 </div>
 
 <section class="inventario-section">
@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let libro of inventarioFiltrado; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i ,libro)" [class.selected]="filaSeleccionadaInventario === i">
+                <tr *ngFor="let libro of inventarioFiltrado; let i = index" [attr.data-index]="i" (click)="seleccionarFilaInventario(i)" [class.selected]="filaSeleccionadaInventario === i">
                     <td>{{ libro.id }}</td>
                     <td>{{ libro.nombre }}</td>
                     <td>{{ libro.fecha }}</td>
