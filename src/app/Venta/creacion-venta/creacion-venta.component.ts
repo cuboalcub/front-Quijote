@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 export class CreacionVentaComponent implements OnInit {
   inventario: any[] = [];
   carrito: Carrito[] = [];
-  clientes: Clientes[] = [];
+  clientes: any[] = [];
 
   filaSeleccionadaInventario: number | null = null;
   filaSeleccionadaCarrito: number | null = null;
@@ -27,7 +27,7 @@ export class CreacionVentaComponent implements OnInit {
   cantidad: number = 1;
   cliente: number = 0;
   inventarioFiltrado: any[] = [...this.inventario];
-  clientesFiltrados: Clientes[] = [...this.clientes];
+  clientesFiltrados: any[] = [...this.clientes];
   terminoBusqueda: string = '';
   DV: any[] = [];
   
@@ -223,8 +223,12 @@ export class CreacionVentaComponent implements OnInit {
 
   cancelarVenta(): void {
     let tamDV = this.DV.length+1
-    this.detalleVentaService.cancelar(tamDV).subscribe(
+    this.ventasService.cancelar(tamDV).subscribe(
       () => alert('Venta cancelada con exito'),
+      error => {
+        console.error(error);
+        alert('Error al cancelar la venta');
+      }
     )
     this.router.navigate(['/prestamos']);
   }

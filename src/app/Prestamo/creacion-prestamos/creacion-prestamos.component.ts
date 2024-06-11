@@ -7,6 +7,8 @@ import { ClientesService } from '../../shared/service/clientes.service';
 import { DetalleventaService } from '../../shared/service/detalleventa.service';
 import { Carrito } from '../../shared/models/carrito';
 import { DetalleprestamoService } from '../../shared/service/detalleprestamo.service';
+import { Router } from '@angular/router';
+import { PrestamosService } from '../../shared/service/prestamos.service';
 @Component({
   selector: 'app-creacion-prestamos',
   standalone: true,
@@ -33,6 +35,7 @@ export class CreacionPrestamosComponent implements OnInit {
     private inventarioService: InvenatrioService,
     private clientesService: ClientesService,
     private detalleprestamo: DetalleprestamoService,
+    private prestamosService: PrestamosService,
   ) {}
 
   ngOnInit(): void {
@@ -60,8 +63,8 @@ export class CreacionPrestamosComponent implements OnInit {
 
   getClientes(): void {
     this.clientesService.get().subscribe(
-      (clientes) => {
-        this.clientes = clientes;
+      (cliente) => {
+        this.clientes = cliente;
       }
     );
   }
@@ -202,12 +205,13 @@ confirmarPrestamo(): void {
 }
 cancelarPrestamo(): void {
   let idPrestamo = this.DP.length + 1
-  this.detalleprestamo.cancelar(idPrestamo).subscribe(
+  this.prestamosService.cancelar(idPrestamo).subscribe(
     (response) => {
       console.log('Prestamo cancelado exitosamente:', response);
     },
     (error) => console.error('Error al cancelar el prestamo:', error)
   )
 }
+
 
 }

@@ -27,4 +27,7 @@ base = API_ROUTES.baseurl
   delete(id: number): Observable<Prestamo> {
     return this.http.delete<Prestamo>(`${this.base}${API_ROUTES.prestamos.delete}/${id}`);
   } 
+  cancelar(id: number): Observable<any> { 
+    return this.http.delete<any>(this.base + API_ROUTES.prestamos.cancelar + '/' + id);
+  }
 }

@@ -92,7 +92,7 @@
     <div class="input-wrapper">
         <input type="text" id="nombreCliente" placeholder="Ingrese el nombre del cliente" (input)="onInputChange($event)">
         <select id="listaClientes" [(ngModel)]="cliente">
-            <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }}</option>
+            <option *ngFor="let cliente of clientesFiltrados" [value]="cliente.id">{{ cliente.nombre }}</option>
         </select>
     </div>
 </div>

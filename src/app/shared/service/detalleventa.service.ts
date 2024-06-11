@@ -26,8 +26,4 @@ export class DetalleventaService {
   delete(id: number): Observable<any> { 
     return this.http.delete<any>(this.baseUrl + API_ROUTES.detalleVentas.delete + '/' + id); }
 
-  cancelar(id: number): Observable<any> { 
-    return this.http.delete<any>(this.baseUrl + API_ROUTES.detalleVentas.cancelar + '/' + id); }
-    
-
 }
