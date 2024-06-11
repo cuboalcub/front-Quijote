@@ -43,6 +43,12 @@ export class CreacionPrestamosComponent implements OnInit {
   ngOnInit(): void {
     this.getInventario();
     this.getClientes();
+
+    const inputNombreCliente: HTMLInputElement = document.getElementById("nombreCliente") as HTMLInputElement;
+    inputNombreCliente.addEventListener("input", (event) => {
+      this.onInputChange(event);
+    });
+    this.actualizarListaDesplegable(inputNombreCliente);
   }
 
   getInventario(): void {
@@ -157,17 +163,25 @@ export class CreacionPrestamosComponent implements OnInit {
     this.filtrarInventario(inputElement.value);
   }
 
-  actualizarListaDesplegable(): void {
-    this.clientesFiltrados = this.clientes.filter(cliente =>
-      cliente.nombre.toLowerCase().includes(this.terminoBusqueda.toLowerCase())
-    );
-  }
 
   onInputChange(event: Event): void {
-    const inputElement = event.target as HTMLInputElement;
-    this.terminoBusqueda = inputElement.value;
-    this.actualizarListaDesplegable();
+    const inputNombreCliente: HTMLInputElement = event.target as HTMLInputElement;
+    this.actualizarListaDesplegable(inputNombreCliente);
   }
+
+  
+actualizarListaDesplegable(input: HTMLInputElement): void {
+  const listaClientes: HTMLSelectElement = document.getElementById("listaClientes") as HTMLSelectElement;
+  listaClientes.innerHTML = ""; // Limpiar la lista desplegable
+  const filtro: string = input.value.toLowerCase();
+  const opcionesFiltradas: any[] = this.clientes.filter(cliente => cliente.nombre.toLowerCase().includes(filtro));
+  opcionesFiltradas.forEach(cliente => {
+    const opcion: HTMLOptionElement = document.createElement("option");
+    opcion.value = cliente.id.toString();
+    opcion.textContent = cliente.nombre;
+    listaClientes.appendChild(opcion);
+  });
+}
 
   confirmarPrestamo(): void {
     let libro: number = 0;
