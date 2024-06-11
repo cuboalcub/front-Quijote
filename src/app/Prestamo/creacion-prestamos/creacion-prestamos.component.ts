@@ -192,8 +192,13 @@ confirmarPrestamo(): void {
     id_cliente: this.cliente,
     cantidad: libro,
     estado: true
-
   }
+  this.detalleprestamo.post(librosPrestados).subscribe(
+    (response) => {
+      console.log('Prestamo registrado exitosamente:', response);
+    },
+    (error) => console.error('Error al registrar el prestamo:', error)
+  )
 }
 cancelarPrestamo(): void {
   let idPrestamo = this.DP.length + 1
