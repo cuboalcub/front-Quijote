@@ -13,7 +13,7 @@
           <tr *ngFor="let editorial of arrEditoriales; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i,editorial.id)" [class.selected]="filaSeleccionada === i">
             <td>{{ editorial.id }}</td>
             <td>{{ editorial.nombre }}</td>
-            <td class="modificar"><a routerLink="/modificarEditorial"><img src="assets/modificar.png" alt="Modificar" (click)="getId(editorial)"></a></td>
+            <td class="modificar"><a routerLink="/modificarEditorial"><img src="https://firebasestorage.googleapis.com/v0/b/quijote-image.appspot.com/o/image%2Fmodificar.png?alt=media&token=42001a07-261f-4ce5-874d-e130c34131a4" alt="Modificar" (click)="getId(editorial)"></a></td>
           </tr>
         </tbody>
       </table>
