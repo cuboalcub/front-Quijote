@@ -27,6 +27,8 @@ export class CreacionPrestamosComponent implements OnInit {
   terminoBusqueda: string = '';
   cliente: number = 0;
   fechaLimite: string = '';
+  clientesFiltrados: any[] = [...this.clientes];
+
   constructor(
     private inventarioService: InvenatrioService,
     private clientesService: ClientesService,
@@ -37,6 +39,13 @@ export class CreacionPrestamosComponent implements OnInit {
     this.getInventario();
     this.getClientes();
     this.inventarioFiltrado = [...this.inventario];
+    this.clientesFiltrados = [...this.clientes]; 
+
+    const inputNombreCliente: HTMLInputElement = document.getElementById("nombreCliente") as HTMLInputElement;
+    inputNombreCliente.addEventListener("input", (event) => {
+      this.onInputChange(event);
+    });
+    this.actualizarListaDesplegable(inputNombreCliente);
   }
 
   getInventario(): void {
@@ -138,6 +147,7 @@ export class CreacionPrestamosComponent implements OnInit {
     return this.carrito.reduce((total, item) => total + item.cantidad, 0);
   }
 
+    //filtrar un libro buscandolo por su nombre--------------------
   filtrarInventario(busqueda: string): void {
     this.terminoBusqueda = busqueda; 
     console.log('Buscando:', busqueda); 
@@ -153,24 +163,26 @@ export class CreacionPrestamosComponent implements OnInit {
     const inputElement = event.target as HTMLInputElement;
     this.filtrarInventario(inputElement.value);
   }
+//-------------------------------------------------
 
-  actualizarListaDesplegable(input: HTMLInputElement): void {
-    const listaClientes: HTMLSelectElement = document.getElementById('listaClientes') as HTMLSelectElement;
-    listaClientes.innerHTML = '';
+// Función para actualizar las opciones de la lista desplegable
+actualizarListaDesplegable(input: HTMLInputElement): void {
+  const listaClientes: HTMLSelectElement = document.getElementById("listaClientes") as HTMLSelectElement;
+  listaClientes.innerHTML = ""; // Limpiar la lista desplegable
+  const filtro: string = input.value.toLowerCase();
+  const opcionesFiltradas: any[] = this.clientes.filter(cliente => cliente.nombre.toLowerCase().includes(filtro));
+  opcionesFiltradas.forEach(cliente => {
+    const opcion: HTMLOptionElement = document.createElement("option");
+    opcion.value = cliente.id.toString();
+    opcion.textContent = cliente.nombre;
+    listaClientes.appendChild(opcion);
+  });
+}
 
-    const filtro: string = input.value.toLowerCase();
-    const opcionesFiltradas: string[] = this.clientes.filter(cliente => cliente.toLowerCase().includes(filtro));
-
-    opcionesFiltradas.forEach(cliente => {
-      const opcion: HTMLOptionElement = document.createElement('option');
-      opcion.value = cliente;
-      opcion.textContent = cliente;
-      listaClientes.appendChild(opcion);
-    });
-  }
-
-  onInputChange(event: Event): void {
-    const inputNombreCliente: HTMLInputElement = event.target as HTMLInputElement;
-    this.actualizarListaDesplegable(inputNombreCliente);
-  }
+// Evento para detectar cambios en el campo de entrada y actualizar la lista desplegable
+onInputChange(event: Event): void {
+  const inputNombreCliente: HTMLInputElement = event.target as HTMLInputElement;
+  this.actualizarListaDesplegable(inputNombreCliente);
+}
+//-----------------------------------------------------
 }
