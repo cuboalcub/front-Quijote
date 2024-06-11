@@ -6,6 +6,7 @@ import { InvenatrioService } from '../../shared/service/invenatrio.service';
 import { DetalleventaService } from '../../shared/service/detalleventa.service';
 import { VentasService } from '../../shared/service/ventas.service';
 import { ClientesService } from '../../shared/service/clientes.service';
+import { DetalleVentaComponent } from '../../Prestamo/detalle-venta/detalle-venta.component';
 import { Clientes } from '../../shared/models/cliente';
 
 @Component({
@@ -27,12 +28,12 @@ export class CreacionVentaComponent implements OnInit {
   cantidad: number = 1;
   cliente: string = '';
   terminoBusqueda: string = '';
-
+  DV: any[] = [];
   constructor(
     private inventarioService: InvenatrioService,
     private detalleVentaService: DetalleventaService, 
     private ventasService: VentasService, 
-    private clientesService: ClientesService
+    private clientesService: ClientesService,
   ) { }
 
   ngOnInit(): void {
@@ -104,12 +105,17 @@ export class CreacionVentaComponent implements OnInit {
       }
   
       libroSeleccionado.existencias -= this.cantidad;
-  
+      
+      this.ventasService.get().subscribe((inventario:any[]) => {
+        this.DV = inventario;
+      })
+      let tamDV = this.DV.length + 1;
       const libro = {
-        id_libro: libroSeleccionado.id,
-        id_prestamo: 1,
+        idVenta: tamDV,
+        id_libro:libroSeleccionado.id,
         cantidad: this.cantidad,
-        fecha: libroSeleccionado.Fecha_public,
+        precio: libroSeleccionado.precio,
+        subtotal: (libroSeleccionado.precio * this.cantidad),
         estado: true
       };
   
@@ -166,4 +172,6 @@ export class CreacionVentaComponent implements OnInit {
     this.carrito = [];
     this.total = 0;
   }
+
+
 }
