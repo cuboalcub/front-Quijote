@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Inventario } from '../../shared/models/inventario';
 import { Carrito } from '../../shared/models/carrito';
 import { InvenatrioService } from '../../shared/service/invenatrio.service';
 import { DetalleventaService } from '../../shared/service/detalleventa.service';
