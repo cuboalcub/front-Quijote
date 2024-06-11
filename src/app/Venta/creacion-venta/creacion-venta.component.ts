@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Inventario } from '../../shared/models/inventario';
@@ -8,6 +8,7 @@ import { DetalleventaService } from '../../shared/service/detalleventa.service';
 import { VentasService } from '../../shared/service/ventas.service';
 import { ClientesService } from '../../shared/service/clientes.service';
 import { Clientes } from '../../shared/models/cliente';
+
 @Component({
   selector: 'app-creacion-venta',
   standalone: true,
@@ -15,9 +16,9 @@ import { Clientes } from '../../shared/models/cliente';
   templateUrl: './creacion-venta.component.html',
   styleUrls: ['./creacion-venta.component.css']
 })
-export class CreacionVentaComponent {
-  constructor(private inventarioService: InvenatrioService, private detalleVentaService: DetalleventaService, private ventasService: VentasService, private clientesService: ClientesService) { }
+export class CreacionVentaComponent implements OnInit {
   inventario: any[] = [];
+  inventarioFiltrado: any[] = [];
   carrito: Carrito[] = [];
   clientes: Clientes[] = [];
   filaSeleccionadaInventario: number | null = null;
@@ -26,32 +27,35 @@ export class CreacionVentaComponent {
   objeto: any;
   cantidad: number = 1;
   cliente: string = '';
-
-  inventarioFiltrado: any[] = [...this.inventario]; //
   terminoBusqueda: string = '';
 
+  constructor(
+    private inventarioService: InvenatrioService,
+    private detalleVentaService: DetalleventaService, 
+    private ventasService: VentasService, 
+    private clientesService: ClientesService
+  ) { }
+
   ngOnInit(): void {
-    this.actualizarTotal();//
     this.getInventario();
     this.getClientes();
+    this.actualizarTotal();
   }
 
   getClientes(): void {
     this.clientesService.get().subscribe((clientes) => {
       this.clientes = clientes;
-    }
-    );
+    });
   }
 
   getInventario(): void {
-    this.inventarioService.get().subscribe((inventario) => {
+    this.inventarioService.get().subscribe((inventario:any[]) => {
       this.inventario = inventario;
-    }
-    );
+      this.inventarioFiltrado = [...this.inventario]; // Inicializar inventarioFiltrado
+    });
   }
 
-  seleccionarFilaInventario(index: number, objeto: any) {
-    console.log('Fila inventario seleccionada:', index);
+  seleccionarFilaInventario(index: number, objeto: any): void {
     if (this.filaSeleccionadaInventario === index) {
       this.filaSeleccionadaInventario = null;
     } else {
@@ -60,8 +64,7 @@ export class CreacionVentaComponent {
     }
   }
 
-  seleccionarFilaCarrito(index: number) {
-    console.log('Fila carrito seleccionada:', index);
+  seleccionarFilaCarrito(index: number): void {
     if (this.filaSeleccionadaCarrito === index) {
       this.filaSeleccionadaCarrito = null; 
     } else {
@@ -69,16 +72,14 @@ export class CreacionVentaComponent {
     }
   }
   
-  filtrarInventario(busqueda: string) {
-    this.terminoBusqueda = busqueda; // Almacena el término de búsqueda actual
-    console.log('Buscando:', busqueda); // Agrega un log para depuración
+  filtrarInventario(busqueda: string): void {
+    this.terminoBusqueda = busqueda;
     this.inventarioFiltrado = this.inventario.filter(libro =>
       libro.nombre_libro.toLowerCase().includes(busqueda.toLowerCase())
     );
-    console.log('Resultado filtrado:', this.inventarioFiltrado); // Agrega un log para depuración
   }
 
-  onInput(event: Event) {
+  onInput(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
     this.filtrarInventario(inputElement.value);
   }
@@ -86,7 +87,8 @@ export class CreacionVentaComponent {
   actualizarTotal(): void {
     this.total = this.carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
   }
-  agregarDetalleVenta() {
+
+  agregarDetalleVenta(): void {
     if (this.filaSeleccionadaInventario !== null) {
       const libroSeleccionado = this.inventarioFiltrado[this.filaSeleccionadaInventario];
       const itemCarrito = this.carrito.find(item => item.id === libroSeleccionado.id);
@@ -102,7 +104,6 @@ export class CreacionVentaComponent {
         });
       }
   
-      // Reducir la cantidad de existencias del libro en el inventario
       libroSeleccionado.existencias -= this.cantidad;
   
       const libro = {
@@ -114,9 +115,7 @@ export class CreacionVentaComponent {
       };
   
       this.detalleVentaService.post(libro).subscribe(
-        response => {
-          alert('Libro agregado al carrito de compras');
-        },
+        () => alert('Libro agregado al carrito de compras'),
         error => {
           console.error(error);
           alert('Error al agregar el libro al carrito de compras');
@@ -126,16 +125,13 @@ export class CreacionVentaComponent {
       this.actualizarTotal();
     }
   }
-  
 
-  eliminarDelCarrito() {
+  eliminarDelCarrito(): void {
     if (this.filaSeleccionadaCarrito !== null) {
-      console.log('Fila carrito eliminada:', this.filaSeleccionadaCarrito);
       const itemEliminado = this.carrito[this.filaSeleccionadaCarrito];
       const libroEnInventario = this.inventario.find(libro => libro.id === itemEliminado.id);
   
       if (libroEnInventario) {
-        // Sumar la cantidad eliminada del carrito a las existencias del libro en el inventario
         libroEnInventario.existencias += itemEliminado.cantidad;
       } else {
         console.error('El libro no se encuentra en el inventario.');
@@ -143,35 +139,32 @@ export class CreacionVentaComponent {
       }
   
       this.carrito.splice(this.filaSeleccionadaCarrito, 1);
-      this.detalleVentaService.delete(this.filaSeleccionadaCarrito + 1).subscribe((response) => {
-        alert('Libro eliminado del carrito de compras');
-      },
-        (error) => {
+      this.detalleVentaService.delete(this.filaSeleccionadaCarrito + 1).subscribe(
+        () => alert('Libro eliminado del carrito de compras'),
+        error => {
           console.error(error);
           alert('Error al eliminar el libro del carrito de compras');
-        });
+        }
+      );
+
       this.filaSeleccionadaCarrito = null;
       this.actualizarTotal();
     }
   }
-  
-  
 
-  confirmarVenta() {
-    // Aquí iría la lógica para confirmar la venta
-    console.log('Venta confirmada:', this.carrito);
+  confirmarVenta(): void {
     this.carrito.forEach(element => {
-      this.ventasService.post(element).subscribe((response) => {
-        alert('Venta realizada con exito');
-      },
-    )
+      this.ventasService.post(element).subscribe(
+        () => alert('Venta realizada con éxito'),
+        error => console.error('Error al realizar la venta', error)
+      );
     });
     this.carrito = [];
     this.total = 0;
   }
 
-  cancelarVenta() {
+  cancelarVenta(): void {
     this.carrito = [];
-    this.total = 0;//
+    this.total = 0;
   }
 }
