@@ -147,7 +147,6 @@ export class CreacionPrestamosComponent implements OnInit {
     return this.carrito.reduce((total, item) => total + item.cantidad, 0);
   }
 
-    //filtrar un libro buscandolo por su nombre--------------------
   filtrarInventario(busqueda: string): void {
     this.terminoBusqueda = busqueda; 
     console.log('Buscando:', busqueda); 
@@ -163,9 +162,9 @@ export class CreacionPrestamosComponent implements OnInit {
     const inputElement = event.target as HTMLInputElement;
     this.filtrarInventario(inputElement.value);
   }
-//-------------------------------------------------
 
-// Función para actualizar las opciones de la lista desplegable
+
+
 actualizarListaDesplegable(input: HTMLInputElement): void {
   const listaClientes: HTMLSelectElement = document.getElementById("listaClientes") as HTMLSelectElement;
   listaClientes.innerHTML = ""; // Limpiar la lista desplegable
@@ -179,10 +178,10 @@ actualizarListaDesplegable(input: HTMLInputElement): void {
   });
 }
 
-// Evento para detectar cambios en el campo de entrada y actualizar la lista desplegable
+
 onInputChange(event: Event): void {
   const inputNombreCliente: HTMLInputElement = event.target as HTMLInputElement;
   this.actualizarListaDesplegable(inputNombreCliente);
 }
-//-----------------------------------------------------
+
 }

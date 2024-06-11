@@ -82,7 +82,7 @@ export class CreacionVentaComponent implements OnInit {
       this.filaSeleccionadaCarrito = index;
     }
   }
-  //filtrar un libro buscandolo por su nombre--------------------
+
   filtrarInventario(busqueda: string): void {
     this.terminoBusqueda = busqueda; 
     console.log('Buscando:', busqueda); 
@@ -98,9 +98,9 @@ export class CreacionVentaComponent implements OnInit {
     const inputElement = event.target as HTMLInputElement;
     this.filtrarInventario(inputElement.value);
   }
-  //-------------------------------------------------
 
-  // Función para actualizar las opciones de la lista desplegable
+
+
   actualizarListaDesplegable(input: HTMLInputElement): void {
     const listaClientes: HTMLSelectElement = document.getElementById("listaClientes") as HTMLSelectElement;
     listaClientes.innerHTML = ""; // Limpiar la lista desplegable
@@ -114,12 +114,11 @@ export class CreacionVentaComponent implements OnInit {
     });
   }
 
-  // Evento para detectar cambios en el campo de entrada y actualizar la lista desplegable
   onInputChange(event: Event): void {
     const inputNombreCliente: HTMLInputElement = event.target as HTMLInputElement;
     this.actualizarListaDesplegable(inputNombreCliente);
   }
-  //-----------------------------------------------------
+  
   
   actualizarTotal(): void {
     this.total = this.carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
@@ -190,7 +189,7 @@ export class CreacionVentaComponent implements OnInit {
           alert('Error al eliminar el libro del carrito de compras');
         }
       );
-
+      
       this.filaSeleccionadaCarrito = null;
       this.actualizarTotal();
     }
