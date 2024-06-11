@@ -158,14 +158,14 @@ export class CreacionVentaComponent implements OnInit {
   }
 
   confirmarVenta(): void {
-    this.carrito.forEach(element => {
-      this.ventasService.post(element).subscribe(
-        () => alert('Venta realizada con éxito'),
-        error => console.error('Error al realizar la venta', error)
-      );
-    });
-    this.carrito = [];
-    this.total = 0;
+    // this.carrito.forEach(element => {
+    //   this.ventasService.post(element).subscribe(
+    //     () => alert('Venta realizada con éxito'),
+    //     error => console.error('Error al realizar la venta', error)
+    //   );
+    // });
+    // this.carrito = [];
+    // this.total = 0;
   }
 
   cancelarVenta(): void {
