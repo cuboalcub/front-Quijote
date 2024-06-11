@@ -4,12 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { Inventario } from '../../shared/models/inventario';
 import { InvenatrioService } from '../../shared/service/invenatrio.service';
 import { ClientesService } from '../../shared/service/clientes.service';
-import { DetalleventaService } from '../../shared/service/detalleventa.service';
 import { Carrito } from '../../shared/models/carrito';
 import { DetalleprestamoService } from '../../shared/service/detalleprestamo.service';
 import { Router } from '@angular/router';
 import { PrestamosService } from '../../shared/service/prestamos.service';
-
 @Component({
   selector: 'app-creacion-prestamos',
   standalone: true,
@@ -26,11 +24,11 @@ export class CreacionPrestamosComponent implements OnInit {
   cantidad: number = 1;
   maxLibros: number = 3;
   DP: any[] = [];
-  inventarioFiltrado: any[] = [];
+  inventarioFiltrado: any[] = [...this.inventario];
   terminoBusqueda: string = '';
   cliente: number = 0;
   fechaLimite: string = '';
-  clientesFiltrados: any[] = [];
+  clientesFiltrados: any[] = [...this.clientes];
 
   constructor(
     private inventarioService: InvenatrioService,
@@ -43,6 +41,8 @@ export class CreacionPrestamosComponent implements OnInit {
   ngOnInit(): void {
     this.getInventario();
     this.getClientes();
+    this.inventarioFiltrado = [...this.inventario];
+    this.clientesFiltrados = [...this.clientes]; 
 
     const inputNombreCliente: HTMLInputElement = document.getElementById("nombreCliente") as HTMLInputElement;
     inputNombreCliente.addEventListener("input", (event) => {
@@ -53,21 +53,20 @@ export class CreacionPrestamosComponent implements OnInit {
 
   getInventario(): void {
     this.inventarioService.get().subscribe(
-      (inventario:any[]) => {
+      (inventario) => {
         this.inventario = inventario;
         this.inventarioFiltrado = [...this.inventario];
-      }
-      
+      },
+      (error) => console.error('Error al obtener el inventario:', error)
     );
   }
 
   getClientes(): void {
     this.clientesService.get().subscribe(
-      (clientes) => {
-        this.clientes = clientes;
+      (cliente) => {
+        this.clientes = cliente;
         this.clientesFiltrados = [...this.clientes];
-      },
-      (error) => console.error('Error al obtener los clientes:', error)
+      }
     );
   }
 
@@ -104,10 +103,10 @@ export class CreacionPrestamosComponent implements OnInit {
 
       libroSeleccionado.existencias -= this.cantidad;
       this.inventarioFiltrado = [...this.inventario];
-
+      
       this.detalleprestamo.get().subscribe((detalleprestamo: any[]) => {
-        this.DP = detalleprestamo;
-      });
+        this.DP = detalleprestamo
+      })
 
       const libro = {
         id_libro: libroSeleccionado.id,
@@ -115,7 +114,7 @@ export class CreacionPrestamosComponent implements OnInit {
         cantidad: this.cantidad,
         fecha: this.fechaLimite,
         estado: true,
-      };
+      }
 
       this.detalleprestamo.post(libro).subscribe(
         (response) => {
@@ -123,6 +122,7 @@ export class CreacionPrestamosComponent implements OnInit {
         },
         (error) => console.error('Error al registrar el libro:', error)
       );
+
     }
   }
 
@@ -134,16 +134,15 @@ export class CreacionPrestamosComponent implements OnInit {
       if (libroEnInventario) {
         libroEnInventario.existencias += itemEliminado.cantidad;
       }
-
-      this.detalleprestamo.delete(this.filaSeleccionadaCarrito + 1).subscribe(
+      this.detalleprestamo.delete(this.filaSeleccionadaCarrito+1).subscribe(
         (response) => {
           console.log('Libro eliminado exitosamente:', response);
         },
         (error) => console.error('Error al eliminar el libro:', error)
-      );
-
+      )
       this.carrito.splice(this.filaSeleccionadaCarrito, 1);
       this.filaSeleccionadaCarrito = null;
+
     }
   }
 
@@ -152,24 +151,23 @@ export class CreacionPrestamosComponent implements OnInit {
   }
 
   filtrarInventario(busqueda: string): void {
-    this.terminoBusqueda = busqueda;
+    this.terminoBusqueda = busqueda; 
+    console.log('Buscando:', busqueda); 
+    console.log('Inventario:', this.inventario); 
+  
     this.inventarioFiltrado = this.inventario.filter(libro =>
       libro.nombre && libro.nombre.toLowerCase().includes(busqueda.toLowerCase())
     );
+    console.log('Resultado filtrado:', this.inventarioFiltrado); 
   }
 
-  onInput(event: Event): void {
+  onInput(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     this.filtrarInventario(inputElement.value);
   }
 
 
-  onInputChange(event: Event): void {
-    const inputNombreCliente: HTMLInputElement = event.target as HTMLInputElement;
-    this.actualizarListaDesplegable(inputNombreCliente);
-  }
 
-  
 actualizarListaDesplegable(input: HTMLInputElement): void {
   const listaClientes: HTMLSelectElement = document.getElementById("listaClientes") as HTMLSelectElement;
   listaClientes.innerHTML = ""; // Limpiar la lista desplegable
@@ -183,34 +181,39 @@ actualizarListaDesplegable(input: HTMLInputElement): void {
   });
 }
 
-  confirmarPrestamo(): void {
-    let libro: number = 0;
-    this.carrito.forEach(item => {
-      libro += item.cantidad;
-    });
 
-    const librosPrestados = {
-      id_cliente: this.cliente,
-      cantidad: libro,
-      estado: true
-    };
-
-    this.detalleprestamo.post(librosPrestados).subscribe(
-      (response) => {
-        console.log('Prestamo registrado exitosamente:', response);
-      },
-      (error) => console.error('Error al registrar el prestamo:', error)
-    );
+onInputChange(event: Event): void {
+  const inputNombreCliente: HTMLInputElement = event.target as HTMLInputElement;
+  this.actualizarListaDesplegable(inputNombreCliente);
+}
+confirmarPrestamo(): void {
+  let libro: number = 0;
+  this.carrito.forEach(item => {
+    libro += item.cantidad
+  })
+  
+  const librosPrestados = {
+    id_cliente: this.cliente,
+    cantidad: libro,
+    estado: true
   }
+  this.detalleprestamo.post(librosPrestados).subscribe(
+    (response) => {
+      console.log('Prestamo registrado exitosamente:', response);
+    },
+    (error) => console.error('Error al registrar el prestamo:', error)
+  )
+}
+cancelarPrestamo(): void {
+  let idPrestamo = this.DP.length + 1
+  this.prestamosService.cancelar(idPrestamo).subscribe(
+    (response) => {
+      console.log('Prestamo cancelado exitosamente:', response);
+    },
+    (error) => console.error('Error al cancelar el prestamo:', error)
+  )
+  this.router
+}
 
-  cancelarPrestamo(): void {
-    let idPrestamo = this.DP.length + 1;
-    this.prestamosService.cancelar(idPrestamo).subscribe(
-      (response) => {
-        console.log('Prestamo cancelado exitosamente:', response);
-      },
-      (error) => console.error('Error al cancelar el prestamo:', error)
-    );
-    this.router.navigate(['/prestamos']);
-  }
+
 }
