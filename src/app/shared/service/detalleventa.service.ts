@@ -24,6 +24,10 @@ export class DetalleventaService {
     return this.http.post<any>(this.baseUrl + API_ROUTES.detalleVentas.post, data, { headers });}
 
   delete(id: number): Observable<any> { 
-    return this.http.delete<any>(this.baseUrl + API_ROUTES.detalleVentas.delete + '/' + id); }  
+    return this.http.delete<any>(this.baseUrl + API_ROUTES.detalleVentas.delete + '/' + id); }
+
+  cancelar(id: number): Observable<any> { 
+    return this.http.delete<any>(this.baseUrl + API_ROUTES.detalleVentas.cancelar + '/' + id); }
+    
 
 }

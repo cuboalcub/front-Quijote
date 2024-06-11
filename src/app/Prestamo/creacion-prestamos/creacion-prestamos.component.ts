@@ -182,5 +182,27 @@ onInputChange(event: Event): void {
   const inputNombreCliente: HTMLInputElement = event.target as HTMLInputElement;
   this.actualizarListaDesplegable(inputNombreCliente);
 }
+confirmarPrestamo(): void {
+  let libro: number = 0;
+  this.carrito.forEach(item => {
+    libro += item.cantidad
+  })
+  
+  const librosPrestados = {
+    id_cliente: this.cliente,
+    cantidad: libro,
+    estado: true
+
+  }
+}
+cancelarPrestamo(): void {
+  let idPrestamo = this.DP.length + 1
+  this.detalleprestamo.cancelar(idPrestamo).subscribe(
+    (response) => {
+      console.log('Prestamo cancelado exitosamente:', response);
+    },
+    (error) => console.error('Error al cancelar el prestamo:', error)
+  )
+}
 
 }

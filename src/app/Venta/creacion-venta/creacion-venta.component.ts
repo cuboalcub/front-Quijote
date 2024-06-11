@@ -222,11 +222,10 @@ export class CreacionVentaComponent implements OnInit {
   }
 
   cancelarVenta(): void {
-    for (let i = 1; i = this.carrito.length; i++) {
-      this.detalleVentaService.delete(i).subscribe(
-        
-      )
-    }
+    let tamDV = this.DV.length+1
+    this.detalleVentaService.cancelar(tamDV).subscribe(
+      () => alert('Venta cancelada con exito'),
+    )
     this.router.navigate(['/prestamos']);
   }
 
