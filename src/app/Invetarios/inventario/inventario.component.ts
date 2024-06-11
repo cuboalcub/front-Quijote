@@ -20,7 +20,7 @@ export class InventarioComponent { // Implementar OnInit
 
   ngOnInit(): void { 
     this.get();
-   }
+  }
 
   get(): void {
     this.inventarioService.get().subscribe((inventarios) => {

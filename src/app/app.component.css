@@ -15,7 +15,7 @@ header{
         transform: translateX(-50%); /* centra horizontalmente */
         width: 400px; /* ajusta el ancho según sea necesario */
         height: auto; /* ajusta la altura automáticamente según el ancho */
-      }
+    }
     a{
         text-decoration: none;
     }
@@ -25,7 +25,7 @@ header{
         left: 45px; /* ajusta la posición horizontal según sea necesario */
         width: 165px; /* ajusta el ancho según sea necesario */
         height: auto; /* ajusta la altura automáticamente según el ancho */
-      }
+    }
     
     header p{
         font-family: 'Inter';
