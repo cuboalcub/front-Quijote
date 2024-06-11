@@ -6,9 +6,8 @@ import { InvenatrioService } from '../../shared/service/invenatrio.service';
 import { DetalleventaService } from '../../shared/service/detalleventa.service';
 import { VentasService } from '../../shared/service/ventas.service';
 import { ClientesService } from '../../shared/service/clientes.service';
-import { DetalleVentaComponent } from '../../Prestamo/detalle-venta/detalle-venta.component';
 import { Clientes } from '../../shared/models/cliente';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-creacion-venta',
   standalone: true,
@@ -34,6 +33,7 @@ export class CreacionVentaComponent implements OnInit {
     private detalleVentaService: DetalleventaService, 
     private ventasService: VentasService, 
     private clientesService: ClientesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -132,6 +132,9 @@ export class CreacionVentaComponent implements OnInit {
       );
   
       this.actualizarTotal();
+      this.getInventario();
+      this.filaSeleccionadaInventario = null;
+      this.cantidad = 1;
     }
   }
 
@@ -166,21 +169,34 @@ export class CreacionVentaComponent implements OnInit {
     this.carrito.forEach(item => {
       cantidadtotal += item.cantidad
     })
+    if (this.cliente != null || this.cliente != 0) {
     const venta = {
       id_cliente: this.cliente,
       cantidad: cantidadtotal,
       total: this.total,
       estado:true
     }
-
     this.ventasService.post(venta).subscribe(
-      
+      Response => {
+        alert('Venta realizada con exito');
+        this.router.navigate(['/prestamos']);
+      },
+      error => {
+        console.error(error);
+        alert('Error al realizar la venta');
+      }
+
     )
+  }
   }
 
   cancelarVenta(): void {
-    this.carrito = [];
-    this.total = 0;
+    for (let i = 1; i = this.carrito.length; i++) {
+      this.detalleVentaService.delete(i).subscribe(
+        
+      )
+    }
+    this.router.navigate(['/prestamos']);
   }
 
 
