@@ -13,7 +13,7 @@
           <tr *ngFor="let genero of generos; let i = index" [attr.data-index]="i" (click)="seleccionarFila(i,genero.id)" [class.selected]="filaSeleccionada === i">
             <td>{{ genero.id }}</td>
             <td>{{ genero.nombre }}</td>
-            <td class="modificar"><a routerLink="/modificarGenero"><img src="assets/modificar.png" alt="Modificar" (click)="getid(genero)"></a></td>
+            <td class="modificar"><a routerLink="/modificarGenero"><img src="https://firebasestorage.googleapis.com/v0/b/quijote-image.appspot.com/o/image%2Fmodificar.png?alt=media&token=42001a07-261f-4ce5-874d-e130c34131a4" alt="Modificar" (click)="getid(genero)"></a></td>
           </tr>
           <!-- Agrega más filas según sea necesario -->
         </tbody>
