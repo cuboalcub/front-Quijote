@@ -27,11 +27,11 @@ export class CreacionVentaComponent {
   cantidad: number = 1;
   cliente: string = '';
 
-  inventarioFiltrado: any[] = [...this.inventario]; 
+  inventarioFiltrado: any[] = [...this.inventario]; //
   terminoBusqueda: string = '';
 
   ngOnInit(): void {
-    this.actualizarTotal();
+    this.actualizarTotal();//
     this.getInventario();
     this.getClientes();
   }
@@ -172,6 +172,6 @@ export class CreacionVentaComponent {
 
   cancelarVenta() {
     this.carrito = [];
-    this.total = 0;
+    this.total = 0;//
   }
 }
