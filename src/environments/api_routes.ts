@@ -34,7 +34,7 @@ export const API_ROUTES = {
         get:"prestamo/obtener",
         post:"prestamo/guardar",
         update:"prestamo/actualizar",
-        delete:"/borrar"
+        delete:"prestamo/borrar"
     },
     sucursales:{
         get:"sucursal/obtener",
@@ -49,16 +49,16 @@ export const API_ROUTES = {
         delete:"venta/borrar"
     },
     detalleVentas:{
-        get:"detalleVenta/obtener",
-        post:"detalleVenta/guardar",
-        update:"detalleVenta/actualizar",
-        delete:"detalleVenta/borrar"
+        get:"detalle_venta/obtener",
+        post:"detalle_venta/guardar",
+        update:"detalle_venta/actualizar",
+        delete:"detalleventa/borrar"
     },
     detallePrestamos:{
-        get:"detallePrestamo/obtener",
-        post:"detallePrestamo/guardar",
-        update:"detallePrestamo/actualizar",
-        delete:"detallePrestamo/borrar"
+        get:"detalle_prestamo/obtener",
+        post:"detalle_prestamo/guardar",
+        update:"detalle_prestamo/actualizar",
+        delete:"detalle_prestamo/borrar"
     },
     login:{
         login:"login"
