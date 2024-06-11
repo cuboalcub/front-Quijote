@@ -36,6 +36,7 @@ export class CreacionPrestamosComponent implements OnInit {
     private clientesService: ClientesService,
     private detalleprestamo: DetalleprestamoService,
     private prestamosService: PrestamosService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -211,6 +212,7 @@ cancelarPrestamo(): void {
     },
     (error) => console.error('Error al cancelar el prestamo:', error)
   )
+  this.router.navigate(['/prestamos']);
 }
 
 
