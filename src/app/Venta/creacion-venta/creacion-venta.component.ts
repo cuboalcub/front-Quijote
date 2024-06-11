@@ -17,7 +17,6 @@ import { Clientes } from '../../shared/models/cliente';
 })
 export class CreacionVentaComponent implements OnInit {
   inventario: any[] = [];
-  inventarioFiltrado: any[] = [];
   carrito: Carrito[] = [];
   clientes: Clientes[] = [];
   filaSeleccionadaInventario: number | null = null;
@@ -26,6 +25,7 @@ export class CreacionVentaComponent implements OnInit {
   objeto: any;
   cantidad: number = 1;
   cliente: string = '';
+  inventarioFiltrado: any[] = [...this.inventario];
   terminoBusqueda: string = '';
 
   constructor(
@@ -39,6 +39,7 @@ export class CreacionVentaComponent implements OnInit {
     this.getInventario();
     this.getClientes();
     this.actualizarTotal();
+    this.inventarioFiltrado = [...this.inventario];
   }
 
   getClientes(): void {
@@ -72,13 +73,17 @@ export class CreacionVentaComponent implements OnInit {
   }
   
   filtrarInventario(busqueda: string): void {
-    this.terminoBusqueda = busqueda;
+    this.terminoBusqueda = busqueda; 
+    console.log('Buscando:', busqueda); 
+    console.log('Inventario:', this.inventario); 
+  
     this.inventarioFiltrado = this.inventario.filter(libro =>
-      libro.nombre_libro.toLowerCase().includes(busqueda.toLowerCase())
+      libro.nombre && libro.nombre.toLowerCase().includes(busqueda.toLowerCase())
     );
+    console.log('Resultado filtrado:', this.inventarioFiltrado); 
   }
 
-  onInput(event: Event): void {
+  onInput(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     this.filtrarInventario(inputElement.value);
   }

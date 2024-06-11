@@ -65,7 +65,7 @@ footer {
 }
 
 .tabla th, .tabla td {
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #ddd;
     width: 10%; 
 }

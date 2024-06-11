@@ -22,7 +22,7 @@ export class CreacionPrestamosComponent implements OnInit {
   filaSeleccionadaCarrito: number | null = null;
   cantidad: number = 1;
   maxLibros: number = 3;
-  inventarioFiltrado: any[] = [];
+  inventarioFiltrado: any[] = [...this.inventario];
   terminoBusqueda: string = '';
 
   constructor(
@@ -34,6 +34,7 @@ export class CreacionPrestamosComponent implements OnInit {
   ngOnInit(): void {
     this.getInventario();
     this.getClientes();
+    this.inventarioFiltrado = [...this.inventario];
   }
 
   getInventario(): void {
@@ -110,10 +111,19 @@ export class CreacionPrestamosComponent implements OnInit {
   }
 
   filtrarInventario(busqueda: string): void {
-    this.terminoBusqueda = busqueda;
+    this.terminoBusqueda = busqueda; 
+    console.log('Buscando:', busqueda); 
+    console.log('Inventario:', this.inventario); 
+  
     this.inventarioFiltrado = this.inventario.filter(libro =>
-      libro.nombre_libro.toLowerCase().includes(busqueda.toLowerCase())
+      libro.nombre && libro.nombre.toLowerCase().includes(busqueda.toLowerCase())
     );
+    console.log('Resultado filtrado:', this.inventarioFiltrado); 
+  }
+
+  onInput(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.filtrarInventario(inputElement.value);
   }
 
   actualizarListaDesplegable(input: HTMLInputElement): void {
