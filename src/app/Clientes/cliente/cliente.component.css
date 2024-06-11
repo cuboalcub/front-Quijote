@@ -31,19 +31,18 @@
 }
 
 th {
-    background-color: #823F00; /* Color de fondo del encabezado */
-    color: white; /* Color del texto */
-    height: 35px; /* Altura del encabezado */
-    border-bottom: 1px solid rgb(210, 220, 250); /* Borde inferior */
+    background-color: #823F00; 
+    color: white; 
+    height: 35px; 
+    border-bottom: 1px solid rgb(210, 220, 250); 
 }
 
 td {
-    color: rgba(100, 100, 100, 60); /* Color del texto */
-    height: 30px; /* Altura de las celdas */
+    color: rgba(100, 100, 100, 60); 
+    height: 30px; 
     border: 0.5px solid rgba(240, 240, 240, 10); /* Borde de las celdas */
 }
 
-/* Pseudo-clases */
 th:hover {
     background-color: rgba(20, 20, 20, 90); /* Color de fondo al pasar el mouse sobre el encabezado */
 }

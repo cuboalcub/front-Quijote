@@ -137,6 +137,12 @@
     margin: 20px 0;
 }
 
+.tabla th, .tabla td {
+    padding: 5px;
+    border: 1px solid #ddd;
+    width: 10%; 
+}
+
 th {
     background-color: #823F00;
     color: white;
