@@ -52,7 +52,7 @@ export const API_ROUTES = {
         get:"detalle_venta/obtener",
         post:"detalle_venta/guardar",
         update:"detalle_venta/actualizar",
-        delete:"detalleventa/borrar"
+        delete:"detalle_venta/borrar"
     },
     detallePrestamos:{
         get:"detalle_prestamo/obtener",
