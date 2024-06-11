@@ -16,6 +16,7 @@ export class ClienteComponent {
 constructor(private clientesService: ClientesService,
             private sesionstorageService: SesionstorageService
 ) {}
+
 arrclientes: Clientes[] = [{id: 1, nombre: 'Estefania Rodriguez Barragan martinez', telefono: 'aaaaaaaaaaaaaaa', direccion: 'aaaaaaaaaaaaaaaaaaa', estado: true},
   {id: 1, nombre: 'Estefania Rodriguez Barragan martinez', telefono: 'aaaaaaaaaaaaaaa', direccion: 'aaaaaaaaaaaaaaaaaaa', estado: true},
   {id: 1, nombre: 'Estefania Rodriguez Barragan martinez', telefono: 'aaaaaaaaaaaaaaa', direccion: 'aaaaaaaaaaaaaaaaaaa', estado: true},
@@ -24,6 +25,7 @@ arrclientes: Clientes[] = [{id: 1, nombre: 'Estefania Rodriguez Barragan martine
   {id: 1, nombre: 'Estefania Rodriguez Barragan martinez', telefono: 'aaaaaaaaaaaaaaa', direccion: 'aaaaaaaaaaaaaaaaaaa', estado: true},
   {id: 1, nombre: 'Estefania Rodriguez Barragan martinez', telefono: 'aaaaaaaaaaaaaaa', direccion: 'aaaaaaaaaaaaaaaaaaa', estado: true}
 ];
+
 key = 'cliente';
 id: number = 0;
 ngOnInit(): void {
